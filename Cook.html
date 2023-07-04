@@ -111,10 +111,30 @@ po wcisnieciu pojawia się pop up strefa na której zaczyna liczyć się czas ( 
       color: white;
       cursor: pointer;
   }
+  .Top_image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    z-index: 1;
+  }
+  .background-image {
+    position: fixed;
+    left: 0;
+    top:5vh;
+    width: 100vw;
+    height: auto;
+    z-index: -1;
+}
     
     </style>
 </head>
 <body>
+  <div>
+    <img src="icons/Top_image.png" class="Top_image">
+    <img src ="ICONS/background1.png" class="background-image">
+  </div>
     <div class="button" id="fish">Fish</div>
     <div class="button" id="tfish">tFish</div>
     <div class="button" id="kraken">Kraken</div>
