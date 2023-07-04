@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,8 +20,182 @@
     <script text="text/javascript" src="./js_cook.js"></script>
   </body>
 </html>
+
 <!-- TO DO
-po wcisnieciu pojawia się pop up strefa na której zaczyna liczyć się czas ( animacja kółka )
+po wcisnieciu pojawia się pop up strefa na której zaczyna liczyć się czas ( animacja kółka ) -->
 
 
--->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timer App</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #171738;
+            overflow-y: hidden; 
+        }
+        
+        .button {
+            width: 200px;
+            height: 200px;
+            border-radius: 10%;
+            background-color: #2e1760;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #1d0e3c;
+        }
+
+
+        /* wyskakujące okienko */
+        .timer {
+          font-size: 40px;
+          margin-top: 20px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: flex-end; /* Zmieniamy align-items na flex-end */
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    }
+    
+    .modal-content {
+        background-color: rgb(19, 18, 18);
+        color: wheat;
+        padding: 100px;
+        border-radius: 5px;
+        text-align: center;
+        position: relative;
+        margin-bottom: 20vh; /* Dodajemy margin-bottom */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Dodajemy align-items */
+        justify-content: flex-start; /* Dodajemy justify-content */
+    }
+    
+    .close-button {
+      position: absolute;
+      bottom: 10px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 40px; /* Zwiększamy szerokość przycisku */
+      height: 40px; /* Zwiększamy wysokość przycisku */
+      border-radius: 50%;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      color: white;
+      cursor: pointer;
+  }
+    
+    </style>
+</head>
+<body>
+    <div class="button" id="fish">Fish</div>
+    <div class="button" id="tfish">tFish</div>
+    <div class="button" id="kraken">Kraken</div>
+    <div class="button" id="chicken">Chicken</div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <div id="info"></div>
+          <div id="start">Start</div>
+          <div id="timer" class="timer"></div>
+          <div class="close-button" id="close">&times;</div> <!-- Przenosimy przycisk X tutaj -->
+      </div>
+  </div>
+  
+
+    <script>
+        var timers = {
+            fish: 40,
+            tfish: 90,
+            kraken: 120,
+            chicken: 60
+        };
+
+        var countdownInterval;
+        var countupInterval;
+        var timerValue = 0;
+
+        function startCountdown(id) {
+            var timer = timers[id];
+
+            document.getElementById('info').innerText = "Your " + id + " will be ready in:";
+            document.getElementById('start').innerText = "Starting...";
+            document.getElementById('timer').innerText = timer;
+            timer--;
+
+            countdownInterval = setInterval(function() {
+                if (timer === 0) {
+                    clearInterval(countdownInterval);
+                    playSound();
+                    startCountup();
+                }
+
+                document.getElementById('timer').innerText = timer;
+                timer--;
+            }, 1000);
+        }
+
+        function startCountup() {
+            countupInterval = setInterval(function() {
+                timerValue++;
+
+                if (timerValue === 40) {
+                    clearInterval(countupInterval);
+                    document.getElementById('timer').innerText = 'BURNED';
+                } else {
+                    document.getElementById('timer').innerText = timerValue;
+                }
+            }, 1000);
+        }
+
+        function playSound() {
+            // Twój kod odtwarzający dźwięk
+        }
+
+        var buttons = document.getElementsByClassName('button');
+
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function() {
+                var id = this.id;
+                document.getElementById('modal').style.display = 'flex';
+                startCountdown(id);
+            });
+          }
+
+          document.getElementById('close').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'none';
+            clearInterval(countdownInterval);
+            clearInterval(countupInterval);
+            timerValue = 0;
+        });
+    </script>
+</body>
+</html>
+quick your meat will burn in
+
