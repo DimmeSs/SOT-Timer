@@ -1,104 +1,113 @@
-var timers = {
-    Fish: 15,
-    Meat: 60,
-    tfish: 90,
-    kraken: 120
-    
-  };
-  var countdownInterval;
-  var countupInterval;
-  var timerValue = 0;
+const timers = {
+  Fish: { timer1: 10, timer2: 12 },
+    // [Down here is normal fish timers] Fish: { timer1: 45, timer2: 35 },
+  Meat: { timer1: 65, timer2: 55 },
+  tfish: { timer1: 95, timer2: 85 },
+  kraken: { timer1: 125, timer2: 115 }
+};
+
+  let countdownInterval;
+  let phase = 1;
   
   function startCountdown(id) {
-    var timer = timers[id];
-    var tip;
+    let timer = timers[id].timer1;
   
-    if (id === 'Fish') {
+    if (phase === 1) {
+      timer = timers[id].timer1;
+    } else if (phase === 2) {
+      timer = timers[id].timer2;
+    }
+  
+    let tip;
+  
+    if (id === 'Fish' || id === 'tfish') {
       tip = "Wait for the eyes to turn completely white";
     } else {
       tip = "Wait for the entire piece to turn brown. No pink should be visible";
     }
   
-    var name;
+    let name;
   
     if (id === 'tfish') {
       name = "Trophy Fish";
     } else if (id === 'kraken') {
       name = "Kraken / Megalodon";
     } else {
-      name = id.charAt(0).toUpperCase() + id.slice(1);
+      name = id;
     }
   
-    document.getElementById('info').innerText = "Your " + name + " will be ready in:";
-    document.getElementById('timer').innerText = timer;
-    document.getElementById('info2').innerText = "[Tip]: " + tip;
+    const infoElement = document.getElementById('info');
+    const timerElement = document.getElementById('timer');
+    const info2Element = document.getElementById('info2');
   
+    infoElement.innerText = `Your ${name} will be ready in:`;
+    timerElement.innerText = timer;
+    info2Element.innerText = `[Tip]: ${tip}`;
     timer--;
   
-    var elementsToBlur = document.getElementsByClassName('blur-effect');
-    for (var i = 0; i < elementsToBlur.length; i++) {
-      elementsToBlur[i].classList.add('blur-effect');
-    }
-    document.getElementById('timer').classList.remove('blur-effect');
-  
-    countdownInterval = setInterval(function() {
-      if (timer === 9) {
-        playSound();
+    countdownInterval = setInterval(() => {
+      if (timer === 9 && phase === 1) {
+        playSound1();
+      } else if (timer === 9 && phase === 2) {
+        playSound2();
       }
+  
       if (timer === 0) {
         clearInterval(countdownInterval);
-        startCountup();
-        document.getElementById('info').innerText = "Quick take your " + name + " before it burns! \n You've got:";
-        document.getElementById('info2').innerText = "";
+        phase++;
+  
+        if (phase === 3) {
+          infoElement.innerText = `Your ${name} has burned!`;
+          timerElement.style.display = 'none';
+          info2Element.innerText = "";
+          phase = 1;
+        } else if (phase === 2) {
+          timer = timers[id].timer2;
+          startCountdown(id);
+          infoElement.innerText = `Quick take your ${name} before it burns! \n You've got:`;
+          timerElement.style.display = 'inline';
+          info2Element.innerText = "";
+        }
       }
   
-      document.getElementById('timer').innerText = timer;
+      timerElement.innerText = timer;
       timer--;
     }, 1000);
   }
   
-  function startCountup() {
-    countupInterval = setInterval(function() {
-      timerValue++;
+  const audio1 = new Audio('END-ALARM-1.mp3');
+  const audio2 = new Audio('END-ALARM-2.mp3');
   
-      if (timerValue === 40) {
-        clearInterval(countupInterval);
-        document.getElementById('timer').innerText = "Burned :C";
-      } else {
-        document.getElementById('timer').innerText = timerValue;
-      }
-    }, 1000);
+  function playSound1() {
+    audio1.play();
   }
   
-  function playSound() {
-    var audio = new Audio('alarm_sound.mp3');
-    audio.play();
+  function playSound2() {
+    audio2.play();
   }
   
-  var buttons = document.getElementsByClassName('button');
+  function stopSound() {
+    audio1.pause();
+    audio1.currentTime = 0;
+    audio2.pause();
+    audio2.currentTime = 0;
+  }
   
-  for (var i = 0; i < buttons.length; i++) {
+  const buttons = document.getElementsByClassName('button');
+  
+  for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
-      var id = this.id;
+      const id = this.id;
       document.getElementById('modal').style.display = 'flex';
-  
-      if (id === 'tfish') {
-        startCountdown('tfish');
-        document.getElementById('info').innerText = "Your Trophy Fish will be ready in:";
-      } else if (id === 'kraken') {
-        startCountdown('kraken');
-        document.getElementById('info').innerText = "Your Kraken & Megalodon will be ready in:";
-      } else {
-        startCountdown(id);
-        document.getElementById('info').innerText = "Your " + id + " will be ready in:";
-      }
+      startCountdown(id);
     });
   }
   
   document.getElementById('close').addEventListener('click', function() {
     document.getElementById('modal').style.display = 'none';
+    stopSound();
+    phase = 1;
+    document.getElementById('timer').style.display = 'inline';
     clearInterval(countdownInterval);
-    clearInterval(countupInterval);
-    timerValue = 0;
   });
   

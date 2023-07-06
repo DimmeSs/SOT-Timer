@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/x-icon" href="icons/sot_icon.ico">
+    <link rel="stylesheet" href="style_cook.css">
     <meta name="author" content="Szymon Słoniowski" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <title>Sea Of Thieves Cooking Timer</title>
-    <link rel="icon" type="image/x-icon" href="icons/sot_icon.ico">
-    <link rel="stylesheet" href="style_cook.css">
 </head>
 <body>
   <div>
     <img src="icons/Top_image.png" class="Top_image">
     <img src ="ICONS/background1.png" class="background-image">
   </div>
+  <div class="button-container">
     <div class="button" id="Fish"><img src="icons/FFish.png">Fish</div>
     <div class="button" id="tfish">Trophy Fish</div>
     <div class="button" id="kraken">Monster Meats</div>
     <div class="button" id="Meat">Basic Meat</div>
-
+  </div>
+  
     <div id="modal" class="modal">
       <div class="modal-content">
           <div id="info" class="timer-top">Your tfish will be ready in:</div>
@@ -27,12 +29,12 @@
       </div>
     </div>
     <!-- TO DO
-    po zrobieniu sie odać dzwiek i liczenie odpowiednie zanim się zacznie palić
-    design gornego zdjecia do przycisków zeby sie nie mieszały
-    
+    design gornego zdjecia do przycisków zeby sie nie zlewały z górnym zdjęciem top image
+    tekst : Click button before you place thing to cook nad przyciskami
     -->
-    
-
-  <script src="js_cook.js"></script>
+  
+  <script async src="js_cook.js"></script>
 </body>
 </html>
+
+
