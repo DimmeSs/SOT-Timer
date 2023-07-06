@@ -1,9 +1,9 @@
 const timers = {
-  Fish: { timer1: 10, timer2: 12 },
-    // [Down here is normal fish timers] Fish: { timer1: 45, timer2: 35 },
-  Meat: { timer1: 65, timer2: 55 },
-  tfish: { timer1: 95, timer2: 85 },
-  kraken: { timer1: 125, timer2: 115 }
+  BFish: { timer1: 10, timer2: 12 },
+    // [Down here is normal fish timers] BFish: { timer1: 45, timer2: 35 },
+  BMeat: { timer1: 65, timer2: 55 },
+  BTFish: { timer1: 95, timer2: 85 },
+  BMonsterM: { timer1: 125, timer2: 115 }
 };
 
   let countdownInterval;
@@ -20,7 +20,7 @@ const timers = {
   
     let tip;
   
-    if (id === 'Fish' || id === 'tfish') {
+    if (id === 'BFish' || id === 'BTFish') {
       tip = "Wait for the eyes to turn completely white";
     } else {
       tip = "Wait for the entire piece to turn brown. No pink should be visible";
@@ -28,12 +28,14 @@ const timers = {
   
     let name;
   
-    if (id === 'tfish') {
+    if (id === 'BTFish') {
       name = "Trophy Fish";
-    } else if (id === 'kraken') {
+    } else if (id === 'BMonsterM') {
       name = "Kraken / Megalodon";
-    } else {
-      name = id;
+    } else if (id === "BMeat"){
+      name = "Basic Meat";
+    }else if (id === "BFish"){
+      name = "Fish";
     }
   
     const infoElement = document.getElementById('info');
@@ -57,7 +59,7 @@ const timers = {
         phase++;
   
         if (phase === 3) {
-          infoElement.innerText = `Your ${name} has burned!`;
+          infoElement.innerText = `Your ${name} has burned!\n\n`;
           timerElement.style.display = 'none';
           info2Element.innerText = "";
           phase = 1;

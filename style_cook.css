@@ -34,7 +34,7 @@ body {
   }
 
 
-.button {
+  .button {
     width: 400px;
     height: 300px;
     border-radius: 30px;
@@ -42,25 +42,49 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 16px 0px rgb(6, 6, 6,0.5);
     margin: 10px;
-    display: flex;
+    display: inline-block;
+    text-align: center;
     justify-content: center;
+    padding: px;
     align-items: center;
     font-size: 20px;
     color: white;
     cursor: pointer;
     transition: background-color 0.15s ease;
 }
-
+.button img {
+    height: 40px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.button span {
+    display: block;
+    margin-top: 2vh;
+    margin-bottom: vh;
+    font-size: 3vh;
+    color: wheat;
+    font-family: 'Windlass', sans-serif;
+}
+/* button animacje */
 .button:hover {
     background-color: rgba(3, 10, 10, 0.793);
 }
 .button:active{
     background-color: rgb(3, 10, 10);
 }
-#fish{
-    text-align: right;
+#BasicM{
+    margin-top: 4vh;
+    height: 8vh;
 }
-#tfish{font: optional;}
+#MonsterM {
+        height: 10vh;
+}
+#Fish{
+    margin-top: 3vh;
+    height: 9vh;
+}
+
+#TFish{height: 10vh}
 
 /* WYSKAKUJĄCE OKIENKO */
 
@@ -76,8 +100,8 @@ body {
 
 .timer-bottom {
     font-size: 2vh;
-  }
-.modal {
+}
+  .modal {
     display: none;
     position: fixed;
     top: 0;
@@ -122,14 +146,20 @@ body {
     bottom: 10px;
     right: 50%;
     transform: translateX(50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: red;
+    width: 400px;
+    height: 70px;
+    border-radius: 20%;
+    background: linear-gradient(-60deg, red 50%, rgba(255, 25, 0, 0.639) 50%);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 12px;
     color: white;
     cursor: pointer;
+    margin-bottom: 1vh;
+}
+#close{
+    font-size: 3vh;
+    color: wheat;
+    font-family: 'Windlass', sans-serif;
 }
