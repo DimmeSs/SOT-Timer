@@ -1,6 +1,7 @@
 const timers = {
-  BFish: { timer1: 10, timer2: 12 },
-    // [Down here is normal fish timers] BFish: { timer1: 45, timer2: 35 },
+  // BFish: { timer1: 10, timer2: 12 },
+  // [Down here is normal fish timers]  
+  BFish: { timer1: 45, timer2: 35 },
   BMeat: { timer1: 65, timer2: 55 },
   BTFish: { timer1: 95, timer2: 85 },
   BMonsterM: { timer1: 125, timer2: 115 }
