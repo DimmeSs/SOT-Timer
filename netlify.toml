@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/"
+  to = "/Cook.html"
+  status = 200

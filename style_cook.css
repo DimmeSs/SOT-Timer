@@ -1,16 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: rgb(4, 84, 72);
-  overflow-y: hidden;
+  overflow-x:hidden;
+  padding: 0;
+  margin: 0;
 }
-
+nav{
+    background: url(ICONS/background1.png);
+    width: 100vw;
+    min-height: 900px;
+}
 .Top_image {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 40vh;
   z-index: 0;
@@ -25,20 +31,36 @@ body {
   filter: blur(1px);
 }
 #beforeInfo {
-  text-align: center;
+  display: block;
+  width: fit-content;
+  margin-inline:auto;
+
 }
 /* PRZYCISKI */
 .button-container {
   display: grid;
   grid-auto-flow: column;
+  grid-template-columns: repeat(1fr,4);
   gap: 10px;
   height: fit-content;
 }
-
+@media screen and (max-width: 1350px){
+    .button-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }     
+}
+@media screen and (max-width: 650px){
+    .button-container{
+        grid-auto-flow: row;
+        grid-template-columns: unset;
+        grid-template-rows: unset;
+    }
+}
 button {
   appearance: none;
   border: 0;
-  width: 400px;
+  min-width: 300px;
   border-radius: 30px;
   background-color: rgba(68, 79, 77, 0.1);
   backdrop-filter: blur(10px);

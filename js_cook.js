@@ -95,8 +95,8 @@ const timers = {
     audio2.currentTime = 0;
   }
   
-  const buttons = document.getElementsByClassName('button');
-  
+
+  const buttons = document.querySelectorAll("nav button")
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
       const id = this.id;
