@@ -38,6 +38,8 @@ nav {
   margin-inline: auto;
   text-align: center;
   font-size: 3vh;
+  font-weight: bold;
+  text-shadow: rgb(2, 2, 2) 1px 0 10px;
   line-height: 1.2;
   color: wheat;
   font-family: "Windlass", sans-serif;
@@ -83,6 +85,7 @@ button span {
   font-size: 3vh;
   color: wheat;
   font-family: "Windlass", sans-serif;
+  text-shadow: rgb(2, 2, 2) 1px 0 10px;
 }
 /* button animacje */
 button:hover {
