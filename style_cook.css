@@ -1,47 +1,44 @@
 @import url("https://fonts.cdnfonts.com/css/windlass");
 * {
   box-sizing: border-box;
+  
 }
+/*            /\ czcionka /\        */
 
 body {
   justify-content: center;
   align-items: center;
   height: 100%;
   background-color: rgb(4, 84, 72);
+  max-width: 100%;
+  width: 100vw;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
 }
-nav {
-  background: url(ICONS/background1-min.png);
-  background-size: auto;
-  min-height: 1000px;
-  user-select: none;
-}
+/* box z przyciskami i textem */
 .Top_image {
   background: url(icons/Top_image-min.png);
   background-size: 100% 100%;
-
-  width: 100vw;
   height: 40vh;
   z-index: 0;
+  
 }
-.background-image {
-  position: fixed;
-  left: 0;
-  top: 5vh;
-  width: 100vw;
-  height: auto;
+nav {
+  background: url(ICONS/background1-min.png)no-repeat;
+  background-size: 100% 100%;
   z-index: -1;
-  filter: blur(1px);
+  user-select: none;
+  overflow-x: hidden;
 }
+
 #beforeInfo {
   display: block;
   width: fit-content;
   margin-inline: auto;
   text-align: center;
   font-size: 3vh;
-  line-height: 1.6;
+  line-height: 1.2;
   color: wheat;
   font-family: "Windlass", sans-serif;
 }
@@ -193,9 +190,6 @@ button:active {
   }
 }
 @media screen and (max-width: 1300px) {
-  /* #beforeInfo {
-    max-width: 20%;
-  } */
   .Top_image {
     transform: scaleX(1.2) translateX(-2%);
   }
