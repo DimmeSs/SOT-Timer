@@ -96,11 +96,8 @@ button:hover {
 }
 button:active {
   background-color: rgb(3, 10, 10);
-  background-color: transparent; /* lub inny kolor tła */
-  box-shadow: none; /* lub inny efekt cienia */
-  outline: none; /* jeśli widoczny jest outline */
-  }
-
+  -webkit-tap-highlight-color: transparent;
+}
 #BasicM {
   margin-top: 4vh;
   height: 8vh;
