@@ -22,7 +22,7 @@ body {
   background-size: 100% 100%;
   height: 40vh;
   z-index: 0;
-  
+  pointer-events: none;
 }
 nav {
   background: url(ICONS/background1-min.png)no-repeat;
@@ -30,6 +30,7 @@ nav {
   z-index: -1;
   user-select: none;
   overflow-x: hidden;
+  padding-bottom: 10vh;
 }
 
 #beforeInfo {
@@ -74,6 +75,7 @@ button {
   transition: background-color 0.15s ease;
 }
 button img {
+  pointer-events: none;
   height: 40px;
   margin-top: 2vh;
   margin-bottom: 2vh;
@@ -146,7 +148,7 @@ button:active {
   background-color: rgb(19, 18, 18);
   color: wheat;
   padding: 100px;
-  border-radius: 5px;
+  border-radius: 4.5%;
   text-align: center;
   position: relative;
   margin-bottom: 20vh;
@@ -166,13 +168,9 @@ button:active {
 
 .close-button {
   position: absolute;
-  bottom: 10px;
+  bottom:1px;
   right: 50%;
   transform: translateX(50%);
-  width: 400px;
-  height: 70px;
-  border-radius: 20%;
-  background: linear-gradient(-60deg, red 50%, rgba(255, 25, 0, 0.639) 50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,11 +178,26 @@ button:active {
   color: white;
   cursor: pointer;
   margin-bottom: 1vh;
+
+  background: hsl(340deg 100% 32%);
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  outline-offset: 4px;
 }
-#close {
+.front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
   font-size: 3vh;
   color: wheat;
+  background: hsl(345deg 100% 47%);
   font-family: "Windlass", sans-serif;
+  transform: translateY(-6px);
+}
+
+.close-button:active .front {
+  transform: translateY(-2px);
 }
 @media screen and (max-width: 1350px) {
   .button-container {
@@ -195,6 +208,9 @@ button:active {
 @media screen and (max-width: 1300px) {
   .Top_image {
     transform: scaleX(1.2) translateX(-2%);
+  }
+  nav{
+    background-size: cover;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -214,7 +230,7 @@ button:active {
     transform: scaleX(2.1) translateX(3.8%);
   }
   }
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: 670px) {
   #beforeInfo {
     max-width: 58%;
     margin-top:-3vh;

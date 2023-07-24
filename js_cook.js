@@ -30,7 +30,7 @@ let phase = 1;
 
 function startCountdown(id) {
   let timer = timers[id].timer1;
-
+  
   if (phase === 1) {
     timer = timers[id].timer1;
   } else if (phase === 2) {
@@ -61,7 +61,7 @@ function startCountdown(id) {
   const timerElement = document.getElementById("timer");
   const info2Element = document.getElementById("info2");
 
-  infoElement.innerText = `Your ${name} will be ready in:`;
+  infoElement.innerText = `Wait for ${name} to get perfectly cooked`;
   timerElement.innerText = timer;
   info2Element.innerText = `[Tip]: ${tip}`;
   timer--;
@@ -85,7 +85,7 @@ function startCountdown(id) {
       } else if (phase === 2) {
         timer = timers[id].timer2;
         startCountdown(id);
-        infoElement.innerText = `Quick take your ${name} before it burns! \n You've got:`;
+        infoElement.innerText = `Quick take your ${name} before it burns!`;
         timerElement.style.display = "inline";
         info2Element.innerText = "";
       }
@@ -113,6 +113,7 @@ function stopSound() {
   audio2.pause();
   audio2.currentTime = 0;
 }
+
 
 const buttons = document.querySelectorAll("nav button");
 for (let i = 0; i < buttons.length; i++) {
