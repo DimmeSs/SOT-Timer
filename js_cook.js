@@ -114,20 +114,36 @@ function stopSound() {
   audio2.currentTime = 0;
 }
 
-
+function openModal() {
+  var modal = document.getElementById('modal');
+  var blurBackground = document.getElementById('blur-background');
+  modal.style.display = 'flex';
+  blurBackground.style.display = 'block'; // Pokazujemy element blur-background
+}
 const buttons = document.querySelectorAll("nav button");
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
+    openModal()
     const id = this.id;
     document.getElementById("modal").style.display = "flex";
     startCountdown(id);
   });
 }
 
+function closeModal() {
+  var modal = document.getElementById('modal');
+  var blurBackground = document.getElementById('blur-background');
+  modal.style.display = 'none';
+  blurBackground.style.display = 'none'; // Ukrywamy element blur-background
+}
+
 document.getElementById("close").addEventListener("click", function () {
+  closeModal()
   document.getElementById("modal").style.display = "none";
   stopSound();
   phase = 1;
   document.getElementById("timer").style.display = "inline";
   clearInterval(countdownInterval);
 });
+
+
