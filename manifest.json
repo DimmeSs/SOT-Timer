@@ -12,7 +12,8 @@
       "src": "iconsApp/sot_icon72x72.png",
       "sizes": "72x72",
       "type": "image/png"
-
+    },
+    {
       "src": "iconsApp/sot_icon96x96.png",
       "sizes": "96x96",
       "type": "image/png"
