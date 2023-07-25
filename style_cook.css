@@ -146,6 +146,13 @@ button:active {
   scrollbar-color: transparent transparent;
   z-index: 1;
   animation: slideIn 0.6s;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 /* animacja pojawiania się okienka */
 @keyframes slideIn {
@@ -202,7 +209,13 @@ button:active {
   color: white;
   cursor: pointer;
   margin-bottom: 1vh;
-
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background: hsl(340deg 100% 32%);
   border-radius: 12px;
   border: none;
