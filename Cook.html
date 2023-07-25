@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="icons/sot_icon.ico" />
-    <link rel="stylesheet" href="style_cook.css" />
+    <link rel="icon" type="image/x-icon" href="iconsApp/sot_icon.ico" />
+    <link rel="stylesheet" href="/style_cook.css" />
+    <link rel="manifest" href="/manifest.json">
     <meta name="author" content="Szymon Słoniowski" />
+    <meta name="description" content="Sea of thieves timer + tips">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
     <title>Sea Of Thieves Cooking Timer</title>
   </head>
   <body>
@@ -15,23 +18,23 @@
       <span id="beforeInfo">Click the button before you put the meat to fry </span>
       <div class="button-container">
         <button id="BFish">
-          <img src="icons/Fish.png" id="Fish" /><span>Fish</span>
+          <img src="icons/Fish.png" alt="FISH" id="Fish" /><span>Fish</span>
         </button>
         <button id="BTFish">
-          <img src="icons/FFish.png" id="TFish" /><span>Trophy Fish</span>
+          <img src="icons/FFish.png" alt="TROPHY FISH"id="TFish" /><span>Trophy Fish</span>
         </button>
         <button id="BMonsterM">
-          <img src="icons/FKraken.png" id="MonsterM" /><img
-            src="icons/FMegalodon.png"
+          <img src="icons/FKraken.png" alt="KRAKEN"id="MonsterM" /><img
+            src="icons/FMegalodon.png"alt="KRAKEN"
             id="MonsterM"
           /><span>Monster Meats</span>
         </button>
         <button id="BMeat">
-          <img src="icons/FChicken.png" id="BasicM" /><img
-            src="icons/FPork.png"
+          <img src="icons/FChicken.png" alt="CHICKEN"id="BasicM" /><img
+            src="icons/FPork.png"alt="PORK"
             id="BasicM"
-          /><img src="icons/FSnake.png" id="BasicM" /><img
-            src="icons/FShark.png"
+          /><img src="icons/FSnake.png" alt="SNAKE"id="BasicM" /><img
+            src="icons/FShark.png"alt="SHARK"
             id="BasicM"
           /><span>Basic Meat</span>
         </button>
@@ -164,6 +167,18 @@
     jak będziesz robić tipy pod przyciskami to zrób to w innym BRANCH
   -->
 
-    <script async src="js_cook.js"></script>
+    <script async src="js_cook.js">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+              console.log('Service Worker zarejestrowany:', registration);
+            })
+            .catch(function(error) {
+              console.log('Rejestracja Service Workera nie powiodła się:', error);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

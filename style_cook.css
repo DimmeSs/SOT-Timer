@@ -192,7 +192,7 @@ button:active {
 
 .close-button {
   position: absolute;
-  bottom:1px;
+  bottom: 8px;
   right: 50%;
   transform: translateX(50%);
   display: flex;
