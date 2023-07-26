@@ -116,6 +116,44 @@ button:active {
 
 /* WYSKAKUJĄCE OKIENKO */
 
+.circle {
+  position: relative;
+  transform: rotate(-90deg);
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0);
+}
+
+.mask {
+  fill: none;
+  stroke: hsl(340deg 100% 32%);
+  stroke-width: 20;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 0;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+.timer-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+#timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 45px; /* Dostosuj do swoich potrzeb */
+}
+
+#svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
 .timer {
   font-size: 5.5vh;
   font-family: "Seconda Round W00 Bold";

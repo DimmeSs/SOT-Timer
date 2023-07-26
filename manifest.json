@@ -9,17 +9,17 @@
   "orientation":"portrait",
   "icons": [
     {
-      "src": "iconsApp/sot_icon72x72.png",
+      "src": "iconsApp/72x72.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "iconsApp/sot_icon96x96.png",
+      "src": "iconsApp/96x96.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "iconsApp/sot_icon128x128.png",
+      "src": "iconsApp/128x128.png",
       "sizes": "128x128",
       "type": "image/png"
     },

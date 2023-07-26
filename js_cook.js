@@ -1,42 +1,83 @@
-// // background: url(ICONS/Top_image-min-PhotoRoom.png);
-// const checkph = () => {
-//   const photo = document.querySelector(".Top_image");
-//   if (matchMedia("(max-width: 850px)").matches) {
-//     if (photo.src !== "ICONS/Top_image-min-PhotoRoom.png") {
-//       console.log("mały");
-//       photo.src = "ICONS/Top_image-min-PhotoRoom.png";
-//     }
+// document.getElementById('downloadButton').addEventListener('click', function() {
+//   // Sprawdź, czy przeglądarka obsługuje PWA (Service Worker i manifest)
+//   if ('serviceWorker' in navigator && 'PushManager' in window) {
+//     // Zarejestruj Service Workera i obsłuż instalację aplikacji
+//     navigator.serviceWorker.register('/service-worker.js')
+//       .then(function(registration) {
+//         console.log('Service Worker zarejestrowany:', registration);
+//         // Wyślij powiadomienie o instalacji aplikacji (niektóre przeglądarki obsługują to)
+//         registration.showNotification('Kliknij, aby zainstalować aplikację', {
+//           icon: 'iconsApp/sot_icon192x192.png',
+//           body: 'Dodaj aplikację do swojego ekranu startowego',
+//         });
+//       })
+//       .catch(function(error) {
+//         console.log('Rejestracja Service Workera nie powiodła się:', error);
+//       });
 //   } else {
-//     if (photo.src !== "icons/Top_image-min.png") {
-//       console.log("duzy");
-//       photo.src = "icons/Top_image-min.png";
-//     }
+//     // Przeglądarka nie obsługuje PWA
+//     alert('Twoja przeglądarka nie obsługuje Progressive Web Apps.');
+//   }
+// });
+// document.getElementById('downloadButton').addEventListener('click', function() {
+//   if ('Notification' in window) {
+//     Notification.requestPermission()
+//       .then(function(permission) {
+//         if (permission === 'granted') {
+//           // Powiadomienie zostało zezwolone, można wywołać showNotification
+//           showInstallNotification();
+//         } else {
+//           // Powiadomienie zostało zablokowane lub użytkownik jeszcze nie podjął decyzji
+//           console.log('Użytkownik zablokował powiadomienia lub jeszcze nie podjął decyzji.');
+//         }
+//       })
+//       .catch(function(error) {
+//         console.log('Błąd podczas próby uzyskania zgody na powiadomienia:', error);
+//       });
+//   }
+// });
+
+// function showInstallNotification() {
+//   if ('serviceWorker' in navigator && 'PushManager' in window) {
+//     navigator.serviceWorker.ready.then(function(registration) {
+//       registration.showNotification('Kliknij, aby zainstalować aplikację', {
+//         icon: 'iconsApp/sot_icon192x192.png',
+//         body: 'Dodaj aplikację do swojego ekranu startowego',
+//       });
+//     });
 //   }
 // }
-// window.addEventListener("resize",checkph);
-// window.addEventListener("load",checkph);
 
 const timers = {
   // BFish: { timer1: 10, timer2: 12 },
   // [Down here is normal fish timers]
-  BFish: { timer1: 45, timer2: 35 },
+  BFish: { timer1: 15, timer2: 35 },
   BMeat: { timer1: 65, timer2: 55 },
   BTFish: { timer1: 95, timer2: 85 },
   BMonsterM: { timer1: 125, timer2: 115 },
 };
 
+const circle = document.getElementById('circle');
 let countdownInterval;
 let phase = 1;
 
 function startCountdown(id) {
   let timer = timers[id].timer1;
+  let totalDuration = timer;
   
   if (phase === 1) {
     timer = timers[id].timer1;
+    totalDuration = timer;
+    circle.style.visibility = 'visible';
   } else if (phase === 2) {
     timer = timers[id].timer2;
+    totalDuration = timer;
+    circle.style.strokeDashoffset = '440';
+    circle.style.visibility = 'visible';
   }
-
+  let initialProgress = timer / totalDuration;
+  let initialDashoffsetValue = initialProgress * 440; 
+  circle.style.strokeDashoffset = initialDashoffsetValue;
   let tip;
 
   if (id === "BFish" || id === "BTFish") {
@@ -81,20 +122,34 @@ function startCountdown(id) {
         infoElement.innerText = `Your ${name} has burned!\n\n`;
         timerElement.style.display = "none";
         info2Element.innerText = "";
+        circle.style.strokeDashoffset = '440';
+        circle.style.visibility = 'hidden';
         phase = 1;
       } else if (phase === 2) {
         timer = timers[id].timer2;
+        totalDuration = timer;
         startCountdown(id);
         infoElement.innerText = `Quick take your ${name} before it burns!`;
         timerElement.style.display = "inline";
         info2Element.innerText = "";
       }
     }
+    
+    let progress = timer/totalDuration;
+    let dashoffsetValue = progress * 440; 
+
+    circle.style.strokeDashoffset = dashoffsetValue;
 
     timerElement.innerText = timer;
     timer--;
   }, 1000);
 }
+
+
+
+
+
+
 
 const audio1 = new Audio("END-ALARM-1.mp3");
 const audio2 = new Audio("END-ALARM-2.mp3");
@@ -143,6 +198,7 @@ document.getElementById("close").addEventListener("click", function () {
   stopSound();
   phase = 1;
   document.getElementById("timer").style.display = "inline";
+  circle.style.strokeDashoffset = '440';
   clearInterval(countdownInterval);
 });
 
