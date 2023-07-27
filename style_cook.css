@@ -160,14 +160,15 @@ button:active {
   color: white;
 }
 .timer-top {
-  margin-top: 6vh;
-  margin-bottom: 6vh;
+  margin-top: 9vh;
+  margin-bottom: 1vh;
   font-size: 4vh;
 }
 
 .timer-bottom {
   font-size: 2vh;
   margin-bottom: 1vh;
+  margin-top: 20px;
 }
 
 .modal {
@@ -274,6 +275,18 @@ button:active {
 .close-button:active .front {
   transform: translateY(-2px);
 }
+
+#burnedImage {
+  width: 200px;
+  height: 300px;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
 
 @media screen and (max-width: 1350px) {
   .button-container {
