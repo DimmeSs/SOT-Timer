@@ -58,7 +58,7 @@
 
 // Definicja czasów przygotowania dla różnych produktów
 const timers = {
-  BFish: { timer1: 11, timer2: 11 },
+  BFish: { timer1: 45, timer2: 35 },
   BMeat: { timer1: 65, timer2: 55 },
   BTFish: { timer1: 95, timer2: 85 },
   BMonsterM: { timer1: 125, timer2: 115 },

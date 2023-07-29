@@ -9,12 +9,16 @@
     <meta name="author" content="Szymon Słoniowski" />
     <meta name="description" content="Sea of thieves timer + tips">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+    <link rel="preload" as="image" href="ICONS/Top_image-min1.png" />
+    <link rel="preload" as="image" href="ICONS/background1-min.png" />
     <title>Sea Of Thieves Cooking Timer</title>
   </head>
   <body>
     <div id="blur-background"></div>
     <nav>
-        <div class="Top_image"></div>
+      <div class="image-container">
+        <img src="ICONS/Top_image-min1.png" alt="Top Image">
+      </div>
       <span id="beforeInfo">Click the button before you put the meat to fry </span>
       <div class="button-container">
         <button id="BFish">
@@ -58,8 +62,6 @@
         </span></div>
       </div>
     </div>
-    <!-- TO DO -->
-      
     <script async src="js_cook.js">
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
