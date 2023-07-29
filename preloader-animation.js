@@ -10,12 +10,13 @@
       preloader.style.pointerEvents = "none"; /* Wyłączamy interakcję z preloaderem */
 
       content.style.opacity = "1"; /* Pokazujemy zawartość strony z przezroczystością 1 */
-    }, 2000); // 3000 ms = 3 seconds
+    },2000);
+  //⬆️2000
 
-    // After 4 seconds, hide the preloader
     setTimeout(function() {
       preloader.style.display = "none"; /* Ukrywamy preloader */
-    }, 3000); // 4000 ms = 4 seconds
+    },3000);
+  //⬆️3000 
   });
 
   // // Wait for the DOM to be fully loaded
