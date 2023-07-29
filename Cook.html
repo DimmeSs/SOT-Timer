@@ -6,6 +6,7 @@
     <link rel="icon" type="image/x-icon" href="iconsApp/sot_icon.ico" />
     <link rel="stylesheet" href="/style_cook.css" />
     <link rel="manifest" href="/manifest.json">
+    <script async src="preloader-animation.js"></script>
     <meta name="author" content="Szymon Słoniowski" />
     <meta name="description" content="Sea of thieves timer + tips">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
@@ -14,6 +15,10 @@
     <title>Sea Of Thieves Cooking Timer</title>
   </head>
   <body>
+  <div id="preloader">
+    <img src="ICONS/preloader.gif" alt="">
+  </div>
+  <div id="content">
     <div id="blur-background"></div>
     <nav>
       <div class="image-container">
@@ -44,6 +49,7 @@
         </button>
       </div>
     </nav>
+  </div>
     <div id="modal" class="modal">
       <div class="modal-content">
         <div class="timer-container">
@@ -52,7 +58,6 @@
             <circle id="circle" class="mask" r="70" cx="100" cy="100" fill="transparent" stroke="red" stroke-width="10" stroke-dasharray="440" stroke-dashoffset="440"></circle>
           </svg>
           <img id="burnedImage" src="icons/Burned.png" style="visibility: hidden">
-
         </div>
         <div id="info" class="timer-top">[Info]</div>
         <div id="info2" class="timer-bottom"></div>
@@ -62,18 +67,7 @@
         </span></div>
       </div>
     </div>
-    <script async src="js_cook.js">
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/service-worker.js')
-            .then(function(registration) {
-              console.log('Service Worker zarejestrowany:1', registration);
-            })
-            .catch(function(error) {
-              console.log('Rejestracja Service Workera nie powiodła się:', error);
-            });
-        });
-      }
-    </script>
+    <script async src="PWA.js"></script>
+    <script async src="js_cook.js"></script>
   </body>
 </html>
