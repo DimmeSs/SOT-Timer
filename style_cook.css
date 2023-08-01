@@ -33,16 +33,16 @@ body {
   height: 100%;
   background-color: #01201c;
   z-index: 9999;
-  transition: opacity 1s ease-in-out; /* Dodajemy przejście dla płynnego zanikania */
-  opacity: 1; /* Ustawiamy początkową przezroczystość na 1 */
-  pointer-events: auto; /* Włączamy interakcję z preloaderem */
+  transition: opacity 1s ease-in-out; 
+  opacity: 1; 
+  pointer-events: auto; 
 }
 .preloader-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Wyśrodkowuje zawartość w pionie */
-  justify-content: center; /* Wyśrodkowuje zawartość w poziomie */
-  height: 10vh; /* Możesz dostosować wysokość kontenera */
+  align-items: center; 
+  justify-content: center;
+  height: 10vh; 
 }
 #preloader img {
   width: 100px;
@@ -75,7 +75,7 @@ body {
 }
 #content {
   opacity: 0;
-  transition: opacity 1s ease-in-out; /* Dodajemy przejście dla płynnego pojawiania się */
+  transition: opacity 1s ease-in-out;
 }
 
 /* Top image and navigation styles */
@@ -90,11 +90,27 @@ body {
 .image-container img {
   width: auto;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
   display: block;
-  margin-left: -40px;
   pointer-events: none; 
+}
+
+.menu_bar hr{
+  border: 2.215px solid #393939;
+  background: #000;
+  height: 38.054px;
+  margin-top:-20px;
+  margin-bottom: -20px;
+}
+
+#skull {
+width: fit-content; 
+height: fit-content;
+margin-inline: auto; /* gora dol null, lewo prawo auto */
+}
+
+#skull img{
+  width: 40px;
+  height: 40px;
 }
 
 nav {
@@ -193,23 +209,6 @@ button:active {
 
 #TFish {
   height: 10vh;
-}
-
-.menu_bar hr{
-    border: 2.215px solid #393939;
-    background: #000;
-    height: 38.054px;
-    margin-top:-20px;
-    margin-bottom: -20px;
-
-}
-
-#skull {
-  width: 40px; 
-  height: 40px;
-  margin-left: 50%;
-  transform:translateX(-1.3vw)
-  
 }
 
 /* Pop-up window styles */
@@ -432,6 +431,6 @@ button:active {
 @media screen and (max-width: 450px) {
   .image-container img {
     transform: scale(0.85);
-    margin-top: 0;
     margin-top: -30px;
+    margin-left: -30px;
 }}
