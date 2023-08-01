@@ -6,7 +6,6 @@
 /* Global styles */
 * {
   box-sizing: border-box;
-  
 }
 
 body {
@@ -49,16 +48,15 @@ body {
   height: 100px;
 }
 #preloader p{
-    text-shadow: rgb(2, 2, 2) 1px 0 10px;
-    display: block;
-    font-weight: bold;
-    text-align: center;
-    font-size: 65px;
-    color: rgb(0, 0, 0);
-    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
-    font-family: "Windlass", sans-serif;
+  text-shadow: rgb(2, 2, 2) 1px 0 10px;
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  font-size: 65px;
+  color: rgb(0, 0, 0);
+  text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  font-family: "Windlass", sans-serif;
 }
-
 
 @keyframes fadeOut {
   from {
@@ -103,14 +101,22 @@ body {
 }
 
 #skull {
-width: fit-content; 
-height: fit-content;
-margin-inline: auto; /* gora dol null, lewo prawo auto */
+  width: fit-content; 
+  height: fit-content;
+  margin-inline: auto; /* gora dol null, lewo prawo auto */
+  pointer-events: none;
 }
 
 #skull img{
   width: 40px;
   height: 40px;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 nav {
@@ -415,22 +421,19 @@ button:active {
     grid-template-columns: unset;
     grid-template-rows: unset;
   }
-  /* #skull {
-    margin-left: 47.5%;
-  } */
 }
 
 @media screen and (max-width: 670px) {
   #beforeInfo {
     max-width: 58%;
-    /* margin-top: -3vh; */
     margin-bottom: 20px;
   }
-
 }
+
 @media screen and (max-width: 450px) {
   .image-container img {
     transform: scale(0.85);
     margin-top: -30px;
     margin-left: -30px;
-}}
+  }
+}

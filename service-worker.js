@@ -5,8 +5,7 @@ const urlsToCache = [
   '/js_cook.js',
   '/ICONS/',
   '/iconsApp',
-  'END-ALARM-1.mp3',
-  'END-ALARM-2.mp3',
+  '/SOUND'
 ];
 
 self.addEventListener('install', function(event) {

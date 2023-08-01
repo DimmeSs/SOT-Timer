@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="iconsApp/sot_icon.ico" />
-    <link rel="stylesheet" href="/style_cook.css" />
-    <link rel="manifest" href="/manifest.json">
-    <script src="preloader-animation.js"></script>
-    <meta name="author" content="Szymon Słoniowski" />
-    <meta name="description" content="Sea of thieves timer + tips">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
-    <link rel="preload" as="image" href="ICONS/Top_image-min1.png" />
-    <link rel="preload" as="image" href="ICONS/background1-min.png" />
-    <title>Sea Of Thieves Cooking Timer</title>
-  </head>
-  <body>
+<head>
+  <meta name="author" content="Szymon Słoniowski" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="iconsApp/sot_icon.ico" />
+  <link rel="stylesheet" href="/style_cook.css" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="description" content="Sea of Thieves Timer + Tips">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+  <link rel="preload" as="image" href="ICONS/Top_image-min1.png" />
+  <link rel="preload" as="image" href="ICONS/background1-min.png" />
+  <title>Sea Of Thieves Cooking Timer</title> 
+  <script src="preloader-animation.js"></script>
+</head>
+<body>
   <div id="preloader" class="preloader-container">
     <img src="ICONS/preloader.gif" alt="">
     <p>Loading</p>
@@ -25,28 +25,25 @@
       <div class="image-container">
         <img src="ICONS/Top_image-min1.png" alt="Top Image">
       </div>
-      <span id="beforeInfo">Click the button before you put the meat to fry </span>
+      <span id="beforeInfo">Click the button before you put the meat to fry</span>
       <div class="button-container">
         <button id="BFish">
           <img src="icons/Fish.png" alt="FISH" id="Fish" /><span>Fish</span>
         </button>
         <button id="BTFish">
-          <img src="icons/FFish.png" alt="TROPHY FISH"id="TFish" /><span>Trophy Fish</span>
+          <img src="icons/FFish.png" alt="TROPHY FISH" id="TFish" /><span>Trophy Fish</span>
         </button>
         <button id="BMonsterM">
-          <img src="icons/FKraken.png" alt="KRAKEN"id="MonsterM" /><img
-            src="icons/FMegalodon.png"alt="KRAKEN"
-            id="MonsterM"
+          <img src="icons/FKraken.png" alt="KRAKEN" id="MonsterM" /><img
+            src="icons/FMegalodon.png" alt="KRAKEN" id="MonsterM"
           /><span>Monster Meats</span>
         </button>
         <button id="BMeat">
-          <img src="icons/FChicken.png" alt="CHICKEN"id="BasicM" /><img
-            src="icons/FPork.png"alt="PORK"
-            id="BasicM"
-          /><img src="icons/FSnake.png" alt="SNAKE"id="BasicM" /><img
-            src="icons/FShark.png"alt="SHARK"
-            id="BasicM"
-          /><span>Basic Meat</span>
+          <img src="icons/FChicken.png" alt="CHICKEN" id="BasicM"/>
+          <img src="icons/FPork.png" alt="PORK" id="BasicM"/>
+          <img src="icons/FSnake.png" alt="SNAKE" id="BasicM"/>
+          <img src="icons/FShark.png" alt="SHARK" id="BasicM"/>
+          <span>Basic Meat</span>
         </button>
       </div>
     </nav>
@@ -70,13 +67,14 @@
         <div id="info2" class="timer-bottom"></div>
         <div class="close-button" id="close">
           <span class="front">
-          Cancel
-        </span></div>
+            Cancel
+          </span>
+        </div>
       </div>
     </div>
   </div>
   <!-- Scripts -->
-    <script async src="PWA.js"></script>
-    <script async src="js_cook.js"></script>
-  </body>
+  <script async src="PWA.js"></script>
+  <script async src="js_cook.js"></script>
+</body>
 </html>
