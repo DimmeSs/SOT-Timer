@@ -3,6 +3,9 @@ v1.0
 DONE
 
 v2.0
+
+czcionka nie z linka tylko z pliku żeby nie ładowało się tak długo na początku
+
 // const timers = {
 //   BFish: { timer1: 11, timer2: 11, name: "Fish", tip: "Wait for the eyes to turn completely white" },
 //   BMeat: { timer1: 65, timer2: 55, name: "Basic Meat", tip: "Wait for the entire piece to turn brown. No pink should be visible" },
