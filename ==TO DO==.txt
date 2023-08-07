@@ -4,7 +4,15 @@ DONE
 
 v2.0
 
+muzyke podziel na liczenie i dzwięk -> if 0  && phase 1 = "dzwiek1.5" 
+
 czcionka nie z linka tylko z pliku żeby nie ładowało się tak długo na początku
+
+loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
+
+pwa offline nie działa, napraw
+
+przycisk do pobierania strony jako aplikacje
 
 // const timers = {
 //   BFish: { timer1: 11, timer2: 11, name: "Fish", tip: "Wait for the eyes to turn completely white" },
@@ -14,10 +22,4 @@ czcionka nie z linka tylko z pliku żeby nie ładowało się tak długo na pocz�
 // };
 
 
-loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
-
-pwa offline nie działa, napraw
-
-przycisk do pobierania strony jako aplikacje
-
-tipy , info itp na stronie ,
+sekcje , tipy , info itp na stronie ,
