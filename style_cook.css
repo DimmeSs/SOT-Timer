@@ -237,7 +237,7 @@ button:active {
   stroke: #a30036;
   stroke-width: 20;
   stroke-dasharray: 440;
-  stroke-dashoffset: 0;
+  stroke-dashoffset: 440;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 }
