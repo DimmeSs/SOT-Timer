@@ -20,7 +20,7 @@ function startCountdown(id) {
   if (phase === 3) {
       phase = 1;
       circle.style.strokeDashoffset = '0';
-      circle.style.visibility = 'visible'; 
+      circle.style.visibility = 'visible';
       const burnedImage = document.getElementById("burnedImage");
       burnedImage.style.visibility = 'hidden';
   }
