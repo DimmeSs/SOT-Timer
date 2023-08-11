@@ -177,3 +177,14 @@ document.getElementById("close").addEventListener("click", function () {
   circle.style.strokeDashoffset = '440';
   clearInterval(countdownInterval);
 });
+
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+    .then(function(registration) {
+        console.log('Service Worker zarejestrowany poprawnie:', registration);
+    })
+    .catch(function(error) {
+        console.log('Rejestracja Service Worker nie powiodła się:', error);
+    });
+}
