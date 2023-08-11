@@ -6,16 +6,6 @@ v2.0
 
 loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
 
-pwa offline nie działa, napraw
-
 przycisk do pobierania strony jako aplikacje
-
-// const timers = {
-//   BFish: { timer1: 11, timer2: 11, name: "Fish", tip: "Wait for the eyes to turn completely white" },
-//   BMeat: { timer1: 65, timer2: 55, name: "Basic Meat", tip: "Wait for the entire piece to turn brown. No pink should be visible" },
-//   BTFish: { timer1: 95, timer2: 85, name: "Trophy Fish", tip: "Wait for the eyes to turn completely white" },
-//   BMonsterM: { timer1: 125, timer2: 115, name: "Kraken / Megalodon", tip: "Wait for the entire piece to turn brown. No pink should be visible" },
-// };
-
 
 sekcje , tipy , info itp na stronie ,
