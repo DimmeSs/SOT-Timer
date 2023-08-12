@@ -42,6 +42,10 @@ body {
   opacity: 1; 
   pointer-events: auto; 
 }
+@media screen and (max-width: 850px) {
+  #preloader {
+    background-color: #045448;
+}}
 .preloader-container {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -56,6 +60,10 @@ body {
   justify-content: center;
   height: 10vh; 
 }
+@media screen and (max-width: 850px) {
+  #preloader {
+    background-color: #045448;
+}}
 #preloader img {
   width: 100px;
   height: 100px;
@@ -435,7 +443,9 @@ button:active {
     grid-template-columns: unset;
     grid-template-rows: unset;
   }
-}
+  #preloader {
+    background-color: #045448;
+}}
 
 @media screen and (max-width: 670px) {
   #beforeInfo {

@@ -179,12 +179,12 @@ document.getElementById("close").addEventListener("click", function () {
 });
 
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-    .then(function(registration) {
-        console.log('Service Worker zarejestrowany poprawnie:', registration);
-    })
-    .catch(function(error) {
-        console.log('Rejestracja Service Worker nie powiodła się:', error);
-    });
-}
+// if ('serviceWorker' in navigator) {
+//     navigator.serviceWorker.register('/service-worker.js')
+//     .then(function(registration) {
+//         console.log('Service Worker zarejestrowany poprawnie:', registration);
+//     })
+//     .catch(function(error) {
+//         console.log('Rejestracja Service Worker nie powiodła się:', error);
+//     });
+// }

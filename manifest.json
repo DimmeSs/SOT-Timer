@@ -1,7 +1,7 @@
 {
   "name" : "Sea of Thieves Cooking Timer",
-  "short_name" : "S.O.T Timer",
-  "description" : "Sea of thieves timer + tips",
+  "short_name" : "ThievesCook",
+  "description" : "Sea of thieves | Timer + Tips |",
   "start_url" : "/Cook.html",
   "theme_color" : "#045448",
   "background_color" : "#01201c",
