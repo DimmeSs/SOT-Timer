@@ -60,6 +60,10 @@ body {
   justify-content: center;
   height: 10vh; 
 }
+@media screen and (max-width: 850px) {
+  #preloader {
+    background-color: #045448;
+}}
 #preloader img {
   width: 100px;
   height: 100px;
