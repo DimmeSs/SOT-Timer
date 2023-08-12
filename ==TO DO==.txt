@@ -4,8 +4,9 @@ DONE
 
 v2.0
 
-loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
+loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji ) !!
 
-przycisk do pobierania strony jako aplikacje
+pwa offline nie działa na telefonie, napraw
+
 
 sekcje , tipy , info itp na stronie ,
