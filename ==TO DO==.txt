@@ -1,12 +1,32 @@
-v1.0
-
-DONE
-
-v2.0
-
-loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji ) !!
+LATER
 
 pwa offline nie działa na telefonie, napraw
 
+loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
 
-sekcje , tipy , info itp na stronie ,
+
+
+v2.0
+
+pasek navigacji na hr
+po najechaniu animacje do tego{
+  zmienia kolor ikonki i podnosi lekko
+  wyswietla ponizej tekst co to jest
+  pod ikonką dodaje podświate kolorową
+  }
+
+DESIGN sekcji-1 
+tabeli ul
+ramki ze zdjęciami dać na środek bardziej przy dużych ekranach
+ pogrubić pasek czarny
+
+ 
+sekcje ,
+tipy ,
+info ,
+money ,
+tabele ,
+
+
+!!! Wszystko robię w branch BETA żeby branch main zostal nietknięty
+!!! w Main zmieniam tylko TODO
