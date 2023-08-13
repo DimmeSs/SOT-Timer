@@ -68,6 +68,7 @@ body {
   width: 100px;
   height: 100px;
   pointer-events: none;
+  animation: fadeIn 1s;
 }
 #preloader p{
   text-shadow: rgb(2, 2, 2) 1px 0 10px;
@@ -78,6 +79,16 @@ body {
   text-shadow: rgb(0, 0, 0) 2px 2px 2px;
   font-family: "Windlass", sans-serif;
   font-weight: bold;
+  letter-spacing: 1.5px;
+  animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
 }
 
 @keyframes fadeOut {
@@ -117,7 +128,7 @@ body {
 .menu_bar hr{
   border: 2.215px solid #393939;
   background: #000;
-  height: 38.054px;
+  height: 50px;
   margin-top:-20px;
   margin-bottom: -20px;
 }
@@ -130,8 +141,8 @@ body {
 }
 
 #skull img{
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   -webkit-tap-highlight-color: transparent;
   pointer-events: none;
   -webkit-user-select: none;
