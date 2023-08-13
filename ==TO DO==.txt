@@ -5,7 +5,14 @@ pwa offline nie działa na telefonie, napraw
 loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
 
 v2.0
+
+
+DESIGN sekcji-1 
+tabeli ul
+tamki ze zdjęciami dać na środek bardziej przy dużych ekranach
  pogrubić pasek czarny
+
+ 
 sekcje ,
 tipy ,
 info ,
