@@ -1,32 +1,48 @@
-$(document).ready(function() {
-    const slideDuration = 1000;
-    const images = ["#image1", "#image2", "#image3", "#image4"];
-    const initialPositions = [9, 511, 1013, 1515];
-    let currentImageIndex = 0;
+let currentSlide = 1;
+const totalSlides = 6; 
+const slideChangeInterval = 5000;  
 
-    function getNextImageIndex() {
-        return (currentImageIndex + 1) % images.length;
+function changeSlide() {
+    currentSlide++;
+    if (currentSlide > totalSlides) {
+        currentSlide = 1;
     }
 
-    function animateImage() {
-        const currentImage = $(images[currentImageIndex]);
-        const nextImage = $(images[getNextImageIndex()]);
+    // Przejście do odpowiedniego slajdu
+    const slideElement = document.getElementById(`slide-${currentSlide}`);
+    slideElement.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"});
+}
 
-        // Ustaw następny obraz za aktualnie przesuwanym obrazem
-        nextImage.attr('x', parseFloat(currentImage.attr('x')) + 502);
+// Rozpoczyna automatyczne przejście między slajdami
+setInterval(changeSlide, slideChangeInterval);
 
-        // Przesuń obecny obraz w lewo
-        currentImage.animate({ x: '-=502' }, slideDuration, function() {
-            // Zresetuj pozycję obecnego obrazu do początkowej pozycji
-            currentImage.attr('x', initialPositions[currentImageIndex]);
-            
-            // Uaktualnij indeks obrazu
-            currentImageIndex = getNextImageIndex();
 
-            // Rozpocznij animację dla następnego obrazu
-            animateImage();
+const listItems = document.querySelectorAll('li[data-src]');
+const overlay = document.getElementById('overlay');
+const overlayImage = document.getElementById('overlayImage');
+
+listItems.forEach(item => {
+    // Dodajemy nasłuchiwanie do tekstu wewnątrz li oraz do elementu <b>
+    const textNodes = Array.from(item.childNodes).filter(node => node.nodeType === 3 || node.nodeName === "B");
+    textNodes.forEach(textNode => {
+        textNode.addEventListener('mouseenter', function() {
+            const imagePath = item.getAttribute('data-src');
+            overlayImage.src = imagePath;
+            overlay.style.display = 'flex';
         });
-    }
 
-    animateImage();
+        textNode.addEventListener('mouseleave', function() {
+            overlay.style.display = 'none';
+        });
+    });
+});
+
+overlay.addEventListener('mouseenter', function() {
+    overlay.style.display = 'none';
+});
+
+document.addEventListener('contextmenu', function(e) {
+  if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+  }
 });
