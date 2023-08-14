@@ -6,8 +6,12 @@ loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
 
 v2.0
 
+Zdjęcia ogarnąć
 
-DESIGN sekcji-1 
+pokaz slajdów przy where to sell
+
+DESIGN sekcji-1
+
 tabeli ul
 tamki ze zdjęciami dać na środek bardziej przy dużych ekranach
  pogrubić pasek czarny
@@ -19,3 +23,4 @@ info ,
 money ,
 tabele ,
 
+NAPRAWIĆ TO ŻEBY NIE MOGLI NA PRAWO PRZECHODZIĆ ~~~~NIGDY

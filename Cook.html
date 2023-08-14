@@ -13,6 +13,8 @@
   <link rel="preload" as="image" href="ICONS/background1-min.png" />
   <title>Sea Of Thieves Cooking Timer</title>
   <link rel="preload" href="FONTS/Seconda Round W00 Bold.woff" as="font" type="font/woff" crossorigin>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="container2.js?"></script>
   <script src="preloader-animation.js"></script>
 </head>
 <body>
@@ -25,7 +27,7 @@
     <div id="blur-background"></div>
     <nav>
       <div class="image-container">
-        <img src="ICONS/Top_image-min1.png" alt="Top Image">
+        <img src="ICONS/Top_image-min1.png" alt="Top Image" id="section-0">
       </div>
       <span id="beforeInfo">Click the button before you put the meat to fry</span>
       <div class="button-container">
@@ -49,12 +51,36 @@
         </button>
       </div>
     </nav>
-    <header class="menu_bar">
+
+    <header class="menu_bar" >
       <hr />
-      <div id="skull">
-        <img src="ICONS/Skull.png" alt="Skull Icon">
+      <div class="nav-images">
+        <a href="#section-4" class="nav-image">
+          <img src="ICONS/tips.png" alt="Image 1">
+          <span>Tips</span>
+        </a>
+        <a href="#section-1" class="nav-image">
+          <img src="ICONS/coins.png" alt="Image 2">
+          <span>Prices</span>
+        </a>
+        <div id="skull">
+          <a href="#section-5">
+            <img src="ICONS/Skull.png" alt="Skull Icon">
+            <span>Tutorial</span>
+          </a>
+        </div>
+        <a href="#section-2" class="nav-image">
+          <img src="ICONS/bait.png" alt="Image 3">
+          <span>Bait</span>
+        </a>
+        <a href="#section-3" class="nav-image">
+          <img src="ICONS/map.png" alt="Image 4">
+          <span>Regions</span>
+        </a>
       </div>
     </header>
+    
+
 <!-- OKNO WYSKAKUJACE -->
     <div id="modal" class="modal">
       <div class="modal-content">
@@ -93,14 +119,17 @@
       <li>Three Paces East Seapost  <b>S10</b></li>
       <li>The Wild Treasures Store     <b>O4</b></li>
     </ul>
-    <svg width="520" height="280" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="520" height="280" fill="black"/>
-      <rect x="9" y="9" width="502" height="262" fill="#311414"/>
-      <image id="image1" href="INFO SS/Roaring_Traders.png" x="9" y="9" width="502" height="262"/>
-      <image id="image2" href="INFO SS/sea post.jpg" x="9" y="9" width="502" height="262"/>
-      <image id="image3" href="INFO SS/The_Finest_Trading_Post.png" x="9" y="9" width="502" height="262"/>
-      <image id="image4" href="INFO SS/The_Spoils_of_Plenty_Store.png" x="9" y="9" width="502" height="262"/>
-  </svg>
+    <div class="image-slider">
+      <svg width="520" height="280" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="520" height="280" fill="black"/>
+          <rect x="9" y="9" width="502" height="262" fill="black"/>
+          <image id="image1" href="INFO SS/Roaring_Traders.png" x="9" y="9" width="502" height="262"/>
+          <image id="image2" href="INFO SS/sea post.jpg" x="511" y="9" width="502" height="262"/>
+          <image id="image3" href="INFO SS/The_Finest_Trading_Post.png" x="1013" y="9" width="502" height="262"/>
+          <image id="image4" href="INFO SS/The_Spoils_of_Plenty_Store.png" x="1515" y="9" width="502" height="262"/>
+      </svg>
+  </div>
+  
   
   
     </div>
@@ -108,7 +137,7 @@
     <p>At each of these seaposts you can find a representative of the Hunter's Call, the faction that you can sell your fish to. They're normally standing near the end of the pier, not in the shop.</p>
   </section>
   <section>
-<h2 id="section-2">What can you sell</h2>
+<h2>What can you sell</h2>
 <p>Maximizing the value of your catches is essential when selling fish to the Hunter's Call. Cooked fish is particularly lucrative, making it a wise decision to utilize the onboard pan on your ship for cooking before turning them in. However, caution must be exercised, as burnt fish is the least valuable type, even less so than raw fish.
   During the cooking process, it's crucial to monitor the fish closely. Watch for the eyes to turn white, as this signifies that the fish is perfectly cooked and ready to be removed from the pan. Cooking the fish any longer will lead to burning, diminishing its value, while removing it prematurely will result in undercooked fish.
   By mastering the art of cooking fish to perfection, you can ensure the highest profits when selling them to the Hunter's Call faction at the seaposts. Remember, a well-cooked fish is the key to reaping the most rewards for your efforts on the high seas.
@@ -132,7 +161,7 @@
   <p>!!!Half eaten fish cannot be sold so be careful if your inventory is full of fish.!!</p>
   </section>
   <section>
-    <h2 id="section-3">"Sea of Thieves" Fish Guide: Types, Locations, Bait, and Their Value</h2>
+    <h2 >"Sea of Thieves" Fish Guide: Types, Locations, Bait, and Their Value</h2>
     <p>There's tons of fish in Sea of Thieves. In fact, you might never catch them all. Each serves a different purpose, and each has its own value, whether it's cooked, burnt or raw.
       In total, there are 10 types of fish. Each has a fixed location and a bait requirement.</p>
       
@@ -143,7 +172,7 @@
      <hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
 
      <section>
-      <h2 id="section-4">Click to See Prices and Location </h2>
+      <h2 id="section-1">Click to See Prices and Location </h2>
       <a href="">Ancientscale  </a><a href="">Battlegill</a><a href=""> Devilfish</a><a href="">Islehopper</a><a href="">Plentifin</a><a href="">Pondie</a><a href="">Splashtail</a><a href="">Stormfish </a><a href="">Wildsplash</a><a href="">Wrecker</a><a href="">Monster Meats</a><a href="">Basic Meat</a><a href="">Tarcheus Plander</a>
       <svg width="520" height="280" xmlns="http://www.w3.org/2000/svg">
         <rect x="0" y="0" width="520" height="280" fill="black"/>
@@ -169,20 +198,20 @@
      <hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
 
      <section>
-      <h2 id="section-5">Baits in Sea of Thieves</h2>
+      <h2 id="section-2">Baits in Sea of Thieves</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium et pariatur similique, atque mollitia fugit laboriosam voluptatum vel aliquam illo!</p>
       <img src="">
      </section>
 <hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
      <section>
-      <h3 id="section-6">Regions in sea of thieves</h3>
+      <h3 id="section-3">Regions in sea of thieves</h3>
       <img src="INFO SS/Regions.png">
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum necessitatibus nulla minima nihil dolores? Nihil quaerat optio rerum laborum facere!</p>
       <a href="https://seaofthieves-archive.fandom.com/wiki/Locations">More Info</a>
      </section>
      <hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
      <section>
-      <h2 id="section-7">TIPS AND TRICKS</h2>
+      <h2 id="section-4">TIPS AND TRICKS</h2>
       <p>You can get fish and meat not only by fishing but also from other places, e.g. from barrels in:</p>
       <p>FORTS<img src="INFO SS/fort1.png" alt="Fort"><img src="INFO SS/fort2.png" alt="Fort"></p>
       <a href="https://rarethief.com/sea-of-thieves-sea-forts-guide/">MORE INFO ABOUT FORTS</a>
@@ -204,7 +233,7 @@
     <hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
 
     <section>
-      <h2 id="section-8">FISHING TUTORIAL (for begginers)</h2>
+      <h2 id="section-5">FISHING TUTORIAL (for beginners)</h2>
       <p>How To Fish
         1. Decide your bait. Pull out your fishing rod, re-open your inventory and when holding"R"(or B on controller), decide on the bait you want. Once it's on the end of your hook, you're ready to cast.
         2. To cast, simply point at a body of water, and left click. To retrieve your line, simply right click.
@@ -238,8 +267,8 @@
 
 
   <!-- Scripts -->
-  <script async src="container2.js?"></script>
+
   <script async src="js_cook.js?"></script>
-  <script async src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </body>
 </html>

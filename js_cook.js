@@ -179,6 +179,23 @@ document.getElementById("close").addEventListener("click", function () {
 });
 
 
+
+// NO COPY
+document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+});
+
+// NO F9
+
+document.addEventListener('keydown', function(e) {
+    if (e.keyCode === 120) {  // 120 to kod klawisza F9
+        e.preventDefault();  // Zapobiega domyślnej akcji
+    }
+});
+
+// SERVICE-WORKER
 // if ('serviceWorker' in navigator) {
 //     navigator.serviceWorker.register('/service-worker.js')
 //     .then(function(registration) {
