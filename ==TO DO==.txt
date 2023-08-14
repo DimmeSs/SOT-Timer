@@ -4,16 +4,18 @@ pwa offline nie działa na telefonie, napraw
 
 loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
 
-
-
 v2.0
 
-pasek navigacji na hr
+
 po najechaniu animacje do tego{
   zmienia kolor ikonki i podnosi lekko
-  wyswietla ponizej tekst co to jest
   pod ikonką dodaje podświate kolorową
   }
+
+napraw slider bo po zmianie obrazka przesuwa ekran w lewo ( + żeby działał tylko wtedy gdy widać go na ekranie ) 
+przerób zdjęcia żeby były na ostateczną wersje strony
+design sekcji "WHERE TO SELL"
+
 
 DESIGN sekcji-1 
 tabeli ul
