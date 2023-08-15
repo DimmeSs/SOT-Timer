@@ -16,6 +16,7 @@ napraw slider bo po zmianie obrazka przesuwa ekran w lewo ( + żeby działał ty
 przerób zdjęcia żeby były na ostateczną wersje strony
 design sekcji "WHERE TO SELL"
 
+pokaz slajdów przy where to sell
 
 DESIGN sekcji-1 
 tabeli ul
