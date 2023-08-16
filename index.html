@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="iconsApp/sot_icon.ico" />
-  <link rel="stylesheet" href="/style_cook.css?" />
   <link rel="manifest" href="/manifest.json">
   <meta name="description" content="Sea of Thieves Timer + Tips">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
@@ -31,21 +30,21 @@
       <span id="beforeInfo">Click the button before you put the meat to fry</span>
       <div class="button-container">
         <button id="BFish">
-          <img src="icons/Fish.png" alt="FISH" id="Fish" /><span>Fish</span>
+          <img src="ICONS/Fish.png" alt="FISH" id="Fish" /><span>Fish</span>
         </button>
         <button id="BTFish">
-          <img src="icons/FFish.png" alt="TROPHY FISH" id="TFish" /><span>Trophy Fish</span>
+          <img src="ICONS/FFish.png" alt="TROPHY FISH" id="TFish" /><span>Trophy Fish</span>
         </button>
         <button id="BMonsterM">
-          <img src="icons/FKraken.png" alt="KRAKEN" id="MonsterM" /><img
-            src="icons/FMegalodon.png" alt="KRAKEN" id="MonsterM"
+          <img src="ICONS/FKraken.png" alt="KRAKEN" id="MonsterM" /><img
+            src="ICONS/FMegalodon.png" alt="KRAKEN" id="MonsterM"
           /><span>Monster Meats</span>
         </button>
         <button id="BMeat">
-          <img src="icons/FChicken.png" alt="CHICKEN" id="BasicM"/>
-          <img src="icons/FPork.png" alt="PORK" id="BasicM"/>
-          <img src="icons/FSnake.png" alt="SNAKE" id="BasicM"/>
-          <img src="icons/FShark.png" alt="SHARK" id="BasicM"/>
+          <img src="ICONS/FChicken.png" alt="CHICKEN" id="BasicM"/>
+          <img src="ICONS/FPork.png" alt="PORK" id="BasicM"/>
+          <img src="ICONS/FSnake.png" alt="SNAKE" id="BasicM"/>
+          <img src="ICONS/FShark.png" alt="SHARK" id="BasicM"/>
           <span>Basic Meat</span>
         </button>
       </div>
@@ -88,7 +87,7 @@
           <svg id="svg" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <circle id="circle" class="mask" r="70" cx="100" cy="100" fill="transparent" stroke="red" stroke-width="10" stroke-dasharray="440" stroke-dashoffset="440"></circle>
           </svg>
-          <img id="burnedImage" src="icons/Burned.png">
+          <img id="burnedImage" src="ICONS/Burned.png">
         </div>
         <div id="info" class="timer-top">[Info]</div>
         <div id="info2" class="timer-bottom"></div>
@@ -280,11 +279,6 @@
     </footer>
 </main>
 </div>
-
-
-  <!-- Scripts -->
-  <script src="container2.js?"></script>
-  <script async src="js_cook.js?"></script>
-
+<script type="module" src="/src/main.ts"></script>
 </body>
 </html>
