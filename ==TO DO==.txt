@@ -6,14 +6,21 @@ loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
 
 v2.0
 
-Zdjęcia ogarnąć
+
+po najechaniu animacje do tego{
+  zmienia kolor ikonki i podnosi lekko
+  pod ikonką dodaje podświate kolorową
+  }
+
+napraw slider bo po zmianie obrazka przesuwa ekran w lewo ( + żeby działał tylko wtedy gdy widać go na ekranie ) 
+przerób zdjęcia żeby były na ostateczną wersje strony
+design sekcji "WHERE TO SELL"
 
 pokaz slajdów przy where to sell
 
-DESIGN sekcji-1
-
+DESIGN sekcji-1 
 tabeli ul
-tamki ze zdjęciami dać na środek bardziej przy dużych ekranach
+ramki ze zdjęciami dać na środek bardziej przy dużych ekranach
  pogrubić pasek czarny
 
  
@@ -23,4 +30,6 @@ info ,
 money ,
 tabele ,
 
-NAPRAWIĆ TO ŻEBY NIE MOGLI NA PRAWO PRZECHODZIĆ ~~~~NIGDY
+
+!!! Wszystko robię w branch BETA żeby branch main zostal nietknięty
+!!! w Main zmieniam tylko TODO
