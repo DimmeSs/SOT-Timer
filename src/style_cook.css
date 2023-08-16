@@ -1,12 +1,12 @@
 /* Import fonts */
 @font-face {
   font-family: 'Windlass';
-  src: url('FONTS/Windlass.woff') format('woff');
+  src: url('/FONTS/Windlass.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Seconda Round W00 Bold';
-  src: url('FONTS/Seconda Round W00 Bold.woff') format('woff');
+  src: url('/FONTS/Seconda Round W00 Bold.woff') format('woff');
 }
 html {
   scroll-behavior: smooth;
