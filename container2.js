@@ -1,6 +1,11 @@
 let currentSlide = 1;
 const totalSlides = 6;
 const slideChangeInterval = 5000;
+let slideChangeTimer;
+let resumeTimer;
+let hideTimer;
+let isMouseOverB = false;
+let isImageLocked = false;
 
 function changeSlide() {
   currentSlide++;
@@ -16,8 +21,15 @@ function showSlide(slideNumber) {
   slider.scrollLeft = (slideNumber - 1) * slideWidth;
 }
 
-// Rozpoczyna automatyczne przejście między slajdami
-setInterval(changeSlide, slideChangeInterval);
+function startSlideChange() {
+  slideChangeTimer = setInterval(changeSlide, slideChangeInterval);
+}
+
+function stopSlideChange() {
+  clearInterval(slideChangeTimer);
+}
+
+startSlideChange();
 
 const sliderNavLinks = document.querySelectorAll('.slider-nav a');
 sliderNavLinks.forEach((link, index) => {
@@ -38,16 +50,50 @@ listItems.forEach(item => {
       const imagePath = item.getAttribute('data-src');
       overlayImage.src = imagePath;
       overlay.style.display = 'flex';
+      clearTimeout(resumeTimer);
+      clearTimeout(hideTimer);
+      isMouseOverB = true;
+      setTimeout(function() {
+        overlay.style.opacity = '1';
+      }, 10);
+      stopSlideChange();
     });
 
     textNode.addEventListener('mouseleave', function() {
-      overlay.style.display = 'none';
+      isMouseOverB = false;
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(function() {
+        if (!isMouseOverB && !isImageLocked) {
+          overlay.style.opacity = '0';
+          setTimeout(function() {
+            if (!isMouseOverB && !isImageLocked) {
+              overlay.style.display = 'none';
+            }
+          }, 1150);
+        }
+      }, 2000);
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function() {
+        if (!isMouseOverB && !isImageLocked) {
+          startSlideChange();
+        }
+      }, 5000);
     });
   });
 });
 
-overlay.addEventListener('mouseenter', function() {
-  overlay.style.display = 'none';
+overlayImage.addEventListener('click', function() {
+  isImageLocked = !isImageLocked;
+  if (isImageLocked) {
+    clearTimeout(hideTimer);
+    clearTimeout(resumeTimer);
+  } else {
+    overlay.style.opacity = '0';
+    setTimeout(function() {
+      overlay.style.display = 'none';
+    }, 1150);
+    startSlideChange();
+  }
 });
 
 document.addEventListener('contextmenu', function(e) {
@@ -55,4 +101,3 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
   }
 });
-
