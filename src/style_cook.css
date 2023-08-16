@@ -386,7 +386,7 @@ ul {
   opacity: 1;
 }
 nav {
-  background: url(ICONS/background1-min.png) no-repeat;
+  background: url(/ICONS/background1-min.png) no-repeat;
   background-size: 100% 100%;
   z-index: -1;
   user-select: none;
