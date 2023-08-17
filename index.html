@@ -167,7 +167,7 @@
             </svg>
           </button>
 
-          <div class="content-wrapper">
+          <div class="content-wrapper" id="Mouse_slider">
             <ul>
               <li data-src="INFO_IMG/Brian’s Bazaar.png">
                 <b>Brian’s Bazaar Y12</b>
@@ -207,7 +207,7 @@
                 <img id="slide-5" src="INFO_IMG/IMGslide5.png" />
                 <img id="slide-6" src="INFO_IMG/IMGslide6.png" />
               </div>
-              <div class="slider-nav">
+              <div class="slider-nav" id="Mouse_slider">
                 <a href="#slide-1"></a>
                 <a href="#slide-2"></a>
                 <a href="#slide-3"></a>
@@ -246,17 +246,12 @@
           </p>
           <p>To sum up, you can sell on Seapost:</p>
           <ul>
-            <li>Fishes</li>
-            <img src="INFO_IMG/fish-example.png" />
-            <li>Monster Meat</li>
-            <img src="INFO_IMG/MonsterM-example.png" />
-            <li>Basic meat</li>
-            <img src="INFO_IMG/BasicM-example.png" />
-            <li>Gems</li>
-            <img src="INFO_IMG/gem-example.png" />
-            <li>Treacherous Plunder</li>
-            <img src="INFO_IMG/TreacherousP-example.png" />
-            <!-- jak najedziesz na nazwe to pokazuje się obok zdjecie -->
+            <li><p data-image="INFO_IMG/fish-example.png">Fishes</p></li>
+            <li><p data-image="INFO_IMG/MonsterM-example.png">Monster Meat</p></li>
+            <li><p data-image="INFO_IMG/BasicM-example.png">Basic meat</p></li>
+            <li><p data-image="INFO_IMG/gem-example.png">Gems</p></li>
+            <li><p data-image="INFO_IMG/TreacherousP-example.png">Treacherous Plunder</p>
+            <img class="image-preview" id="imagePreview" src="">
           </ul>
           <p>
             The price of each fish / meatis dependant one their Rarity and the

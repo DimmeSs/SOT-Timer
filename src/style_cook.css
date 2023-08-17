@@ -237,6 +237,68 @@ ul {
   max-width: 100%;
   max-height: 90%;
 }
+/*  */
+.show-what-sell {
+  text-align: center;
+  position: relative;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.show-what-sell ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.show-what-sell li {
+  margin: 0 1%;
+  list-style: none;
+}
+
+.box a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 24px;
+  pointer-events: none;
+}
+
+.effect {
+  position: absolute;
+  top: 120px;
+  right: 10%;
+  width: 150px;
+  height: 150px;
+  display: none;
+}
+
+.box:hover + .image-container .effect {
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .show-what-sell ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .effect {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
+
 /* Preloading Animation */
 #preloader {
   display: flex;

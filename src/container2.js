@@ -23,11 +23,13 @@ function showSlide(slideNumber) {
 }
 
 function startSlideChange() {
+  stopSlideChange();
   slideChangeTimer = setInterval(changeSlide, slideChangeInterval);
 }
 
 function stopSlideChange() {
   clearInterval(slideChangeTimer);
+  slideChangeTimer = null; 
 }
 
 startSlideChange();
@@ -80,7 +82,7 @@ listItems.forEach((item) => {
         if (!isMouseOverB && !isImageLocked) {
           startSlideChange();
         }
-      }, 5000);
+      }, 3000);
     });
   });
 });
@@ -105,15 +107,16 @@ document.addEventListener("contextmenu", function (e) {
   }
 });
 
-// const sliderWrapper = document.querySelector(".slider-wrapper");
+const sliderWrapper = document.querySelector("#Mouse_slider");
 
-// sliderWrapper.addEventListener("mouseenter", function () {
-//   stopSlideChange();
-// });
+sliderWrapper.addEventListener("mouseenter", function () {
+  stopSlideChange();
+});
 
-// sliderWrapper.addEventListener("mouseleave", function () {
-//   startSlideChange();
-// });
+sliderWrapper.addEventListener("mouseleave", function () {
+  startSlideChange();
+});
+
 
 // ScrollToTop
 window.addEventListener("scroll", function () {
@@ -138,6 +141,4 @@ function scrollToNav() {
   const nav = document.querySelector("nav");
   nav.scrollIntoView({ behavior: "smooth" });
 }
-// 
-
-
+// show image what to sell
