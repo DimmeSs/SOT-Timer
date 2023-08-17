@@ -138,3 +138,6 @@ function scrollToNav() {
   const nav = document.querySelector("nav");
   nav.scrollIntoView({ behavior: "smooth" });
 }
+// 
+
+
