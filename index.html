@@ -1,286 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta name="author" content="Szymon Słoniowski" />
-  <meta charset="UTF-8" />
-  <meta name="description" content="Sea of Thieves Timer + Tips">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
-  <link rel="icon" type="image/x-icon" href="iconsApp/sot_icon.ico" />
-  <link rel="manifest" href="/manifest.json">
-  <link rel="preload" href="/FONTS/Seconda Round W00 Bold.woff" as="font" type="font/woff" crossorigin>
-  <script src="/preloader-animation.js"></script>
-  <link rel="preload" as="image" href="/ICONS/Top_image-min1.png" />
-  <link rel="preload" as="image" href="/ICONS/background1-min.png" />
-  <title>Sea Of Thieves Cooking Timer</title>
+  <head>
+    <meta name="author" content="Szymon Słoniowski" />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sea of Thieves Timer + Tips" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black"
+    />
+    <link rel="icon" type="image/x-icon" href="iconsApp/sot_icon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="preload"
+      href="/FONTS/Seconda Round W00 Bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <script src="/preloader-animation.js"></script>
+    <link rel="preload" as="image" href="/ICONS/Top_image-min1.png" />
+    <link rel="preload" as="image" href="/ICONS/background1-min.png" />
+    <title>Sea Of Thieves Cooking Timer</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="preloader" class="preloader-container">
+      <img src="/ICONS/preloader.gif" alt="" />
+      <p>Loading</p>
+    </div>
+    <!--  POCZĄTEK PRZYCISKÓW-->
+    <div id="content">
+      <div id="blur-background"></div>
+      <nav>
+        <div class="image-container">
+          <img src="/ICONS/Top_image-min1.png" alt="Top Image" id="section-0" />
+        </div>
+        <span id="beforeInfo"
+          >Click the button before you put the meat to fry</span
+        >
+        <div class="button-container">
+          <button id="BFish" class="nav-button">
+            <img src="/ICONS/Fish.png" alt="FISH" id="Fish" /><span>Fish</span>
+          </button>
+          <button id="BTFish" class="nav-button">
+            <img src="/ICONS/FFish.png" alt="TROPHY FISH" id="TFish" /><span
+              >Trophy Fish</span
+            >
+          </button>
+          <button id="BMonsterM" class="nav-button">
+            <img src="/ICONS/FKraken.png" alt="KRAKEN" id="MonsterM" /><img
+              src="/ICONS/FMegalodon.png"
+              alt="KRAKEN"
+              id="MonsterM"
+            /><span>Monster Meats</span>
+          </button>
+          <button id="BMeat" class="nav-button">
+            <img src="/ICONS/FChicken.png" alt="CHICKEN" id="BasicM" />
+            <img src="/ICONS/FPork.png" alt="PORK" id="BasicM" />
+            <img src="/ICONS/FSnake.png" alt="SNAKE" id="BasicM" />
+            <img src="/ICONS/FShark.png" alt="SHARK" id="BasicM" />
+            <span>Basic Meat</span>
+          </button>
+        </div>
+      </nav>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-</head>
-<body>
-  <div id="preloader" class="preloader-container">
-    <img src="/ICONS/preloader.gif" alt="">
-    <p>Loading</p>
-  </div>
-<!--  POCZĄTEK PRZYCISKÓW-->
-  <div id="content">
-    <div id="blur-background"></div>
-    <nav>
-      <div class="image-container">
-        <img src="/ICONS/Top_image-min1.png" alt="Top Image" id="section-0">
-      </div>
-      <span id="beforeInfo">Click the button before you put the meat to fry</span>
-      <div class="button-container">
-        <button id="BFish">
-          <img src="/ICONS/Fish.png" alt="FISH" id="Fish" /><span>Fish</span>
-        </button>
-        <button id="BTFish">
-          <img src="/ICONS/FFish.png" alt="TROPHY FISH" id="TFish" /><span>Trophy Fish</span>
-        </button>
-        <button id="BMonsterM">
-          <img src="/ICONS/FKraken.png" alt="KRAKEN" id="MonsterM" /><img
-            src="/ICONS/FMegalodon.png" alt="KRAKEN" id="MonsterM"
-          /><span>Monster Meats</span>
-        </button>
-        <button id="BMeat">
-          <img src="/ICONS/FChicken.png" alt="CHICKEN" id="BasicM"/>
-          <img src="/ICONS/FPork.png" alt="PORK" id="BasicM"/>
-          <img src="/ICONS/FSnake.png" alt="SNAKE" id="BasicM"/>
-          <img src="/ICONS/FShark.png" alt="SHARK" id="BasicM"/>
-          <span>Basic Meat</span>
-        </button>
-      </div>
-    </nav>
-
-    <header class="menu_bar" >
-      <hr />
-      <div class="nav-images">
-        <a href="#section-4" class="nav-image">
-          <img src="/ICONS/tips.png" alt="Image 1">
-          <span>Tips</span>
-        </a>
-        <a href="#section-1" class="nav-image">
-          <img src="/ICONS/coins.png" alt="Image 2">
-          <span>Prices</span>
-        </a>
-        <div id="skull">
-          <a href="#section-5">
-            <img src="/ICONS/Skull.png" alt="Skull Icon">
-            <span>Tutorial</span>
+      <header class="menu_bar">
+        <hr />
+        <div class="nav-images">
+          <a href="#section-4" class="nav-image">
+            <img src="/ICONS/tips.png" alt="Image 1" />
+            <span>Tips</span>
+          </a>
+          <a href="#section-1" class="nav-image">
+            <img src="/ICONS/coins.png" alt="Image 2" />
+            <span>Prices</span>
+          </a>
+          <div id="skull">
+            <a href="#section-5">
+              <img src="/ICONS/Skull.png" alt="Skull Icon" />
+              <span>Tutorial</span>
+            </a>
+          </div>
+          <a href="#section-2" class="nav-image">
+            <img src="/ICONS/bait.png" alt="Image 3" />
+            <span>Bait</span>
+          </a>
+          <a href="#section-3" class="nav-image">
+            <img src="/ICONS/map.png" alt="Image 4" />
+            <span>Regions</span>
           </a>
         </div>
-        <a href="#section-2" class="nav-image">
-          <img src="/ICONS/bait.png" alt="Image 3">
-          <span>Bait</span>
-        </a>
-        <a href="#section-3" class="nav-image">
-          <img src="/ICONS/map.png" alt="Image 4">
-          <span>Regions</span>
-        </a>
-      </div>
-    </header>
-    
+      </header>
 
-<!-- OKNO WYSKAKUJACE -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <div class="timer-container">
-          <div id="timer" class="timer">[Timer]</div>
-          <svg id="svg" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-            <circle id="circle" class="mask" r="70" cx="100" cy="100" fill="transparent" stroke="red" stroke-width="10" stroke-dasharray="440" stroke-dashoffset="440"></circle>
-          </svg>
-          <img id="burnedImage" src="/ICONS/Burned.png">
-        </div>
-        <div id="info" class="timer-top">[Info]</div>
-        <div id="info2" class="timer-bottom"></div>
-        <div class="close-button" id="close">
-          <span class="front">
-            Cancel
-          </span>
+      <!-- OKNO WYSKAKUJACE -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="timer-container">
+            <div id="timer" class="timer">[Timer]</div>
+            <svg
+              id="svg"
+              width="200"
+              height="200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                id="circle"
+                class="mask"
+                r="70"
+                cx="100"
+                cy="100"
+                fill="transparent"
+                stroke="red"
+                stroke-width="10"
+                stroke-dasharray="440"
+                stroke-dashoffset="440"
+              ></circle>
+            </svg>
+            <img id="burnedImage" src="/ICONS/Burned.png" />
+          </div>
+          <div id="info" class="timer-top">[Info]</div>
+          <div id="info2" class="timer-bottom"></div>
+          <div class="close-button" id="close">
+            <span class="front"> Cancel </span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-<!-- # KONIEC PRZYCISKÓW # -->
+    <!-- # KONIEC PRZYCISKÓW # -->
 
-  <div class="container2">
-    <main class="content2">
-      <!-- WHERE TO SELL -->
-  <section>
-    <h2>Where to sell fish and meat in Sea of Thieves</h2>
-    <p>Distinguishing from the majority of factions in Sea of Thieves, the Hunter's Call is unique in terms of turning in cooked fish. Rather than delivering your freshly prepared catches to any standard outpost, you must seek out the special seaposts. These small piers perched on rocks can be found scattered across the vast map of Sea of Thieves. At these specific locations, you can trade in your delectable cooked fish for rewards and reputation with the Hunter's Call faction. These seaposts provide a quaint and convenient way for pirates to exchange their culinary delights and partake in the culinary expertise of the sea's bounty.</p>
-    <p>najedz na nazwę Seapost aby wyświetlić mape</p>
-    <p>kliknij na zdjęcie aby zostawic zdjecie widoczne</p>
-    <div class="content-wrapper">
-      <ul>
-        <li data-src="Brian’s Bazaar.png"><b>Brian’s Bazaar                     Y12</b></li>
-        <li data-src="The finest trading Post.png"><b>The finest trading Post       F17</b></li>
-        <li data-src="The North Star Seapost.png"><b>The North Star Seapost     H10</b></li>
-        <li data-src="Roaring traders.png"><b>Roaring traders                   U20</b></li>
-        <li data-src="The Spoils of Plenty Store.png"><b>The Spoils of Plenty Store  B7</b></li>
-        <li data-src="Stephen’s Spoils.png"><b>Stephen’s Spoils                  L15</b></li>
-        <li data-src="Three Paces East Seapost.png"><b>Three Paces East Seapost  S10</b></li>
-        <li data-src="The Wild Treasures Store.png"><b>The Wild Treasures Store     O4</b></li>
-    </ul>
+    <div class="container2">
+      <main class="content2">
+        <!-- WHERE TO SELL -->
+        <section>
+          <h1>Sea of Thieves</h1>
+          <p>Fishing And Cooking Guide</p>
+          <h2 id="show-scroll-from-here">
+            Where to sell fish and meat in Sea of Thieves
+          </h2>
+          <p>
+            Distinguishing from the majority of factions in Sea of Thieves, the
+            Hunter's Call is unique in terms of turning in cooked fish. Rather
+            than delivering your freshly prepared catches to any standard
+            outpost, you must seek out the special seaposts. These small piers
+            perched on rocks can be found scattered across the vast map of Sea
+            of Thieves. At these specific locations, you can trade in your
+            delectable cooked fish for rewards and reputation with the Hunter's
+            Call faction. These seaposts provide a quaint and convenient way for
+            pirates to exchange their culinary delights and partake in the
+            culinary expertise of the sea's bounty.
+          </p>
+          <p>najedz na nazwę Seapost aby wyświetlić mape</p>
+          <p>kliknij na zdjęcie aby zostawic zdjecie widoczne</p>
 
-    
-      <div class="slider-wrapper">
-        <div class="overlay" id="overlay">
-          <img src="" id="overlayImage" />
-      </div>
-          <div class="slider">
-              <img id="slide-1" src="1.jpg" />
-              <img id="slide-2" src="2.png"/>
-              <img id="slide-3" src="3.png"/>
-              <img id="slide-4" src="4.png"/>
-              <img id="slide-5" src="5.png"/>
-              <img id="slide-6" src="6.png"/>
+          <button id="scroll-to-top">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 576 512"
+            >
+              <path
+                fill="white"
+                d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+              />
+            </svg>
+          </button>
+
+          <div class="content-wrapper">
+            <ul>
+              <li data-src="INFO_IMG/Brian’s Bazaar.png">
+                <b>Brian’s Bazaar Y12</b>
+              </li>
+              <li data-src="INFO_IMG/The finest trading Post.png">
+                <b>The finest trading Post F17</b>
+              </li>
+              <li data-src="INFO_IMG/The North Star Seapost.png">
+                <b>The North Star Seapost H10</b>
+              </li>
+              <li data-src="INFO_IMG/Roaring traders.png">
+                <b>Roaring traders U20</b>
+              </li>
+              <li data-src="INFO_IMG/The Spoils of Plenty Store.png">
+                <b>The Spoils of Plenty Store B7</b>
+              </li>
+              <li data-src="INFO_IMG/Stephen’s Spoils.png">
+                <b>Stephen’s Spoils L15</b>
+              </li>
+              <li data-src="INFO_IMG/Three Paces East Seapost.png">
+                <b>Three Paces East Seapost S10</b>
+              </li>
+              <li data-src="INFO_IMG/The Wild Treasures Store.png">
+                <b>The Wild Treasures Store O4</b>
+              </li>
+            </ul>
+
+            <div class="slider-wrapper">
+              <div class="overlay" id="overlay">
+                <img src="" id="overlayImage" />
+              </div>
+              <div class="slider">
+                <img id="slide-1" src="INFO_IMG/IMGslide1.jpg" />
+                <img id="slide-2" src="INFO_IMG/IMGslide2.png" />
+                <img id="slide-3" src="INFO_IMG/IMGslide3.png" />
+                <img id="slide-4" src="INFO_IMG/IMGslide4.png" />
+                <img id="slide-5" src="INFO_IMG/IMGslide5.png" />
+                <img id="slide-6" src="INFO_IMG/IMGslide6.png" />
+              </div>
+              <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+                <a href="#slide-5"></a>
+                <a href="#slide-6"></a>
+              </div>
+            </div>
           </div>
-          <div class="slider-nav">
-              <a href="#slide-1"></a>
-              <a href="#slide-2"></a>
-              <a href="#slide-3"></a>
-              <a href="#slide-4"></a>
-              <a href="#slide-5"></a>
-              <a href="#slide-6"></a>
-          </div>
-      </div>
-      </div>
 
-    <p>At each of these seaposts you can find a representative of the Hunter's Call, the faction that you can sell your fish to. They're normally standing near the end of the pier, not in the shop.</p>
-  </section>
-  <!-- WHAT CAN YOU SELL -->
-  <section>
-<h2>What can you sell</h2>
-<p>Maximizing the value of your catches is essential when selling fish to the Hunter's Call. Cooked fish is particularly lucrative, making it a wise decision to utilize the onboard pan on your ship for cooking before turning them in. However, caution must be exercised, as burnt fish is the least valuable type, even less so than raw fish.
-  During the cooking process, it's crucial to monitor the fish closely. Watch for the eyes to turn white, as this signifies that the fish is perfectly cooked and ready to be removed from the pan. Cooking the fish any longer will lead to burning, diminishing its value, while removing it prematurely will result in undercooked fish.
-  By mastering the art of cooking fish to perfection, you can ensure the highest profits when selling them to the Hunter's Call faction at the seaposts. Remember, a well-cooked fish is the key to reaping the most rewards for your efforts on the high seas.
-</p>
-  <p>To sum up, you can sell on Seapost:</p>
-<ul>
-  <li>Fishes</li>
-  <img src="INFO SS/Fish_example.png">
-  <li>Monster Meat</li>
-  <img src="INFO SS/MonsterM-example.png">
-  <li>Basic meat </li>
-  <img src="INFO SS/BasicM-example.png">
-  <li>Gems</li>
-  <img src="INFO SS/GemSaph1-example.png">
-  <img src="INFO SS/Gem-example.png">
-  <li>Treacherous Plunder</li>
-  <img src="INFO SS/TreacherousP-example.png">
-  <!-- jak najedziesz na nazwe to pokazuje się obok zdjecie -->
-</ul>
-<p>The price of each fish / meatis dependant one their Rarity and the State of the fish when you sell it.</p> 
-  <p>!!!Half eaten fish cannot be sold so be careful if your inventory is full of fish.!!</p>
-  </section>
-  <!-- TYPES LOCATION BAIT VALUE -->
-  <section>
-    <h2 >"Sea of Thieves" Fish Guide: Types, Locations, Bait, and Their Value</h2>
-    <p>There's tons of fish in Sea of Thieves. In fact, you might never catch them all. Each serves a different purpose, and each has its own value, whether it's cooked, burnt or raw.
-      In total, there are 10 types of fish. Each has a fixed location and a bait requirement.</p>
-      
-      <p>There is photo that shows all 10 types with location and bait that is needed by Rigack</p>
-      <img src="INFO SS/CheatSheet.jpg">
-     </section>
+          <p>
+            At each of these seaposts you can find a representative of the
+            Hunter's Call, the faction that you can sell your fish to. They're
+            normally standing near the end of the pier, not in the shop.
+          </p>
+        </section>
 
-     <hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
-<!-- PRICES -->
-     <section>
-      <h2 id="section-1">Click to See Prices and Location </h2>
-      <a href="">Ancientscale  </a><a href="">Battlegill</a><a href=""> Devilfish</a><a href="">Islehopper</a><a href="">Plentifin</a><a href="">Pondie</a><a href="">Splashtail</a><a href="">Stormfish </a><a href="">Wildsplash</a><a href="">Wrecker</a><a href="">Monster Meats</a><a href="">Basic Meat</a><a href="">Tarcheus Plander</a>
-      <svg width="520" height="280" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0" width="520" height="280" fill="black"/>
-        <rect x="9" y="9" width="502" height="262" fill="#311414"/>
-      </svg>
-      <p>Do you want to get meat and fish without fishing? go to tips by clicking here
-        {LINK lub zdjęcie}</p>
-        <h3>Ancientscale</h3>
-        <h3>Battlegill</h3>
-        <h3>Devilfish</h3>
-        <h3>Islehopper</h3>
-        <h3>Plentifin</h3>
-        <h3>Pondie</h3>
-        <h3>Splashtail</h3>
-        <h3>Stormfish</h3>
-        <h3>Wildsplash</h3>
-        <h3>Wrecker</h3>
-        <h3>Monster Meats</h3>
-        <h3>Basic Meat</h3>
-        <h3>Tarcheus Plander</h3>
-     </section>
+        <!-- WHAT CAN YOU SELL -->
+        <section>
+          <h2>What can you sell</h2>
+          <p>
+            Maximizing the value of your catches is essential when selling fish
+            to the Hunter's Call. Cooked fish is particularly lucrative, making
+            it a wise decision to utilize the onboard pan on your ship for
+            cooking before turning them in. However, caution must be exercised,
+            as burnt fish is the least valuable type, even less so than raw
+            fish. During the cooking process, it's crucial to monitor the fish
+            closely. Watch for the eyes to turn white, as this signifies that
+            the fish is perfectly cooked and ready to be removed from the pan.
+            Cooking the fish any longer will lead to burning, diminishing its
+            value, while removing it prematurely will result in undercooked
+            fish. By mastering the art of cooking fish to perfection, you can
+            ensure the highest profits when selling them to the Hunter's Call
+            faction at the seaposts. Remember, a well-cooked fish is the key to
+            reaping the most rewards for your efforts on the high seas.
+          </p>
+          <p>To sum up, you can sell on Seapost:</p>
+          <ul>
+            <li>Fishes</li>
+            <img src="INFO_IMG/fish-example.png" />
+            <li>Monster Meat</li>
+            <img src="INFO_IMG/MonsterM-example.png" />
+            <li>Basic meat</li>
+            <img src="INFO_IMG/BasicM-example.png" />
+            <li>Gems</li>
+            <img src="INFO_IMG/gem-example.png" />
+            <li>Treacherous Plunder</li>
+            <img src="INFO_IMG/TreacherousP-example.png" />
+            <!-- jak najedziesz na nazwe to pokazuje się obok zdjecie -->
+          </ul>
+          <p>
+            The price of each fish / meatis dependant one their Rarity and the
+            State of the fish when you sell it.
+          </p>
+          <p>
+            !!!Half eaten fish cannot be sold so be careful if your inventory is
+            full of fish.!!
+          </p>
+        </section>
+        <!-- TYPES LOCATION BAIT VALUE -->
+        <section>
+          <h2>
+            "Sea of Thieves" Fish Guide: Types, Locations, Bait, and Their Value
+          </h2>
+          <p>
+            There's tons of fish in Sea of Thieves. In fact, you might never
+            catch them all. Each serves a different purpose, and each has its
+            own value, whether it's cooked, burnt or raw. In total, there are 10
+            types of fish. Each has a fixed location and a bait requirement.
+          </p>
 
-     <hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
-<!-- BAITS -->
-     <section>
-      <h2 id="section-2">Baits in Sea of Thieves</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium et pariatur similique, atque mollitia fugit laboriosam voluptatum vel aliquam illo!</p>
-      <img src="">
-     </section>
-<hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
-<!-- REGIONS -->     
-<section>
-      <h3 id="section-3">Regions in sea of thieves</h3>
-      <!-- <img src="INFO SS/Regions.png"> -->
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum necessitatibus nulla minima nihil dolores? Nihil quaerat optio rerum laborum facere!</p>
-      <a href="https://seaofthieves-archive.fandom.com/wiki/Locations">More Info</a>
-     </section>
-     <hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
-     <!-- TIPS -->
-     <section>
-      <h2 id="section-4">TIPS AND TRICKS</h2>
-      <p>You can get fish and meat not only by fishing but also from other places, e.g. from barrels in:</p>
-      <p>FORTS<img src="INFO SS/fort1.png" alt="Fort"><img src="INFO SS/fort2.png" alt="Fort"></p>
-      <a href="https://rarethief.com/sea-of-thieves-sea-forts-guide/">MORE INFO ABOUT FORTS</a>
-      <p>Ship Wrecks<img src="INFO SS/Ship1.png" alt="Ship Wreck"><img src="INFO SS/Ship2.png" alt="Ship Wreck"></p>
-      <a href="https://seaofthieves.fandom.com/wiki/Shipwrecks">MORE INFO ABOUT SHIP WRECKS</a>
-      <a href="https://www.youtube.com/watch?v=sCJ1LCfPQyU ">MORE POSSIBILITIES TO GET FISH WITHOUT FISHING</a>
-      <hr style='height: 10px;margin-left: -20px;margin-right: -20px;'/>
-      <p>You can cook fish Faster by using 4 x frying pan in Forts  </p>
-      <img src="INFO SS/4xCook.png" alt="4 Frying Pan in Forts">
-      <hr style='height: 10px;margin-left: -20px;margin-right: -20px;'/>
-      <p>Highest Selling Fish In Sea Of Thieves
-        If you're wanting to maximize your profit in our Sea of Thieves Fishing Guide, you should always try to pursue Rare variants. In addition, you should also cook it as this will always return the most money. However, if you burn your fish during the cooking process, its value will plummet.
-        Shadow Stormfish (Rare variant) currently sells for the most money in our Sea of Thieves fishing guide, but only when cooked. Its Trophy variants sell for 11,250g raw and 16,875g cooked.​​​​​​​​​​​​​​ You can sell your fish at Hunter’s Call posts (indicated by the Octopus logo), and be sure not to burn them!
-        To sell your fish, you'll need to be holding it in your hand, similarly to how you sell chests to vendors.</p>
-      <hr style='height: 10px;margin-left: -20px;margin-right: -20px;'/>
-      <a href="https://www.merfolkslullaby.com/map?latitude=18.615035398798895&longitude=-64.40515692899349&zoom=12.574191141293307&realm=sea-of-thieves">use interactive map for easy adventure</a>
-    </section>
+          <p>
+            There is photo that shows all 10 types with location and bait that
+            is needed by Rigack
+          </p>
+          <img src="INFO_IMG/CheatSheet.jpg" />
+        </section>
 
-    <hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
+        <hr
+          style="
+            background-color: black;
+            height: 10px;
+            margin-left: -20px;
+            margin-right: -20px;
+          "
+        />
+        <!-- PRICES -->
+        <section>
+          <h2 id="section-1">Click to See Prices and Location</h2>
+          <a href="">Ancientscale </a><a href="">Battlegill</a
+          ><a href=""> Devilfish</a><a href="">Islehopper</a
+          ><a href="">Plentifin</a><a href="">Pondie</a><a href="">Splashtail</a
+          ><a href="">Stormfish </a><a href="">Wildsplash</a
+          ><a href="">Wrecker</a><a href="">Monster Meats</a
+          ><a href="">Basic Meat</a><a href="">Tarcheus Plander</a>
+          <svg width="520" height="280" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="520" height="280" fill="black" />
+            <rect x="9" y="9" width="502" height="262" fill="#311414" />
+          </svg>
+          <p>
+            Do you want to get meat and fish without fishing? go to tips by
+            <a href="#section-4">clicking here</a>
+          </p>
+          <h3>Ancientscale</h3>
+          <h3>Battlegill</h3>
+          <h3>Devilfish</h3>
+          <h3>Islehopper</h3>
+          <h3>Plentifin</h3>
+          <h3>Pondie</h3>
+          <h3>Splashtail</h3>
+          <h3>Stormfish</h3>
+          <h3>Wildsplash</h3>
+          <h3>Wrecker</h3>
+          <h3>Monster Meats</h3>
+          <h3>Basic Meat</h3>
+          <h3>Tarcheus Plander</h3>
+        </section>
 
-    <section>
-      <h2 id="section-5">FISHING TUTORIAL (for beginners)</h2>
-      <p>How To Fish
-        1. Decide your bait. Pull out your fishing rod, re-open your inventory and when holding"R"(or B on controller), decide on the bait you want. Once it's on the end of your hook, you're ready to cast.
-        2. To cast, simply point at a body of water, and left click. To retrieve your line, simply right click.
-        3. Once your line is in the water, it's simply a case of waiting. Sometimes you'll be able to see a fish under the water, others it'll be too dark. Either way, once you've got a bite your line will begin to flex and bow.
-        4. To reel in a fish when you have a bite, don't instantly left click (it'll cause the line to break and the fish to escape). What you need to do is tire the fish out. Fundamentally, you move your fishing rod in the opposite direction that the fish is moving.
-        If the fish is going left, hold right (typically "D").
-        If the fish is going right, hold left (typically "A").
-        If the fish is going away from you, hold down (typically "S").
-        
-        !!!If you're holding the rod in the wrong direction, you'll hear it begin to strain and crack. When your line goes slack and when the fish is exhausted, reel it in.!!!
-        5. To take your fish off your line, you need to be sure you have the inventory space. If you don't have space, you can store items in a nearby barrel or eat some existing food.</p>
-        <img src="INFO SS/fishing1.png" alt="How to Fish"><img src="INFO SS/fishing2.png" alt="How to Fish"><img src="INFO SS/fishing3.png" alt="How to Fish">
-        <p>How To Cook
-          It's fairly simple! Head below deck and you'll see a stove and skillet. If you aren't on board your ship, most islands have an available frying pan by any fire. With your fish in hand, you'll be able to interact with the pan, and start cooking.
-          Like all things in Sea of Thieves, there's no UI to indicate how well your fish is cooked. You'll need to pay attention. If it's undercooked and you eat it, you'll be sick with food poisoning. Left on the heat too long, and it'll be burnt and worthless.
-          While it takes practice to know exactly which fish have which timings, the easiest tricks are:
-          
-          Watch for the fish to change colour. When it turns brown, it's typically cooked just right.
-          The fish's pupils will go completely white.
-          Steam coming off the frying pan will thin out as the fish cooks through.
-          Larger fish (trophies) take longer to cook.</p>
-          <img src="INFO SS/Cooking1.png" alt="How to Cook"><img src="INFO SS/Cooking2.png" alt="How to Cook"><img src="INFO SS/Cooking3.png" alt="How to Cook">
-          <a href="https://rarethief.com/sea-of-thieves-fishing-guide/">more detailed guide here</a>
-    </section>
-    <hr style='background-color:black;height: 10px;margin-left: -20px;margin-right: -20px;'/>
-    <footer style="background-color:black;height:200px">
-      <i class="copyright" aria-hidden="true" style="color:azure">@copyright</i>
-    </footer>
-</main>
-</div>
-<script type="module" src="/src/main.ts"></script>
-</body>
+        <hr
+          style="
+            background-color: black;
+            height: 10px;
+            margin-left: -20px;
+            margin-right: -20px;
+          "
+        />
+        <!-- BAITS -->
+        <section>
+          <h2 id="section-2">Baits in Sea of Thieves</h2>
+          <img src="INFO_IMG/BAITS.png" />
+          <ul>
+            <li>
+              Leeches seem drawn to the water. They are best found by digging as
+              close to the water line as possible.
+            </li>
+            <li>
+              Grubs appear to enjoy the warm sand. Just be sure you’re at least
+              little further back from where you might find leeches.
+            </li>
+            <li>Earthworms tend to nestle themselves beneath the grass.</li>
+          </ul>
+          <img src="" />
+        </section>
+        <hr
+          style="
+            background-color: black;
+            height: 10px;
+            margin-left: -20px;
+            margin-right: -20px;
+          "
+        />
+        <!-- REGIONS -->
+        <section>
+          <h3 id="section-3">Regions in sea of thieves</h3>
+          <!-- <img src="INFO SS/Regions.png"> -->
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
+            necessitatibus nulla minima nihil dolores? Nihil quaerat optio rerum
+            laborum facere!
+          </p>
+          <a href="https://seaofthieves-archive.fandom.com/wiki/Locations"
+            >More Info</a
+          >
+        </section>
+        <hr
+          style="
+            background-color: black;
+            height: 10px;
+            margin-left: -20px;
+            margin-right: -20px;
+          "
+        />
+        <!-- TIPS -->
+        <section>
+          <h2 id="section-4">TIPS AND TRICKS</h2>
+          <p>
+            You can get fish and meat not only by fishing but also from other
+            places, e.g. from barrels in:
+          </p>
+          <p>
+            FORTS<img src="INFO SS/fort1.png" alt="Fort" /><img
+              src="INFO SS/fort2.png"
+              alt="Fort"
+            />
+          </p>
+          <a href="https://rarethief.com/sea-of-thieves-sea-forts-guide/"
+            >MORE INFO ABOUT FORTS</a
+          >
+          <p>
+            Ship Wrecks<img src="INFO SS/Ship1.png" alt="Ship Wreck" /><img
+              src="INFO SS/Ship2.png"
+              alt="Ship Wreck"
+            />
+          </p>
+          <a href="https://seaofthieves.fandom.com/wiki/Shipwrecks"
+            >MORE INFO ABOUT SHIP WRECKS</a
+          >
+          <a href="https://www.youtube.com/watch?v=sCJ1LCfPQyU "
+            >MORE POSSIBILITIES TO GET FISH WITHOUT FISHING</a
+          >
+          <hr style="height: 10px; margin-left: -20px; margin-right: -20px" />
+          <p>You can cook fish Faster by using 4 x frying pan in Forts</p>
+          <img src="INFO SS/4xCook.png" alt="4 Frying Pan in Forts" />
+          <hr style="height: 10px; margin-left: -20px; margin-right: -20px" />
+          <p>
+            Highest Selling Fish In Sea Of Thieves If you're wanting to maximize
+            your profit in our Sea of Thieves Fishing Guide, you should always
+            try to pursue Rare variants. In addition, you should also cook it as
+            this will always return the most money. However, if you burn your
+            fish during the cooking process, its value will plummet. Shadow
+            Stormfish (Rare variant) currently sells for the most money in our
+            Sea of Thieves fishing guide, but only when cooked. Its Trophy
+            variants sell for 11,250g raw and 16,875g cooked.​​​​​​​​​​​​​​ You
+            can sell your fish at Hunter’s Call posts (indicated by the Octopus
+            logo), and be sure not to burn them! To sell your fish, you'll need
+            to be holding it in your hand, similarly to how you sell chests to
+            vendors.
+          </p>
+          <hr style="height: 10px; margin-left: -20px; margin-right: -20px" />
+          <a
+            href="https://www.merfolkslullaby.com/map?latitude=18.615035398798895&longitude=-64.40515692899349&zoom=12.574191141293307&realm=sea-of-thieves"
+            >use interactive map for easy adventure</a
+          >
+        </section>
+
+        <hr
+          style="
+            background-color: black;
+            height: 10px;
+            margin-left: -20px;
+            margin-right: -20px;
+          "
+        />
+
+        <section>
+          <h2 id="section-5">FISHING TUTORIAL (for beginners)</h2>
+          <p>
+            How To Fish 1. Decide your bait. Pull out your fishing rod, re-open
+            your inventory and when holding"R"(or B on controller), decide on
+            the bait you want. Once it's on the end of your hook, you're ready
+            to cast. 2. To cast, simply point at a body of water, and left
+            click. To retrieve your line, simply right click. 3. Once your line
+            is in the water, it's simply a case of waiting. Sometimes you'll be
+            able to see a fish under the water, others it'll be too dark. Either
+            way, once you've got a bite your line will begin to flex and bow. 4.
+            To reel in a fish when you have a bite, don't instantly left click
+            (it'll cause the line to break and the fish to escape). What you
+            need to do is tire the fish out. Fundamentally, you move your
+            fishing rod in the opposite direction that the fish is moving. If
+            the fish is going left, hold right (typically "D"). If the fish is
+            going right, hold left (typically "A"). If the fish is going away
+            from you, hold down (typically "S"). !!!If you're holding the rod in
+            the wrong direction, you'll hear it begin to strain and crack. When
+            your line goes slack and when the fish is exhausted, reel it in.!!!
+            5. To take your fish off your line, you need to be sure you have the
+            inventory space. If you don't have space, you can store items in a
+            nearby barrel or eat some existing food.
+          </p>
+          <img src="INFO SS/fishing1.png" alt="How to Fish" /><img
+            src="INFO SS/fishing2.png"
+            alt="How to Fish"
+          /><img src="INFO SS/fishing3.png" alt="How to Fish" />
+          <p>
+            How To Cook It's fairly simple! Head below deck and you'll see a
+            stove and skillet. If you aren't on board your ship, most islands
+            have an available frying pan by any fire. With your fish in hand,
+            you'll be able to interact with the pan, and start cooking. Like all
+            things in Sea of Thieves, there's no UI to indicate how well your
+            fish is cooked. You'll need to pay attention. If it's undercooked
+            and you eat it, you'll be sick with food poisoning. Left on the heat
+            too long, and it'll be burnt and worthless. While it takes practice
+            to know exactly which fish have which timings, the easiest tricks
+            are: Watch for the fish to change colour. When it turns brown, it's
+            typically cooked just right. The fish's pupils will go completely
+            white. Steam coming off the frying pan will thin out as the fish
+            cooks through. Larger fish (trophies) take longer to cook.
+          </p>
+          <img src="INFO SS/Cooking1.png" alt="How to Cook" /><img
+            src="INFO SS/Cooking2.png"
+            alt="How to Cook"
+          /><img src="INFO SS/Cooking3.png" alt="How to Cook" />
+          <a href="https://rarethief.com/sea-of-thieves-fishing-guide/"
+            >more detailed guide here</a
+          >
+        </section>
+        <hr
+          style="
+            background-color: black;
+            height: 10px;
+            margin-left: -20px;
+            margin-right: -20px;
+          "
+        />
+        <footer style="background-color: black; height: 200px">
+          <i class="copyright" aria-hidden="true" style="color: azure"
+            >Created by Szymon Słoniowski © 2023</i
+          >
+        </footer>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
