@@ -279,9 +279,25 @@ ul {
   font-size: 18px; /* Zwiększ rozmiar czcionki */
 }
 
+#fish-image {
+  width: 260px; /* zmniejsza obraz do 260px szerokości */
+  height: 140px; /* zmniejsza obraz do 140px wysokości */
+  display: none; /* ukrywa obraz, gdy src jest pusty */
+  border: none; /* usuwa obramowanie */
+  margin: 20px auto; /* wycentrowuje obraz w poziomie i dodaje 20px marginesu górnego */
+}
 
-
-
+#image-container {
+  width: 260px;
+  height: 140px;
+  margin: 20px auto;
+}
+#fish-image {
+  width: 100%;
+  height: 100%;
+  display: none;
+  border: none;
+}
 
 /* Preloading Animation */
 #preloader {

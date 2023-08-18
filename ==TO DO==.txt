@@ -13,6 +13,7 @@ po najechaniu na header z linkami dodać animacje do tego{
 
 v2.0
 
+ogarnij zdj dla TreacherousP-example
 design sekcji "WHERE TO SELL"
 
 DESIGN sekcji-1 

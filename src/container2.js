@@ -142,4 +142,20 @@ function scrollToNav() {
   nav.scrollIntoView({ behavior: "smooth" });
 }
 // show image what to sell
+document.addEventListener('DOMContentLoaded', function () {
+  const fishLinks = document.querySelectorAll('.fish-link-item');
+  const imgElement = document.getElementById('fish-image');
 
+  fishLinks.forEach(link => {
+    link.addEventListener('mouseenter', function (event) {
+      const imageUrl = event.target.getAttribute('data-image');
+      imgElement.src = imageUrl;
+      imgElement.style.display = 'block'; // Pokazuje obraz
+    });
+
+    link.addEventListener('mouseleave', function () {
+      imgElement.src = '';
+      imgElement.style.display = 'none'; // Ukrywa obraz
+    });
+  });
+});
