@@ -4,24 +4,20 @@ pwa offline nie działa na telefonie, napraw
 
 loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
 
-v2.0
+( + żeby slider działał tylko wtedy gdy widać go na ekranie ) 
 
-
-po najechaniu animacje do tego{
+po najechaniu na header z linkami dodać animacje do tego{
   zmienia kolor ikonki i podnosi lekko
   pod ikonką dodaje podświate kolorową
   }
 
-napraw slider bo po zmianie obrazka przesuwa ekran w lewo ( + żeby działał tylko wtedy gdy widać go na ekranie ) 
-przerób zdjęcia żeby były na ostateczną wersje strony
-design sekcji "WHERE TO SELL"
+v2.0
 
-pokaz slajdów przy where to sell
+design sekcji "WHERE TO SELL"
 
 DESIGN sekcji-1 
 tabeli ul
-ramki ze zdjęciami dać na środek bardziej przy dużych ekranach
- pogrubić pasek czarny
+pogrubić pasek czarny
 
  
 sekcje ,

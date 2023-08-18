@@ -133,6 +133,7 @@ h2 {
   /* text-shadow: 0px 0px 5px #020102, 0px 0px 10px #000000, 0px 0px 10px #000000,
     0px 0px 20px #000000; */
   margin-top: 100px;
+  text-align: center;
 }
 
 /* section-1 */
@@ -238,62 +239,45 @@ ul {
   max-height: 90%;
 }
 /*  */
-.show-what-sell {
-  text-align: center;
-  position: relative;
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+.sell_tabel {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px; /* Ustaw maksymalną szerokość tabeli na 800px */
+  margin: 0 auto; /* Wyśrodkuj tabelę na stronie */
 }
 
-.show-what-sell ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.sell_tabel tr td {
+  border: 2px solid black;
+  padding: 12px;
+  text-align: left;
+  color: white;
+  font-weight: bold;
 }
-
-.show-what-sell li {
-  margin: 0 1%;
-  list-style: none;
-}
-
-.box a {
-  color: #3498db;
-  text-decoration: none;
-  font-size: 24px;
-  pointer-events: none;
-}
-
-.effect {
-  position: absolute;
-  top: 120px;
-  right: 10%;
-  width: 150px;
-  height: 150px;
-  display: none;
-}
-
-.box:hover + .image-container .effect {
+.sell_tabel tr td img {
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#CheatSheet{
+  width: 100%; /* Ustaw szerokość obrazu na 100% szerokości kontenera */
+  height: auto; /* Ustaw wysokość obrazu na auto, aby zachować proporcje */
+  max-width: 100%; /* Ogranicz maksymalną szerokość obrazu do 100% szerokości kontenera */
+  max-height: 100%; /* Ogranicz maksymalną wysokość obrazu do 100% wysokości kontenera */
 }
 
-@media (max-width: 500px) {
-  .show-what-sell ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .effect {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.Fish-Link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px; /* Ustaw odstęp między linkami */
 }
 
+.Fish-Link a {
+  margin: 8px; /* Ustaw odstęp na zewnątrz linków */
+  color: white; /* Zmień kolor tekstu na biały */
+  text-decoration: none; /* Usuń podkreślenie */
+  font-size: 18px; /* Zwiększ rozmiar czcionki */
+}
 
 
 

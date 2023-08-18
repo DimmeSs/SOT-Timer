@@ -142,3 +142,4 @@ function scrollToNav() {
   nav.scrollIntoView({ behavior: "smooth" });
 }
 // show image what to sell
+
