@@ -14,13 +14,18 @@ po najechaniu na header z linkami dodać animacje do tego{
 v2.0
 
 ogarnij zdj dla TreacherousP-example
+
+
+
+info + Dodaj w regionach opcje wyświetlenia fun made mapki!!!!!
+
 design sekcji "WHERE TO SELL"
 
 DESIGN sekcji-1 
-tabeli ul
-pogrubić pasek czarny
+dodaj link do baitów oraz regionów!!!!!
+dodaj zdjecia ryb obok tabeli !!!!!! 
+zamień czarny pasek na to fajne coś wiesz o co chodzi!!!!!
 
- 
 sekcje ,
 tipy ,
 info ,

@@ -119,7 +119,7 @@ h1 {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   /* pointer-events: none;  <-- Remove this line */
 }
-@media (max-width: 860px) {
+@media (max-width: 960px) {
   .content2 {
     width: 100%;
   }
@@ -258,11 +258,11 @@ ul {
   margin-left: auto;
   margin-right: auto;
 }
-#CheatSheet{
-  width: 100%; /* Ustaw szerokość obrazu na 100% szerokości kontenera */
-  height: auto; /* Ustaw wysokość obrazu na auto, aby zachować proporcje */
-  max-width: 100%; /* Ogranicz maksymalną szerokość obrazu do 100% szerokości kontenera */
-  max-height: 100%; /* Ogranicz maksymalną wysokość obrazu do 100% wysokości kontenera */
+#CheatSheet {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .Fish-Link {
@@ -297,6 +297,68 @@ ul {
   height: 100%;
   display: none;
   border: none;
+}
+/* Price Tables */
+h3 {
+  color: rgb(15, 137, 193);
+  text-align: center;
+  font-weight: bold;
+  font-size:40px;
+}
+.table-scroll-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.price-table-container {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 2px solid #60dabe;
+  width: 100%;
+  max-width: 681px;
+  overflow-x: auto;
+}
+.price-table-container colgroup col:nth-child(1),
+.price-table-container colgroup col:nth-child(2) {
+  width: 12%;
+}
+.price-table-container colgroup col {
+  width: 9%;
+}
+.price-table-container thead th {
+  border: 2px solid #60dabe;
+  padding: 6px;
+  background-color: #1f555f;
+  color: white;
+  font-family: Seconda Round W00 Bold, sans-serif;
+}
+.price-table-container tbody td {
+  border: 2px solid #60dabe;
+  background-color: #0e272c;
+  color: white;
+  font-family: 'Rubik';
+  font-weight: bold;
+  padding: 13px 6px;
+
+}
+.price-cell {
+  text-align: right;
+  white-space: nowrap;
+  color: white;
+}
+.gold-icon {
+  vertical-align: middle;
+  padding-right: 3px;
+}
+
+/* Dodawanie responsywności */
+@media only screen and (max-width: 1130px) {
+  .price-table-container colgroup col {
+    width: auto;
+  }
+  .price-table-container thead th,
+  .price-table-container tbody td {
+    font-size: 0.8em;
+  }
 }
 
 /* Preloading Animation */
