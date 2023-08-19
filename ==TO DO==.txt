@@ -13,8 +13,11 @@ po najechaniu na header z linkami dodać animacje do tego{
 
 v2.0
 
-ogarnij zdj dla TreacherousP-example
+Ogarnij zdj dla:
 
+preview see prices and location
+TreacherousP-example
+data-image="INFO_IMG/Meats-example.png"
 
 
 info + Dodaj w regionach opcje wyświetlenia fun made mapki!!!!!

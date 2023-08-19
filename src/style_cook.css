@@ -380,6 +380,21 @@ h3 {
 .flex-rarity img {
   margin-right: 3px;
 }
+.Meat-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 16px;
+}
+.Meat-image:first-child {
+  margin-top: 86px; 
+}
+.Meat-image {
+  height: 40px; 
+  width: auto;
+  margin-bottom: 25px; 
+}
 
 /* Dodawanie responsywności */
 @media only screen and (max-width: 1130px) {
