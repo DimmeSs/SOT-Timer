@@ -305,24 +305,49 @@ h3 {
   font-weight: bold;
   font-size:40px;
 }
+
+.fish-images {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 16px;
+}
+
+.fish-image {
+  height: 76px;
+  width: auto;
+  margin-bottom: 2px;
+}
+.table-container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
 .table-scroll-container {
   overflow-x: auto;
   max-width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto; /* Dodaj tę linię */
+  min-width: 300px; /* Dodaj tę linię i dostosuj wartość według własnych potrzeb */
 }
 .price-table-container {
   margin: 0 auto;
   border-collapse: collapse;
   border: 2px solid #60dabe;
   width: 100%;
-  max-width: 681px;
+  max-width: 900px;
   overflow-x: auto;
 }
 .price-table-container colgroup col:nth-child(1),
 .price-table-container colgroup col:nth-child(2) {
-  width: 12%;
+  width: 17%;
 }
 .price-table-container colgroup col {
-  width: 9%;
+  width: 10%;
 }
 .price-table-container thead th {
   border: 2px solid #60dabe;
@@ -348,6 +373,13 @@ h3 {
 .gold-icon {
   vertical-align: middle;
   padding-right: 3px;
+}
+.flex-rarity {
+  display: flex;
+  align-items: center;
+}
+.flex-rarity img {
+  margin-right: 3px;
 }
 
 /* Dodawanie responsywności */
