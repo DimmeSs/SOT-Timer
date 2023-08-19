@@ -16,8 +16,7 @@ v2.0
 Ogarnij zdj dla:
 
 preview see prices and location
-TreacherousP-example
-data-image="INFO_IMG/Meats-example.png"
+TreacherousP-example!!!!!
 
 
 info + Dodaj w regionach opcje wyświetlenia fun made mapki!!!!!
@@ -25,8 +24,7 @@ info + Dodaj w regionach opcje wyświetlenia fun made mapki!!!!!
 design sekcji "WHERE TO SELL"
 
 DESIGN sekcji-1 
-dodaj link do baitów oraz regionów!!!!!
-dodaj zdjecia ryb obok tabeli !!!!!! 
+dodaj link do baitów oraz regionów!!!!! 
 zamień czarny pasek na to fajne coś wiesz o co chodzi!!!!!
 
 sekcje ,
