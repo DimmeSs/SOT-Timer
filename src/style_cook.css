@@ -27,7 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: #033b33;
+  background-image: linear-gradient(to bottom,#0a1d20,#011513, #0a1318);
   max-width: 100%;
   width: 100vw;
   overflow-x: hidden;
@@ -112,12 +112,16 @@ h1 {
 }
 
 .content2 {
-  background-color: #046456;
+  /* background-color: #046456; */
+  background-image:url('ICONS/tlo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   width: 80%; /* Szerokość centralnej części strony */
   padding: 20px;
   padding-top: 0px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-  /* pointer-events: none;  <-- Remove this line */
 }
 @media (max-width: 960px) {
   .content2 {
@@ -130,8 +134,6 @@ h2 {
   font-size: 50px;
   font-weight: 600;
   color: #fdfdfe;
-  /* text-shadow: 0px 0px 5px #020102, 0px 0px 10px #000000, 0px 0px 10px #000000,
-    0px 0px 20px #000000; */
   margin-top: 100px;
   text-align: center;
 }
@@ -239,6 +241,12 @@ ul {
   max-height: 90%;
 }
 /*  */
+#show-image-container{
+  width: auto;
+  max-width: 1160px;
+  height: 140px;
+  margin: 20px auto;
+}
 .sell_tabel {
   border-collapse: collapse;
   width: 100%;
@@ -262,7 +270,8 @@ ul {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  min-width: 340px;
+  width: 70%;
 }
 
 .Fish-Link {
@@ -287,11 +296,7 @@ ul {
   margin: 20px auto; /* wycentrowuje obraz w poziomie i dodaje 20px marginesu górnego */
 }
 
-#image-container {
-  width: 260px;
-  height: 140px;
-  margin: 20px auto;
-}
+
 #fish-image {
   width: 100%;
   height: 100%;
@@ -508,11 +513,12 @@ h3 {
 }
 
 .image-container img {
-  width: auto;
+  width: 100%;
   height: 100%;
   display: block;
   pointer-events: none;
 }
+
 
 .menu_bar {
   position: relative;
