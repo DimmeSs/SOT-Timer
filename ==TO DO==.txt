@@ -13,6 +13,7 @@ po najechaniu na header z linkami dodać animacje do tego{
 
 v2.0
 
+tlo.png napraw
 Popraw OLD ITEMY W TABELI + TABELE
 design sekcji "WHERE TO SELL"
 
