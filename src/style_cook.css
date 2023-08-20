@@ -113,7 +113,7 @@ h1 {
 
 .content2 {
   /* background-color: #046456; */
-  background-image:url('ICONS/tlo.png');
+  background-image:url('/ICONS/tlo.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -307,8 +307,6 @@ ul {
   min-height: 140px; /* minimalna wysokość dla kontenera */
 }
 
-
-
 /* Price Tables */
 h3 {
   color: rgb(15, 137, 193);
@@ -329,7 +327,6 @@ h3 {
   justify-content: center;
   padding-right: 16px;
 }
-
 
 .fish-image {
   height: 40px; 
