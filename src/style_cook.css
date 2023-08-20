@@ -288,22 +288,27 @@ ul {
   text-decoration: none; /* Usuń podkreślenie */
   font-size: 18px; /* Zwiększ rozmiar czcionki */
 }
+/* see prices and location */
 
-#fish-image {
-  width: 260px; /* zmniejsza obraz do 260px szerokości */
-  height: 140px; /* zmniejsza obraz do 140px wysokości */
-  display: none; /* ukrywa obraz, gdy src jest pusty */
-  border: none; /* usuwa obramowanie */
-  margin: 20px auto; /* wycentrowuje obraz w poziomie i dodaje 20px marginesu górnego */
+#fish-image-example {
+  border: none; 
+  max-height: 100px;
+  margin: 20px auto;
+}
+@media only screen and (max-width: 642px) {
+  #fish-image-example {
+    max-width: 340px;
+  }
+}
+#show-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 140px; /* minimalna wysokość dla kontenera */
 }
 
 
-#fish-image {
-  width: 100%;
-  height: 100%;
-  display: none;
-  border: none;
-}
+
 /* Price Tables */
 h3 {
   color: rgb(15, 137, 193);
@@ -325,12 +330,21 @@ h3 {
   padding-right: 16px;
 }
 
+
 .fish-image {
   height: 40px; 
   width: auto;
   margin-bottom: 6px; 
 }
 
+/* tabele */
+@media only screen and (max-width: 642px) {
+  .fish-image {
+    height: 40px; 
+    width: auto;
+    margin-bottom: 6px; 
+  }
+}
 .fish-image:first-child {
   margin-top: 74.5px; 
 }
