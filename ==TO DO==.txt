@@ -1,28 +1,22 @@
-LATER
+!!! Wszystko robię w branch BETA żeby branch main zostal nietknięty
+!!! w Main zmieniam tylko TODO\
 
-pwa offline nie działa na telefonie, napraw
+IDEA FOR LATER :
 
-loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
-
-( + żeby slider działał tylko wtedy gdy widać go na ekranie ) 
-
-po najechaniu na header z linkami dodać animacje do tego{
-  zmienia kolor ikonki i podnosi lekko
-  pod ikonką dodaje podświate kolorową
-  }
+- pwa offline nie działa na telefonie, napraw
+- loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
+- żeby slider działał tylko wtedy gdy widać go na ekranie 
+- po najechaniu na header z linkami dodać animacje do tego:
+   - zmienia kolor ikonki i podnosi lekko
+   - pod ikonką dodaje podświate kolorową
 
 v2.0
 
-Ogarnij zdj dla:
-
-Popraw OLD ITEMY W TABELI + TABELE
-
+TABELE
+tekst 1/12 + design sekcji "WHERE TO SELL"
+dodaj link do baitów oraz regionów!!!!! 
 info + Dodaj w regionach opcje wyświetlenia fun made mapki!!!!!
 
-design sekcji "WHERE TO SELL"
-
-DESIGN sekcji-1 
-dodaj link do baitów oraz regionów!!!!! 
 zamień czarny pasek na to fajne coś wiesz o co chodzi!!!!!
 
 sekcje ,
@@ -30,7 +24,3 @@ tipy ,
 info ,
 money ,
 tabele ,
-
-
-!!! Wszystko robię w branch BETA żeby branch main zostal nietknięty
-!!! w Main zmieniam tylko TODO
