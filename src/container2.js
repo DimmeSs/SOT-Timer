@@ -29,7 +29,7 @@ function startSlideChange() {
 
 function stopSlideChange() {
   clearInterval(slideChangeTimer);
-  slideChangeTimer = null; 
+  slideChangeTimer = null;
 }
 
 startSlideChange();
@@ -117,7 +117,6 @@ sliderWrapper.addEventListener("mouseleave", function () {
   startSlideChange();
 });
 
-
 // ScrollToTop
 window.addEventListener("scroll", function () {
   const scrollUpHere = document.getElementById("show-scroll-from-here");
@@ -142,20 +141,19 @@ function scrollToNav() {
   nav.scrollIntoView({ behavior: "smooth" });
 }
 // show image what to sell
-document.addEventListener('DOMContentLoaded', function () {
-  const fishLinks = document.querySelectorAll('.fish-link-item');
-  const imgElement = document.getElementById('fish-image-example');
+document.addEventListener("DOMContentLoaded", function () {
+  const fishLinks = document.querySelectorAll(".fish-link-item");
+  const imgElement = document.getElementById("fish-image-example");
 
-  fishLinks.forEach(link => {
-    link.addEventListener('mouseenter', function (event) {
-      const imageUrl = event.target.getAttribute('data-image');
+  fishLinks.forEach((link) => {
+    link.addEventListener("mouseenter", function (event) {
+      const imageUrl = event.target.getAttribute("data-image");
       imgElement.src = imageUrl;
-      imgElement.style.display = 'inline'; 
+      imgElement.style.display = "inline";
     });
 
-    link.addEventListener('mouseleave', function () {
-      imgElement.style.display = 'none'; 
+    link.addEventListener("mouseleave", function () {
+      imgElement.style.display = "none";
     });
   });
 });
-

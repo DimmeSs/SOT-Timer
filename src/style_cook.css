@@ -27,7 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-image: linear-gradient(to bottom,#0a1d20,#011513, #0a1318);
+  background-image: linear-gradient(to bottom, #0a1d20, #011513, #0a1318);
   max-width: 100%;
   width: 100vw;
   overflow-x: hidden;
@@ -113,7 +113,7 @@ h1 {
 
 .content2 {
   /* background-color: #046456; */
-  background-image:url('/ICONS/tlo.png');
+  background-image: url("/ICONS/tlo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -242,7 +242,7 @@ ul {
   max-height: 90%;
 }
 /*  */
-#show-image-container{
+#show-image-container {
   width: auto;
   max-width: 1160px;
   height: 140px;
@@ -291,7 +291,7 @@ ul {
 /* see prices and location */
 
 #fish-image-example {
-  border: none; 
+  border: none;
   max-height: 100px;
   margin: 20px auto;
 }
@@ -312,7 +312,7 @@ h3 {
   color: rgb(15, 137, 193);
   text-align: center;
   font-weight: bold;
-  font-size:40px;
+  font-size: 40px;
 }
 .table-container {
   display: flex;
@@ -329,21 +329,21 @@ h3 {
 }
 
 .fish-image {
-  height: 40px; 
+  height: 40px;
   width: auto;
-  margin-bottom: 6px; 
+  margin-bottom: 6px;
 }
 
 /* tabele */
 @media only screen and (max-width: 642px) {
   .fish-image {
-    height: 40px; 
+    height: 40px;
     width: auto;
-    margin-bottom: 6px; 
+    margin-bottom: 6px;
   }
 }
 .fish-image:first-child {
-  margin-top: 74.5px; 
+  margin-top: 74.5px;
 }
 
 .table-scroll-container {
@@ -376,17 +376,16 @@ h3 {
   border: 2px solid #60dabe;
   background-color: #0e272c;
   color: white;
-  font-family: 'Rubik';
+  font-family: "Rubik";
   font-weight: bold;
   padding: 13px 6px;
-
+  word-wrap: break-word;
 }
 .price-cell {
   text-align: right;
   white-space: nowrap;
   color: white;
 }
-
 
 .gold-icon {
   vertical-align: middle;
@@ -399,7 +398,8 @@ h3 {
 .flex-rarity img {
   margin-right: 3px;
 }
-.Meat-images ,.TreachP-images{
+.Meat-images,
+.TreachP-images {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -407,20 +407,19 @@ h3 {
   padding-right: 16px;
 }
 .Meat-image:first-child {
-  margin-top: 86px; 
+  margin-top: 86px;
 }
-.Meat-image ,.TreachP-image {
-  height: 40px; 
+.Meat-image,
+.TreachP-image {
+  height: 40px;
   width: auto;
-  margin-bottom: 25px; 
+  margin-bottom: 25px;
 }
 
 .TreachP-image:first-child {
   margin-top: 36px;
   margin-bottom: 20px;
 }
-
-
 
 /* Dodawanie responsywności */
 @media only screen and (max-width: 1130px) {
@@ -432,21 +431,30 @@ h3 {
     font-size: 0.8em;
   }
   .fish-image:first-child {
-    margin-top: 64.5px; 
+    margin-top: 64.5px;
   }
 
-  .Meat-image ,.TreachP-image {
-    height: 40px; 
+  .Meat-image,
+  .TreachP-image {
+    height: 40px;
     width: auto;
-    margin-bottom: 6px; 
+    margin-bottom: 6px;
   }
-  
+
   .TreachP-image:first-child {
     margin-top: 36px;
     margin-bottom: 6px;
   }
 }
-
+.info-fish{
+  text-align: center;
+}
+.info-fish a{
+  color:#00ff9c;
+  font-weight: bold;
+  font-family: "Seconda Round W00 Bold", sans-serif;
+  /* font-family: "Windlass", Sans-serif; */
+}
 /* Preloading Animation */
 #preloader {
   display: flex;
@@ -547,7 +555,6 @@ h3 {
   display: block;
   pointer-events: none;
 }
-
 
 .menu_bar {
   position: relative;
