@@ -142,14 +142,28 @@
     <!-- GUIDE -->
     <div class="container2">
       <main class="content2">
+
+        <button id="scroll-to-top">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 576 512"
+          >
+            <path
+              fill="white"
+              d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+            />
+          </svg>
+        </button>
+
         <!-- WHERE TO SELL -->
         <section>
           <h1>Sea of Thieves</h1>
-          <p>Fishing And Cooking Guide</p>
+          <p id="guide-creator">Fishing And Cooking Guide</p>
           <h2 id="show-scroll-from-here">
-            Where to sell fish and meat in Sea of Thieves
+            Where to sell Fish and Meat in Sea of Thieves
           </h2>
-          <p>
+          <p id="guide-text">
             Distinguishing from the majority of factions in Sea of Thieves, the
             Hunter's Call is unique in terms of turning in cooked fish. Rather
             than delivering your freshly prepared catches to any standard
@@ -161,47 +175,33 @@
             pirates to exchange their culinary delights and partake in the
             culinary expertise of the sea's bounty.
           </p>
-          <p>najedz na nazwę Seapost aby wyświetlić mape</p>
-          <p>kliknij na zdjęcie aby zostawic zdjecie widoczne</p>
-
-          <button id="scroll-to-top">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 576 512"
-            >
-              <path
-                fill="white"
-                d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
-              />
-            </svg>
-          </button>
+          <p id="guide-text">The following is a list of every Seapost and their map coordinates:<em id="guide-text" style="color: rgba(100, 99, 99, 0.774); font-size:13px"> *Hover over a Seapost Name to display its location</em></p>
 
           <div class="content-wrapper" id="Mouse_slider">
-            <ul>
+            <ul class="seapost-list">
               <li data-src="INFO_IMG/Brian’s Bazaar.png">
-                <b>Brian’s Bazaar Y12</b>
+                <b>Brian’s Bazaar <em>Y12</em></b>
               </li>
               <li data-src="INFO_IMG/The finest trading Post.png">
-                <b>The finest trading Post F17</b>
+                <b>The finest trading Post <em>F17</em></b>
               </li>
               <li data-src="INFO_IMG/The North Star Seapost.png">
-                <b>The North Star Seapost H10</b>
+                <b>The North Star Seapost <em>H10</em></b>
               </li>
               <li data-src="INFO_IMG/Roaring traders.png">
-                <b>Roaring traders U20</b>
+                <b>Roaring traders <em>U20</em></b>
               </li>
               <li data-src="INFO_IMG/The Spoils of Plenty Store.png">
-                <b>The Spoils of Plenty Store B7</b>
+                <b>The Spoils of Plenty Store <em>B7</em></b>
               </li>
               <li data-src="INFO_IMG/Stephen’s Spoils.png">
-                <b>Stephen’s Spoils L15</b>
+                <b>Stephen’s Spoils <em>L15</em></b>
               </li>
               <li data-src="INFO_IMG/Three Paces East Seapost.png">
-                <b>Three Paces East Seapost S10</b>
+                <b>Three Paces East Seapost <em>S10</em></b>
               </li>
               <li data-src="INFO_IMG/The Wild Treasures Store.png">
-                <b>The Wild Treasures Store O4</b>
+                <b>The Wild Treasures Store <em>O4</em></b>
               </li>
             </ul>
 
@@ -228,7 +228,7 @@
             </div>
           </div>
 
-          <p>
+          <p id="guide-text">
             At each of these seaposts you can find a representative of the
             Hunter's Call, the faction that you can sell your fish to. They're
             normally standing near the end of the pier, not in the shop.
@@ -429,10 +429,6 @@
           <div id="show-image-container">
             <img id="fish-image-example" alt="" />
           </div>
-          <p>
-            Do you want to get meat and fish without fishing? go to tips by
-            <a href="#section-4">clicking here</a>
-          </p>
 
           <h3 id="Sec-Ancientscale">Ancientscale</h3>
           <p class="info-fish">
@@ -883,8 +879,11 @@
               </table>
             </div>
           </div>
-          <!--  Battlegill table -->
           <h3 id="Sec-Battlegill">Battlegill</h3>
+          <p>Battlegills are fish attracted to danger. They are found in waters near Skeleton Ships, and any active Skeleton Fort, Fort of Fortune, or Fort of the Damned.
+
+            Requires Grubs as Bait to catch. </p>
+          <!--  Battlegill table -->
           <div class="table-container">
             <div class="fish-images">
               <img
@@ -1327,6 +1326,9 @@
             </div>
           </div>
           <h3 id="Sec-Devilfish">Devilfish</h3>
+          <p>Devilfish are one of the four Regional Fish that are only found in the open waters of The Devil's Roar.
+
+            Requires Grubs as Bait to catch. </p>
           <!--  Devilfish table -->
           <div class="table-container">
             <div class="fish-images">
@@ -2215,6 +2217,7 @@
           </div>
 
           <h3 id="Sec-Plentifin">Plentifin</h3>
+          <p>Plentifins are found in the waters of the Shores of Plenty. Requires Earthworms as bait</p>
           <!-- Plentifin Table-->
           <div class="table-container">
             <div class="fish-images">
@@ -2658,6 +2661,7 @@
             </div>
           </div>
           <h3 id="Sec-Pondie">Pondie</h3>
+          <p>Pondies are found exclusively in fresh water ponds. No other fish are found in these locations. </p>
           <!-- Pondie Table-->
           <div class="table-container">
             <div class="fish-images">
@@ -3102,6 +3106,9 @@
             </div>
           </div>
           <h3 id="Sec-Splashtail">Splashtail</h3>
+          <p>Splashtails are found in most open bodies of water. They are the most common fish species. Cannot be caught in Ponds.
+
+            Does not require Bait to catch. </p>
           <!-- Splashtail Table-->
           <div class="table-container">
             <div class="fish-images">
@@ -3546,6 +3553,9 @@
             </div>
           </div>
           <h3 id="Sec-Stormfish">Stormfish</h3>
+          <p>Stormfish are found in open waters inside heavy Storms (indicated by the spinning of the Compass and ringing of the Ship's Bell).
+
+            The Stormfish are mostly Region based catches, with the Rare and Night variants being available to be caught anywhere but The Devil's Roar Region, as Storms do not go there. </p>
           <!-- Stormfish Table-->
           <div class="table-container">
             <div class="fish-images">
@@ -3995,6 +4005,9 @@
             </div>
           </div>
           <h3 id="Sec-Wildsplash">Wildsplash</h3>
+          <p>Wildsplashes are found in the open waters of The Wilds.
+
+            Requires Earthworms as Bait to catch. </p>
           <!-- Wildsplash Table-->
           <div class="table-container">
             <div class="fish-images">
@@ -4440,6 +4453,11 @@
             </div>
           </div>
           <h3 id="Sec-Wrecker">Wrecker</h3>
+          <p>Wreckers can only be found near Shipwrecks.
+
+            Requires Earthworms as Bait to catch.
+            
+            The Blackcloud Wrecker is a unique Fish Variant, because it can only be caught next to Shipwrecks that are inside Storms. </p>
           <!-- Wrecker Table-->
           <div class="table-container">
             <div class="fish-images">
@@ -4660,10 +4678,10 @@
                     <td>
                       <div class="flex-rarity">
                         <img
-                          src="ICONS/Uncommon-rarity-icon.png"
-                          alt="Uncommon-Icon"
+                          src="ICONS/storm_icon.png"
+                          alt="Storm Icon"
                         />
-                        Uncommon
+                        Storm
                       </div>
                     </td>
                     <td class="price-cell">
@@ -4885,6 +4903,7 @@
           </div>
 
           <h3 id="Sec-Meats">Monster & Basic Meat</h3>
+          <p>Animal Meat can be acquired by killing Snakes, Chickens, and pigs, or by finding them in various storage locations. If a land creature dies to Fire, they will drop either Burnt or Cooked Meat. Beast Meat can be acquired by killing the Megalodon or Kraken, or by finding them in various storage location across the waves. </p>
           <!-- MEAT TABLE -->
           <div class="table-container">
             <div class="Meat-images">
@@ -4984,6 +5003,7 @@
           </div>
 
           <h3 id="Sec-Treacherous Plunder">Treacherous Plunder</h3>
+          <p> Treacherous Plunder can only be caught without Bait, making Pondie fishing spots ideal for finding these items, because they have a high spawn rate, allowing for quicker recasts</p>
           <!-- Treacherous Plunder -->
           <div class="table-container">
             <div class="TreachP-images">
@@ -5098,8 +5118,12 @@
             </tbody>
           </table>
           </div>
+          
         </section>
-
+        <p>
+          Do you want to get meat and fish without fishing? go to tips by
+          <a href="#section-4">clicking here</a>
+        </p>
         <hr
           style="
             background-color: black;
