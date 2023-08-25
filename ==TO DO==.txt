@@ -13,7 +13,10 @@ IDEA FOR LATER :
 v2.0
 Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
 
+
 TABELE
+
+click to show text on text - Islehopper!!!!
 tekst 4/12 + design sekcji "WHERE TO SELL"
 dodaj link do baitów oraz regionów!!!!! 
 info + Dodaj w regionach opcje wyświetlenia fun made mapki!!!!!
