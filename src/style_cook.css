@@ -190,8 +190,9 @@ h1 {
 }
 
 .slider-wrapper {
-    flex: none; /* Wyłączenie elastyczności */
-    width: 55%; /* Przykładowa szerokość, możesz dostosować */
+    flex: none; 
+    width: 55%;
+    position: relative;
 }
 ul {
   flex: none;
@@ -204,7 +205,6 @@ ul {
   max-width: 20rem;
   flex: 2;
 }}
-
 .slider {
   display: flex;
   aspect-ratio: 16 / 9;
@@ -357,12 +357,15 @@ ul {
   grid-gap: 22px;
   margin-bottom: 50px;
 }
-.fish_name h3:after,.fish_name h3:before {
+.fish_name h3:after,.fish_name h3:before,#end_table {
   content: " ";
   display: block;
   border-bottom: 2px solid #ccc;
 }
 
+#end_table{
+  margin-top: 60px;
+}
 .table-container {
   display: flex;
   align-items: flex-start;
