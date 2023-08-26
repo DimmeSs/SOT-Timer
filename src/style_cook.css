@@ -45,9 +45,6 @@ h2:first-of-type {
   margin-top: 400px;
 }
 /* TYMCZASOWE */
-p {
-  color: white;
-}
 
 #scroll-to-top {
   position: fixed;
@@ -477,11 +474,13 @@ h3 {
 }
 .info-fish {
   text-align: center;
+  color: white;
 }
 .info-fish a {
   color: #00ff9c;
   font-weight: bold;
   font-family: "Seconda Round W00 Bold", sans-serif;
+  margin-right: 2px;
   /* font-family: "Windlass", Sans-serif; */
 }
 /* Preloading Animation */
