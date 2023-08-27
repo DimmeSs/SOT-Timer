@@ -509,6 +509,56 @@ ul {
   margin-right: 2px;
   /* font-family: "Windlass", Sans-serif; */
 }
+
+
+/* BAIT */
+
+.bait-info {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;  /* Wyśrodkowanie elementów */
+  max-width: 1200px;  /* Maksymalna szerokość kontenera */
+  margin: auto;  /* Wyśrodkowanie kontenera */
+}
+
+.bait-item {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  text-align: center;
+  margin-bottom: 60px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px; 
+  margin-right: 20px; 
+}
+.bait-item p {
+  height: 80px; 
+  display: flex;
+  justify-content: center;
+}
+.bait-info #bait-bottom-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 320px;
+  width: 70%;
+}
+.bait-info #bait-top-image{
+  margin-top: 60px;
+  width: 50%;
+}
+#worm-in-barrels-img,#map-with-regions{
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+  margin-top: -40px;
+}
 /* Preloading Animation */
 #preloader {
   display: flex;
