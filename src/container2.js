@@ -162,26 +162,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryImages = document.querySelectorAll('.gallery-image');
   const popupOverlay = document.getElementById('popup-overlay');
   const popupImage = document.getElementById('popup-image');
+  const showFullImageButton = document.getElementById('show-full-image');
 
   galleryImages.forEach((image) => {
     image.addEventListener('click', function() {
       const newImgSrc = "INFO_IMG/Regions-map.png";
       popupImage.setAttribute('src', newImgSrc);
-      
-      // Najpierw ustaw display na 'flex'
+
       popupOverlay.style.display = 'flex';
-      // Wymuszenie przeliczenia styli
+      showFullImageButton.classList.add('hidden');
+      
       void popupOverlay.offsetWidth;
-      // Następnie dodaj klasę 'show' do uruchomienia animacji
+
       popupOverlay.classList.add('show');
+      showFullImageButton.classList.remove('hidden');
     });
   });
 
   popupOverlay.addEventListener('click', () => {
     popupOverlay.classList.remove('show');
+    showFullImageButton.classList.add('hidden');
+
     setTimeout(() => {
       popupOverlay.style.display = 'none';
-    }, 300); // opóźnienie musi być równe czasowi trwania animacji
+    }, 300);
   });
 
   popupImage.addEventListener('click', (e) => {
@@ -191,6 +195,13 @@ document.addEventListener('DOMContentLoaded', () => {
   popupImage.addEventListener('mousedown', (e) => {
     e.preventDefault();
   });
+
+  showFullImageButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const fullImageURL = "/INFO_IMG/Regions-map.png";
+    window.open(fullImageURL, '_blank');
+  });
 });
+
 
 
