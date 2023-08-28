@@ -157,3 +157,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+// POP UP IMAGE REGIONS
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryImages = document.querySelectorAll('.gallery-image');
+  const popupOverlay = document.getElementById('popup-overlay');
+  const popupImage = document.getElementById('popup-image');
+
+  galleryImages.forEach((image) => {
+    image.addEventListener('click', function() {
+      const newImgSrc = "INFO_IMG/Regions-map.png";
+      popupImage.setAttribute('src', newImgSrc);
+      
+      // Najpierw ustaw display na 'flex'
+      popupOverlay.style.display = 'flex';
+      // Wymuszenie przeliczenia styli
+      void popupOverlay.offsetWidth;
+      // Następnie dodaj klasę 'show' do uruchomienia animacji
+      popupOverlay.classList.add('show');
+    });
+  });
+
+  popupOverlay.addEventListener('click', () => {
+    popupOverlay.classList.remove('show');
+    setTimeout(() => {
+      popupOverlay.style.display = 'none';
+    }, 300); // opóźnienie musi być równe czasowi trwania animacji
+  });
+
+  popupImage.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  popupImage.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+  });
+});
+
+

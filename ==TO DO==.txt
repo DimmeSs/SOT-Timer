@@ -10,10 +10,13 @@ IDEA FOR LATER :
    - zmienia kolor ikonki i podnosi lekko
    - pod ikonką dodaje podświate kolorową
 
+po najechaniu na domek wyświetlaja się nad nim [ bait region price tip ] zeby przeniosło odrazu
+
 v2.0
 Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
 
 smień section 0 1 2 3 4 na nazwy !!!!
+po kliknieciu mapy pojawia sie popup zdjęcia z rozpiską
 
 stormfishe zdjecia ogarnij im wspolną klase czy coś
 
