@@ -1,0 +1,5337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="author" content="Szymon Słoniowski" />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sea of Thieves Timer + Tips" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="iconsApp/sot_icon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="preload"
+      href="/FONTS/Seconda Round W00 Bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <script src="/preloader-animation.js"></script>
+    <link rel="preload" as="image" href="/ICONS/Top_image-min1.png" />
+    <link rel="preload" as="image" href="/ICONS/background1-min.png" />
+    <title>Sea Of Thieves Cooking Timer</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- Loading Animation -->
+    <div id="preloader" class="preloader-container">
+      <img src="/ICONS/preloader.gif" alt="" />
+      <p>Loading</p>
+    </div>
+    <!-- Top-site Content -->
+    <div id="content">
+      <div id="blur-background"></div>
+      <nav>
+        <!-- Top Image -->
+        <div class="image-container">
+          <img src="/ICONS/Top_image-min1.png" alt="Top Image" id="section-0" />
+        </div>
+        <span id="beforeInfo"
+          >Click the button before you put the meat to fry</span
+        >
+        <div class="button-container">
+          <button id="BFish" class="nav-button">
+            <img src="/ICONS/Fish.png" alt="FISH" id="Fish" /><span>Fish</span>
+          </button>
+          <button id="BTFish" class="nav-button">
+            <img src="/ICONS/FFish.png" alt="TROPHY FISH" id="TFish" /><span
+              >Trophy Fish</span
+            >
+          </button>
+          <button id="BMonsterM" class="nav-button">
+            <img src="/ICONS/FKraken.png" alt="KRAKEN" id="MonsterM" /><img
+              src="/ICONS/FMegalodon.png"
+              alt="KRAKEN"
+              id="MonsterM"
+            /><span>Monster Meats</span>
+          </button>
+          <button id="BMeat" class="nav-button">
+            <img src="/ICONS/FChicken.png" alt="CHICKEN" id="BasicM" />
+            <img src="/ICONS/FPork.png" alt="PORK" id="BasicM" />
+            <img src="/ICONS/FSnake.png" alt="SNAKE" id="BasicM" />
+            <img src="/ICONS/FShark.png" alt="SHARK" id="BasicM" />
+            <span>Basic Meat</span>
+          </button>
+        </div>
+      </nav>
+      <header class="menu_bar">
+        <hr />
+        <div class="nav-images">
+          <a href="#section-tips" class="nav-image">
+            <img src="/ICONS/tips.png" alt="Image 1" />
+            <span>Tips</span>
+          </a>
+          <a href="#section-1" class="nav-image">
+            <img src="/ICONS/coins.png" alt="Image 2" />
+            <span>Prices</span>
+          </a>
+          <div id="skull">
+            <a href="#section-5">
+              <img src="/ICONS/Skull.png" alt="Skull Icon" />
+              <span>Tutorial</span>
+            </a>
+          </div>
+          <a href="#section-bait" class="nav-image">
+            <img src="/ICONS/bait.png" alt="Image 3" />
+            <span>Bait</span>
+          </a>
+          <a href="#section-regions" class="nav-image">
+            <img src="/ICONS/map.png" alt="Image 4" />
+            <span>Regions</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- OKNO WYSKAKUJACE -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="timer-container">
+            <div id="timer" class="timer">[Timer]</div>
+            <svg
+              id="svg"
+              width="200"
+              height="200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                id="circle"
+                class="mask"
+                r="70"
+                cx="100"
+                cy="100"
+                fill="transparent"
+                stroke="red"
+                stroke-width="10"
+                stroke-dasharray="440"
+                stroke-dashoffset="440"
+              ></circle>
+            </svg>
+            <img id="burnedImage" src="/ICONS/Burned.png" />
+          </div>
+          <div id="info" class="timer-top">[Info]</div>
+          <div id="info2" class="timer-bottom"></div>
+          <div class="close-button" id="close">
+            <span class="front"> Cancel </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GUIDE -->
+    <div class="container2">
+      <main class="content2">
+
+        <button id="scroll-to-top">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 576 512"
+          >
+            <path
+              fill="white"
+              d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+            />
+          </svg>
+        </button>
+
+        <!-- WHERE TO SELL -->
+        <section>
+          <h1>Sea of Thieves</h1>
+          <p id="guide-creator">Fishing And Cooking Guide</p>
+          <h2 id="show-scroll-from-here">
+            Where to sell Fish and Meat in Sea of Thieves
+          </h2>
+          <p id="guide-text">
+            Distinguishing from the majority of factions in Sea of Thieves, the
+            Hunter's Call is unique in terms of turning in cooked fish. Rather
+            than delivering your freshly prepared catches to any standard
+            outpost, you must seek out the special seaposts. These small piers
+            perched on rocks can be found scattered across the vast map of Sea
+            of Thieves. At these specific locations, you can trade in your
+            delectable cooked fish for rewards and reputation with the Hunter's
+            Call faction. These seaposts provide a quaint and convenient way for
+            pirates to exchange their culinary delights and partake in the
+            culinary expertise of the sea's bounty.
+          </p>
+          <p id="guide-text">The following is a list of every Seapost and their map coordinates:<em id="guide-text" style="color: rgba(100, 99, 99, 0.774); font-size:13px"> *Hover over a Seapost Name to display its location</em></p>
+
+          <!-- SLIDER -->
+
+          <div class="content-wrapper" id="Mouse_slider">
+            <ul class="seapost-list">
+              <li data-src="INFO_IMG/Brian’s Bazaar.png">
+                <b>Brian’s Bazaar <em>Y12</em></b>
+              </li>
+              <li data-src="INFO_IMG/The finest trading Post.png">
+                <b>The finest trading Post <em>F17</em></b>
+              </li>
+              <li data-src="INFO_IMG/The North Star Seapost.png">
+                <b>The North Star Seapost <em>H10</em></b>
+              </li>
+              <li data-src="INFO_IMG/Roaring traders.png">
+                <b>Roaring traders <em>U20</em></b>
+              </li>
+              <li data-src="INFO_IMG/The Spoils of Plenty Store.png">
+                <b>The Spoils of Plenty Store <em>B7</em></b>
+              </li>
+              <li data-src="INFO_IMG/Stephen’s Spoils.png">
+                <b>Stephen’s Spoils <em>L15</em></b>
+              </li>
+              <li data-src="INFO_IMG/Three Paces East Seapost.png">
+                <b>Three Paces East Seapost <em>S10</em></b>
+              </li>
+              <li data-src="INFO_IMG/The Wild Treasures Store.png">
+                <b>The Wild Treasures Store <em>O4</em></b>
+              </li>
+            </ul>
+
+            <div class="slider-wrapper">
+              <div class="overlay" id="overlay">
+                <img src="" id="overlayImage" />
+              </div>
+              <div class="slider">
+                <img id="slide-1" src="INFO_IMG/IMGslide1.jpg" />
+                <img id="slide-2" src="INFO_IMG/IMGslide2.png" />
+                <img id="slide-3" src="INFO_IMG/IMGslide3.png" />
+                <img id="slide-4" src="INFO_IMG/IMGslide4.png" />
+                <img id="slide-5" src="INFO_IMG/IMGslide5.png" />
+                <img id="slide-6" src="INFO_IMG/IMGslide6.png" />
+              </div>
+              <div class="slider-nav" id="Mouse_slider">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+                <a href="#slide-5"></a>
+                <a href="#slide-6"></a>
+              </div>
+            </div>
+          </div>
+
+          <p id="guide-text">
+            At each of these seaposts you can find a representative of the
+            Hunter's Call, the faction that you can sell your fish to. They're
+            normally standing near the end of the pier, not in the shop.
+          </p>
+        </section>
+
+        <!-- WHAT CAN YOU SELL -->
+        <section>
+          <h2>What can you sell</h2>
+          <p id="guide-text">
+            Maximizing the value of your catches is essential when selling fish
+            to the Hunter's Call. Cooked fish is particularly lucrative, making
+            it a wise decision to utilize the onboard pan on your ship for
+            cooking before turning them in. However, caution must be exercised,
+            as burnt fish is the least valuable type, even less so than raw
+            fish. During the cooking process, it's crucial to monitor the fish
+            closely. Watch for the eyes to turn white, as this signifies that
+            the fish is perfectly cooked and ready to be removed from the pan.
+            Cooking the fish any longer will lead to burning, diminishing its
+            value, while removing it prematurely will result in undercooked
+            fish. By mastering the art of cooking fish to perfection, you can
+            ensure the highest profits when selling them to the Hunter's Call
+            faction at the seaposts. Remember, a well-cooked fish is the key to
+            reaping the most rewards for your efforts on the high seas.
+          </p>
+          <p id="guide-text">To sum up, you can sell on Seapost:</p>
+
+          <table class="sell_tabel">
+            <tr>
+              <td>Fishes</td>
+              <td>
+                <img
+                  class="image-preview"
+                  src="INFO_IMG/fish-example.png"
+                  width="30%"
+                  height="auto"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Monster Meat</td>
+              <td>
+                <img
+                  class="image-preview"
+                  src="INFO_IMG/MonsterM-example.png"
+                  width="30%"
+                  height="auto"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Basic meat</td>
+              <td>
+                <img
+                  class="image-preview"
+                  src="INFO_IMG/BasicM-example.png"
+                  width="40%"
+                  height="auto"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Gems</td>
+              <td>
+                <img
+                  class="image-preview"
+                  src="INFO_IMG/gem-example_test.png"
+                  width="30%"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Treacherous Plunder</td>
+              <td>
+                <img
+                  class="image-preview"
+                  src="INFO_IMG/TreacherousPlunder2-example.png"
+                  width="50%"
+                  height="100%"
+                />
+              </td>
+            </tr>
+          </table>
+          <p id="guide-text" style="margin-top: 30px;">
+            The price of each fish / meat is dependant one their <strong>Rarity</strong>, <strong>Type</strong> and <strong>State</strong>
+            of the fish when you sell it.
+          </p>
+          <p id="guide-text">
+            <strong>*Half eaten fish Cannot be Sold, so be careful if your inventory is
+            full of fish.</strong>
+          </p>
+        </section>
+        <!-- TYPES LOCATION BAIT VALUE -->
+        <section>
+          <h2>
+            "Sea of Thieves" Fish Guide: Types, Locations, Bait, and Their Value
+          </h2>
+          <p id="guide-text">
+            There's tons of fish in Sea of Thieves. In fact, you might never
+            catch them all. Each serves a different purpose, and each has its
+            own value, whether it's cooked, burnt or raw. In total, there are 10
+            types of fish. Each has a fixed location and a bait requirement.
+          </p>
+
+          <p id="guide-text">
+            There is photo that shows all 10 types with location and bait that
+            is needed by Rigack
+          </p>
+          <img src="INFO_IMG/CheatSheet.jpg" id="CheatSheet" />
+        </section>
+
+        <!-- PRICES -->
+        <section>
+          <h2 id="section-1">Click to See Prices and Location</h2>
+
+          <div class="Fish-Link">
+            <a
+              href="#Sec-Ancientscale"
+              class="fish-link-item"
+              data-image="FISH/Almond Ancientscale.png"
+              >Ancientscale</a
+            >
+            <a
+              href="#Sec-Battlegill"
+              class="fish-link-item"
+              data-image="FISH/Jade Battlegill.png"
+              >Battlegill</a
+            >
+            <a
+              href="#Sec-Devilfish"
+              class="fish-link-item"
+              data-image="FISH/Ashen Devilfish.png"
+              >Devilfish</a
+            >
+            <a
+              href="#Sec-Islehopper"
+              class="fish-link-item"
+              data-image="FISH/Stone Islehopper.png"
+              >Islehopper</a
+            >
+            <a
+              href="#Sec-Plentifin"
+              class="fish-link-item"
+              data-image="FISH/Olive Plentifin.png"
+              >Plentifin</a
+            >
+            <a
+              href="#Sec-Pondie"
+              class="fish-link-item"
+              data-image="FISH/Charcoal Pondie.png"
+              >Pondie</a
+            >
+            <a
+              href="#Sec-Splashtail"
+              class="fish-link-item"
+              data-image="FISH/Ruby Splashtail.png"
+              >Splashtail</a
+            >
+            <a
+              href="#Sec-Stormfish"
+              class="fish-link-item"
+              data-image="FISH/Ancient Stormfish.png"
+              >Stormfish</a
+            >
+            <a
+              href="#Sec-Wildsplash"
+              class="fish-link-item"
+              data-image="FISH/Russet WildSplashes.png"
+              >Wildsplash</a
+            >
+            <a
+              href="#Sec-Wrecker"
+              class="fish-link-item"
+              data-image="FISH/Sun Wrecker.png"
+              >Wrecker</a
+            >
+            <a
+              href="#Sec-Meats"
+              class="fish-link-item"
+              data-image="INFO_IMG/Meats-example.png"
+              >Meats</a
+            >
+            <a
+              href="#Sec-Treacherous Plunder"
+              class="fish-link-item"
+              data-image="INFO_IMG/TreacherousPlunder2-example.png"
+              >Treacherous Plunder</a
+            >
+          </div>
+          <div id="show-image-container">
+            <img id="fish-image-example" alt="" />
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Ancientscale">Ancientscale</h3>
+          <p class="info-fish">
+            <i><strong>Ancientscales</strong> can be found in the open waters of 
+            <a href="#section-regions"> The Ancient Isles </a>. <br>Requires <a href="#section-bait">Leeches</a> as Bait to catch.</i></p></article>
+          <!--  Ancientscale table -->
+          <div class="table-container">
+            <div class="fish-images">
+              <img
+                src="FISH/Almond Ancientscale.png"
+                alt="Almond Ancientscale Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Sapphire Ancientscale.png"
+                alt="Sapphire Ancientscale Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Smoke Ancientscale.png"
+                alt="Smoke Ancientscale Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Bone Ancientscale.png"
+                alt="Bone Ancientscale Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Starshine Ancientscale.png"
+                alt="Starshine Ancientscale Image"
+                class="fish-image"
+              />
+            </div>
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="2">Ancientscale</th>
+                    <th colspan="2">Raw</th>
+                    <th colspan="2">Undercooked</th>
+                    <th colspan="2">Cooked</th>
+                    <th colspan="2">Burnt</th>
+                  </tr>
+                  <tr>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Almond<br /></td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Base-rarity-icon.png"
+                          alt="Base-Icon"
+                        />Base
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      305
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      765
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      340
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      850
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      50
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      130
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Sapphire</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />
+                        Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      300
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      405
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,015
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      70
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      170
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Smoke</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Uncommon-rarity-icon.png"
+                          alt="Uncommon-Icon"
+                        />
+                        Uncommon
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      940
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,270
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,410
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      210
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Bone</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img src="ICONS/Rare-rarity-icon.png" alt="Rare-icon" />
+                        Rare
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      3,000
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      7,500
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      4,050
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      10,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      4,500
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      11,250
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Starshine</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Night-rarity-icon.png"
+                          alt="Night-Icon"
+                        />Night
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      300
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      405
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,015
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      70
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      170
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Battlegill">Battlegill</h3>
+          <p class="info-fish"><i><strong> Battlegills</strong> can be found in the open waters near<a href="#section-regions"> Skeleton Ships, Active Skeleton Fort, 
+            Fort of Fortune, or Fort of the Damned</a>. <br>Requires <a href="#section-bait">Grubs</a> as Bait to catch.</i></p></article>
+          <!--  Battlegill table -->
+          <div class="table-container">
+            <div class="fish-images">
+              <img
+                src="FISH/Jade Battlegill.png"
+                alt="Jade Battlegill Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Sky Battlegill.png"
+                alt="Sky Battlegill Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Rum Battlegill.png"
+                alt="Rum Battlegill Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Sand Battlegill.png"
+                alt="Sand Battlegill Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Bittersweet Battlegill.png"
+                alt="Bittersweet Battlegill Image"
+                class="fish-image"
+              />
+            </div>
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="2">Battlegill</th>
+                    <th colspan="2">Raw</th>
+                    <th colspan="2">Undercooked</th>
+                    <th colspan="2">Cooked</th>
+                    <th colspan="2">Burnt</th>
+                  </tr>
+                  <tr>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Jade<br /></td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Base-rarity-icon.png"
+                          alt="Base-Icon"
+                        />Base
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      940
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,270
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,410
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      210
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Sky</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />
+                        Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      610
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,520
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      100
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Rum</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Uncommon-rarity-icon.png"
+                          alt="Uncommon-Icon"
+                        />
+                        Uncommon
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      525
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,315
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      710
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,775
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      790
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,975
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      120
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      295
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Sand</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img src="ICONS/Rare-rarity-icon.png" alt="Rare-icon" />
+                        Rare
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      3,750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      9,375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      5,065
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      12,655
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      5,625
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      14,065
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      845
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      2,110
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Bittersweet</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Night-rarity-icon.png"
+                          alt="Night-Icon"
+                        />Night
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      610
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,520
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      100
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Devilfish">Devilfish</h3>
+          <p class="info-fish">
+            <i><strong>Devilfish</strong> can be only found in the open waters of <a href="#section-regions">The Devil's Roar</a>.<br> Requires <a href="#section-bait">Grubs </a> as Bait to catch.</i></p>
+         </article> <!--  Devilfish table -->
+          <div class="table-container">
+            <div class="fish-images">
+              <img
+                src="FISH/Ashen Devilfish.png"
+                alt="Ashen Devilfish Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Seashell Devilfish.png"
+                alt="Seashell Devilfish Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Lava Devilfish.png"
+                alt="Lava Devilfish Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Forsaken Devilfish.png"
+                alt="Forsaken Devilfish Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Firelight Devilfish.png"
+                alt="Firelight Devilfish Image"
+                class="fish-image"
+              />
+            </div>
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="2">Devilfish</th>
+                    <th colspan="2">Raw</th>
+                    <th colspan="2">Undercooked</th>
+                    <th colspan="2">Cooked</th>
+                    <th colspan="2">Burnt</th>
+                  </tr>
+                  <tr>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Ashen<br /></td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Base-rarity-icon.png"
+                          alt="Base-Icon"
+                        />Base
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      305
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      765
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      340
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      850
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      50
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      130
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Seashell</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />
+                        Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      300
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      405
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,015
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      70
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      170
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Lava</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Uncommon-rarity-icon.png"
+                          alt="Uncommon-Icon"
+                        />
+                        Uncommon
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      940
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,270
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,410
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      210
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Forsaken</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img src="ICONS/Rare-rarity-icon.png" alt="Rare-icon" />
+                        Rare
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      3,000
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      7,500
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      4,050
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      10,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      4,500
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      11,250
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Firelight</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Night-rarity-icon.png"
+                          alt="Night-Icon"
+                        />Night
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      300
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      405
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,015
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      70
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      170
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Islehopper">Islehopper</h3>
+          <p class="info-fish"><i><strong>Islehopper</strong> can be found in the open waters surrounding Large Islands. Here is a list of where each type can be found: 
+            <br><strong>Stone</strong> Islehopper <a href="#section-bait">Sailor's Bounty | Cannon Cove | Shipwreck Bay | Shark Bait Cove | Crook's Hollow</a>
+            <br><strong>Moss</strong> Islehopper <a href="#section-bait"> Lone Cove | Wanderer's Refuge | Marauder's Arch | Thieves' Haven</a>
+            <br><strong>Honey</strong> Islehopper <a href="#section-bait">Crescent Isle | Kraken's Fall | Sunken Grove | Plunder Valley | Discovery Ridge</a>
+            <br><strong>Raven</strong> Islehopper <a href="#section-bait"> Mermaid's Hideaway | Discovery Ridge | Shark Bait Cove | Wanderers Refuge</a>
+            <br><strong>Amethyst</strong> Islehopper <a href="">Smuggler's Bay | Mermaid's Hideaway | The Crooked Masts | Old Faithful Isle | Snake Island | Devil's Ridge</a>
+            <br>Does not require Bait to catch.</i></p></article>
+          <!-- Islehopper table -->
+          <div class="table-container">
+            <div class="fish-images">
+              <img
+                src="FISH/Stone Islehopper.png"
+                alt="Stone Islehopper Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Moss Islehopper.png"
+                alt="Moss Islehopper Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Honey Islehopper.png"
+                alt="Honey Islehopper Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Raven Islehopper.png"
+                alt="Raven Islehopper Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Amethyst Islehopper.png"
+                alt="Amethyst Islehopper Image"
+                class="fish-image"
+              />
+            </div>
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="2">Islehopper</th>
+                    <th colspan="2">Raw</th>
+                    <th colspan="2">Undercooked</th>
+                    <th colspan="2">Cooked</th>
+                    <th colspan="2">Burnt</th>
+                  </tr>
+                  <tr>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Stone<br /></td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      105
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      265
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      140
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      360
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      160
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      400
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      25
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      60
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Moss</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />
+                        Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      105
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      265
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      140
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      360
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      160
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      400
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      25
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      60
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Honey</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />
+                        Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      105
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      265
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      140
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      360
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      160
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      400
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      25
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      60
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Raven</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img src="ICONS/Rare-rarity-icon.png" alt="Rare-icon" />
+                        Rare
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      1,1050
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      2,625
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,420
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      3,545
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,575
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      3,940
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      235
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      590
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Amethyst</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Night-rarity-icon.png"
+                          alt="Night-Icon"
+                        />Night
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      105
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      265
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      140
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      360
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      160
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      400
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      25
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      60
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Plentifin">Plentifin</h3>
+          <p class="info-fish"><i><strong>Plentifins</strong> are found in the waters of the <a href="#section-regions"> Shores of Plenty</a>.<br> Requires <a href="#section-bait">Earthworms</a> as bait</i></p>
+          </article><!-- Plentifin Table-->
+          <div class="table-container">
+            <div class="fish-images">
+              <img
+                src="FISH/Olive Plentifin.png"
+                alt="Olive Plentifin Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Amber Plentifin.png"
+                alt="Amber Plentifin Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Cloudy Plentifin.png"
+                alt="Cloudy Plentifin Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Bonedust Plentifin.png"
+                alt="Bonedust Plentifin Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Watery Plentifin.png"
+                alt="Watery Plentifin Image"
+                class="fish-image"
+              />
+            </div>
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="2">Plentifin</th>
+                    <th colspan="2">Raw</th>
+                    <th colspan="2">Undercooked</th>
+                    <th colspan="2">Cooked</th>
+                    <th colspan="2">Burnt</th>
+                  </tr>
+                  <tr>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Olive<br /></td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Base-rarity-icon.png"
+                          alt="Base-Icon"
+                        />Base
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      305
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      765
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      340
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      850
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      50
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      130
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Amber</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />
+                        Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      300
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      405
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,015
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      70
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      170
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Cloudy</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Uncommon-rarity-icon.png"
+                          alt="Uncommon-Icon"
+                        />
+                        Uncommon
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      940
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,270
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,410
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      210
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Bonedust</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img src="ICONS/Rare-rarity-icon.png" alt="Rare-icon" />
+                        Rare
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      3,000
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      7,500
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      4,050
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      10,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      4,500
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      11,250
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Watery</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Night-rarity-icon.png"
+                          alt="Night-Icon"
+                        />Night
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      300
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      405
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,015
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      70
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      170
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Pondie">Pondie</h3>
+          <p class="info-fish"><i><strong>Pondies</strong> can be found in <a href="#section-regions">Water ponds</a>.<strong> *No other fish can be found in these location.</strong><br>Does not require Bait to catch.</i></p>
+          </article><!-- Pondie Table-->
+          <div class="table-container">
+            <div class="fish-images">
+              <img
+                src="FISH/Charcoal Pondie.png"
+                alt="Charcoal Pondie Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Orchid Pondie.png"
+                alt="Orchid Pondie Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Bronze Pondie.png"
+                alt="Bronze Pondie Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Bright Pondie.png"
+                alt="Bright Pondie Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Moonsky Pondie.png"
+                alt="Moonsky Pondie Image"
+                class="fish-image"
+              />
+            </div>
+
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="2">Pondie</th>
+                    <th colspan="2">Raw</th>
+                    <th colspan="2">Undercooked</th>
+                    <th colspan="2">Cooked</th>
+                    <th colspan="2">Burnt</th>
+                  </tr>
+                  <tr>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Charcoal<br /></td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Base-rarity-icon.png"
+                          alt="Base-Icon"
+                        />Base
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      75
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      190
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      100
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      255
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      115
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      285
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      15
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      45
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Orchid</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />
+                        Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      150
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      205
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      35
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Bronze</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Uncommon-rarity-icon.png"
+                          alt="Uncommon-Icon"
+                        />
+                        Uncommon
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      255
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      305
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      765
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      340
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      850
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      50
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      130
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Bright</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img src="ICONS/Rare-rarity-icon.png" alt="Rare-icon" />
+                        Rare
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      940
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,270
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,410
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      210
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Moonsky</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Night-rarity-icon.png"
+                          alt="Night-Icon"
+                        />Night
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      150
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      205
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      35
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Splashtail">Splashtail</h3>
+          <p class="info-fish"><i><strong>Splashtails</strong> are found <a href="#section-regions">anywhere in open water</a> but Cannot be caught in Water ponds.<br>Does not require Bait to catch.</i></p>
+          </article><!-- Splashtail Table-->
+          <div class="table-container">
+            <div class="fish-images">
+              <img
+                src="FISH/Ruby Splashtail.png"
+                alt="Ruby Splashtail Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Sunny Splashtail.png"
+                alt="Sunny Splashtail Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Indigo Splashtail.png"
+                alt="Indigo Splashtail Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Umber Splashtail.png"
+                alt="Umber Splashtail Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Seafoam Splashtail.png"
+                alt="Seafoam Splashtail Image"
+                class="fish-image"
+              />
+            </div>
+
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="2">Splashtail</th>
+                    <th colspan="2">Raw</th>
+                    <th colspan="2">Undercooked</th>
+                    <th colspan="2">Cooked</th>
+                    <th colspan="2">Burnt</th>
+                  </tr>
+                  <tr>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Ruby<br /></td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Base-rarity-icon.png"
+                          alt="Base-Icon"
+                        />Base
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      75
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      190
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      100
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      255
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      115
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      285
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      15
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      45
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Sunny</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />
+                        Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      150
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      205
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      35
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Indigo</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Uncommon-rarity-icon.png"
+                          alt="Uncommon-Icon"
+                        />
+                        Uncommon
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      255
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      305
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      765
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      340
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      850
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      50
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      130
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Umber</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img src="ICONS/Rare-rarity-icon.png" alt="Rare-icon" />
+                        Rare
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      940
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,270
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,410
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      210
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Seafoam</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Night-rarity-icon.png"
+                          alt="Night-Icon"
+                        />Night
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      150
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      205
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      35
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      80
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Stormfish">Stormfish</h3>
+          <p class="info-fish"><strong>Stormfish</strong> are found in open waters inside <a href="#section-bait">Storms</a>.<em style="color: rgba(100, 99, 99, 0.899); font-size:20px">*Indicated by the ringing of the Ship's Bell</em>
+            <br>The Stormfish are mostly <a href="#section-bait">Region based</a> catches, with the Rare and Night variants being available to be caught anywhere.
+            <br><strong>*Remember Storms do not go to The Devil's Roar Region</strong></p></article>
+          <!-- Stormfish Table-->
+          <div class="table-container">
+            <div class="fish-images">
+              <img
+                src="FISH/Ancient Stormfish.png"
+                alt="Ancient Stormfish Image"
+                class="fish-image"
+                style="height: 45px; margin-top: 90px; margin-bottom: 30px"
+              />
+              <img
+                src="FISH/Shores Stormfish.png"
+                alt="Shores Stormfish Image"
+                class="fish-image"
+                style="height: 45px; margin-bottom: 15px"
+              />
+              <img
+                src="FISH/Wild Stormfish.png"
+                alt="Wild Stormfish Image"
+                class="fish-image"
+                style="height: 45px"
+              />
+              <img
+                src="FISH/Shadow Stormfish.png"
+                alt="Shadow Stormfish Image"
+                class="fish-image"
+                style="height: 45px"
+              />
+              <img
+                src="FISH/Twilight Stormfish.png"
+                alt="Seafoam Splashtail Image"
+                class="fish-image"
+                style="height: 45px"
+              />
+            </div>
+
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="2">Stormfish</th>
+                    <th colspan="2">Raw</th>
+                    <th colspan="2">Undercooked</th>
+                    <th colspan="2">Cooked</th>
+                    <th colspan="2">Burnt</th>
+                  </tr>
+                  <tr>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Ancient<br /></td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Uncommon-rarity-icon.png"
+                          alt="Uncommon-Icon"
+                        />The Ancient Isles
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      610
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,520
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      100
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Shores</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Uncommon-rarity-icon.png"
+                          alt="Uncommon-Icon"
+                        />
+                        The Shores of Plenty
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      610
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,520
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      100
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Wild</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Uncommon-rarity-icon.png"
+                          alt="Uncommon-Icon"
+                        />
+                        The Wilds
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      610
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,520
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      100
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Shadow</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img src="ICONS/Rare-rarity-icon.png" alt="Rare-icon" />
+                        Rare
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      4,500
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      11,250
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      6,075
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      15,190
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      6,750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      16,875
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,015
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,400
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Twilight</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Night-rarity-icon.png"
+                          alt="Night-Icon"
+                        />Night
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      610
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,520
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      100
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Wildsplash">Wildsplash</h3>
+          <p class="info-fish"><i><strong>Wildsplashes</strong> are found in the open waters of <a href="#section-regions">The Wilds</a>. 
+            <br>Requires <a href="#section-bait">Earthworms</a> as Bait to catch. </i></p></article>
+          <!-- Wildsplash Table-->
+          <div class="table-container">
+            <div class="fish-images">
+              <img
+                src="FISH/Russet WildSplashes.png"
+                alt="Russet WildSplashes Image"
+                class="fish-image"
+                style="margin-top: 80px"
+              />
+              <img
+                src="FISH/Sandy WildSplashes.png"
+                alt="Sandy WildSplashes Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Ocean WildSplashes.png"
+                alt="Ocean WildSplashes Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Muddy WildSplashes.png"
+                alt="Muddy WildSplashes Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Coral WildSplashes.png"
+                alt="Coral WildSplashes Image"
+                class="fish-image"
+              />
+            </div>
+
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="2">WildSplashes</th>
+                    <th colspan="2">Raw</th>
+                    <th colspan="2">Undercooked</th>
+                    <th colspan="2">Cooked</th>
+                    <th colspan="2">Burnt</th>
+                  </tr>
+                  <tr>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Ancient<br /></td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Base-rarity-icon.png"
+                          alt="Base-Icon"
+                        />Base
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      305
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      765
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      340
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      850
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      50
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      130
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Sandy</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />
+                        Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      300
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      405
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,015
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      70
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      170
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Ocean</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Uncommon-rarity-icon.png"
+                          alt="Uncommon-Icon"
+                        />
+                        Uncommon
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      940
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,270
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,410
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      210
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Muddy</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img src="ICONS/Rare-rarity-icon.png" alt="Rare-icon" />
+                        Rare
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      3,000
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      7,500
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      4,050
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      10,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      4,500
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      11,250
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Coral</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Night-rarity-icon.png"
+                          alt="Night-Icon"
+                        />Night
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      300
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      405
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,015
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      70
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      170
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Wrecker">Wrecker</h3>
+          <p class="info-fish"><i><strong>Wreckers</strong> can only be found near <a href="#section-regions">Shipwrecks</a>.
+            <br><strong>*Blackcloud Wrecker is a unique variant, because it can only be caught near <a href="#section-regions">Shipwrecks</a> that are inside <a href="#section-regions">Storms</a>.</strong></em>
+            <br>Requires <a href="#section-bait">Earthworms</a> as Bait to catch.</i></p></article>
+          <!-- Wrecker Table-->
+          <div class="table-container">
+            <div class="fish-images">
+              <img
+                src="FISH/Rose Wrecker.png"
+                alt="Rose Wrecker Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Sun Wrecker.png"
+                alt="Sun Wrecker Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Blackcloud Wrecker.png"
+                alt="Blackcloud Wrecker Image"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Snow Wrecker.png"
+                alt="Snow WreckerImage"
+                class="fish-image"
+              />
+              <img
+                src="FISH/Moon Wrecker.png"
+                alt="Moon Wrecker Image"
+                class="fish-image"
+              />
+            </div>
+
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="2">Wrecker</th>
+                    <th colspan="2">Raw</th>
+                    <th colspan="2">Undercooked</th>
+                    <th colspan="2">Cooked</th>
+                    <th colspan="2">Burnt</th>
+                  </tr>
+                  <tr>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                    <th>Regular</th>
+                    <th>Trophy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Rose<br /></td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Base-rarity-icon.png"
+                          alt="Base-Icon"
+                        />Base
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      940
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      505
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,270
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      565
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,410
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      85
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      210
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Sun</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Common-rarity-icon.png"
+                          alt="Common-Icon"
+                        />
+                        Common
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      610
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,520
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      100
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Blackcloud</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/storm_icon.png"
+                          alt="Storm Icon"
+                        />
+                        Storm
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      525
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,315
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      710
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,775
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      790
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,975
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      120
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      295
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Snow</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img src="ICONS/Rare-rarity-icon.png" alt="Rare-icon" />
+                        Rare
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      3,750
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      9,375
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      5,065
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      12,655
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      5,625
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      14,065
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      845
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      2,110
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Moon</td>
+                    <td>
+                      <div class="flex-rarity">
+                        <img
+                          src="ICONS/Night-rarity-icon.png"
+                          alt="Night-Icon"
+                        />Night
+                      </div>
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,125
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      610
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,520
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      675
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      1,690
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      100
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      225
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Meats">Monster & Basic Meat</h3>
+          <p class="info-fish"><i><strong> Monster Meat</strong> can be acquired by killing the <strong>Megalodon</strong> or <strong>Kraken</strong>, 
+            <br><strong>Basic Meat</strong> can be acquired by killing <strong>Snakes | Chickens | Pigs</strong>
+            <br><strong>*All kinds of meat can be found in <a href="#section-tips">Barrels | Supply Crates</a></strong></i></p></article>
+          <!-- MEAT TABLE -->
+          <div class="table-container">
+            <div class="Meat-images">
+              <img
+                src="INFO_IMG/BasicM-example.png"
+                alt="Basic Meat Image"
+                class="Meat-image"
+              />
+              <img
+                src="INFO_IMG/MonsterM-example.png"
+                alt="Monster Meat Image"
+                class="Meat-image"
+              />
+            </div>
+            <div class="table-scroll-container">
+              <table class="price-table-container">
+                <colgroup>
+                  <col style="width: 64.033333px" />
+                  <col style="width: 45.033333px" />
+                  <col style="width: 140.033333px" />
+                  <col style="width: 71.033333px" />
+                  <col style="width: 60.033333px" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="5">Meat Value<br /></th>
+                  </tr>
+
+                  <tr>
+                    <th>TYPE</th>
+                    <th>Raw<br /></th>
+                    <th>Undercooked</th>
+                    <th>Cooked</th>
+                    <th>Burnt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: #00ff9c">Basic Meat</td>
+                    <td style="text-align: center">X</td>
+                    <td class="price-cell" style="text-align: center">
+                      40
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      45
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      5
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: #00ff9c">Monster Meat</td>
+                    <td style="text-align: center">X</td>
+                    <td class="price-cell" style="text-align: center">
+                      405
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      450
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                    <td class="price-cell">
+                      45
+                      <img
+                        class="gold-icon"
+                        src="ICONS/Gold.png"
+                        alt="Gold Icon"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <article class="fish_name">
+          <h3 id="Sec-Treacherous Plunder">Treacherous Plunder</h3>
+          <p class="info-fish"><i><strong>Treacherous Plunder</strong> is loot you can find while fishing other fish. Can be caught in any fishing location. Can be caught without Bait. 
+            <br><strong>*Pondie fishing spots is ideal for finding these items, because they have a high spawn rate, allowing for quicker recasts</strong>
+            <br><a href="https://www.youtube.com/watch?v=8wFHc-mERXw&autoplay=1" target="_blank">Helpful Video</a> <!-- dodaj pop up --></i></p></article>
+          <!-- Treacherous Plunder -->
+          <div class="table-container">
+            <div class="TreachP-images">
+              <img
+                src="ICONS/Old-Boot.png"
+                alt="Old Boot Image"
+                class="TreachP-image"
+              />
+              <img
+                src="ICONS/Old-Hat.png"
+                alt="Old Hat Image"
+                class="TreachP-image"
+              />
+              <img
+                src="ICONS/Old-Skull.png"
+                alt="Old Skull Image"
+                class="TreachP-image"
+              />
+              <img
+                src="ICONS/Fish-Bones.png"
+                alt="Fish-Bones Image"
+                class="TreachP-image"
+              />
+              <img
+              src="ICONS/Wooden_Plank.png"
+              alt="WoodenPlank Image"
+              class="TreachP-image"
+            />
+              <img
+              src="ICONS/Ashen-Key.png"
+              alt="Fish-Bones Image"
+              class="TreachP-image"
+              id="Ashen-Key"
+            />
+
+            </div>
+            <div class="table-scroll-container">
+          <table
+            class="price-table-container"
+          >
+            <colgroup>
+              <col class="name-col" style="width: 80.066666px" />
+              <col class="type-col" style="width: 80.033333px" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="name-header">Name</th>
+                <th class="type-header">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="name-cell" style="color: #00ff9c">Old Boot</td>
+                <td class="price-cell" style="text-align: center">
+                  10<img
+                    class="gold-icon"
+                    src="ICONS/Gold.png"
+                    alt="Gold Icon"
+                    style="padding: 0 3px;"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="name-cell" style="color: #00ff9c">Old Hat</td>
+                <td class="price-cell" style="text-align:center">
+                  10<img
+                    class="gold-icon"
+                    src="ICONS/Gold.png"
+                    alt="Gold Icon"
+                    style="padding: 0 3px;"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="name-cell" style="color: #00ff9c">Old Skull</td>
+                <td class="price-cell" style="text-align: center">
+                  10<img
+                    class="gold-icon"
+                    src="ICONS/Gold.png"
+                    alt="Gold Icon"
+                    style="padding: 0 3px;"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="name-cell" style="color: #00ff9c">Fish Bones</td>
+                <td class="price-cell" style="text-align: center">
+                  10<img
+                    class="gold-icon"
+                    src="ICONS/Gold.png"
+                    alt="Gold Icon"
+                    style="padding: 0 3px;"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="name-cell" style="color: #00ff9c">Wooden Planks</td>
+                <td class="price-cell" style="text-align: center">X
+                </td>
+              </tr>
+              <tr>
+                <td class="name-cell" style="color: #00ff9c">Ashen Key</td>
+                <td class="price-cell" style="text-align: center">
+                  5<img
+                    class="gold-icon"
+                    src="ICONS/Doubloon.png"
+                    alt="Doubloon Icon"
+                    style="padding: 0 3px;"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          
+        </section>
+        <hr id="end_table">
+        <!-- BAITS -->
+        <section>
+          <h2 id="section-bait">Baits in Sea of Thieves</h2>
+
+          <ul class="bait-info">
+            <li class="bait-item">
+              <img id="bait-top-image" src="INFO_IMG/BAITS_1_demo.png" alt="Leeches Image"/>
+              <p>Leeches seem drawn to the water. They are best found by digging as
+              close to the water line as possible.</p>
+              <img id="bait-bottom-image" src="INFO_IMG/leeches_location.png" alt="Leeches location example">
+              <li class="bait-item">
+                <img id="bait-top-image" src="INFO_IMG/BAITS_2_demo.png" alt="Leeches Image"/>
+                <p>Earthworms tend to nestle themselves beneath the grass.</p>
+                <img id="bait-bottom-image" src="INFO_IMG/worms_location.png" alt="Worms location example">
+              </li>
+            </li>
+            <li class="bait-item">
+              <img id="bait-top-image" src="INFO_IMG/BAITS_3_demo.png" alt="Leeches Image"/>
+              <p>Grubs appear to enjoy the warm sand. Just be sure you’re at least
+              little further back from where you might find leeches.</p>
+              <img id="bait-bottom-image" src="INFO_IMG/grubs_location.png" alt="Grubs location example">
+            </li>
+            </ul>
+          <p id="guide-text">There is also a possibility of obtaining bait from barrels that can be found on 
+            the main islands as well as the smaller ones, and also in crates.</p>
+          <img src="INFO_IMG/worms_in_barrel.png" id="worm-in-barrels-img"/>
+        </section>
+        
+        <!-- REGIONS -->
+        <section>
+          <h2 id="section-regions">Regions for Fishing in Sea of Thieves</h2>
+          <br>
+          <img class="gallery-image" id="map-with-regions" src="INFO_IMG/Regions_beta.png" />
+          <p id="guide-text" style="color: rgba(167, 167, 167, 0.637);">*Click on the Map to find out More</p>
+          <article class="regions-info">
+            <div class="regions-info-text">
+              <p><strong>Shipwrecks</strong> are sunken ships that can contain various Resources and Treasure. 
+              They are the only locations where players can fish for <strong>Wreckers</strong>.
+              <br><i> *A large flock of Seagulls flying above an area at sea indicates a shipwreck is below.</i></p>
+            </div>
+            <div class="regions-info-images">
+              <img src="INFO_IMG/Ship1.png" alt="Shipwreck Example">
+            </div>
+
+            <div class="regions-info-text">
+            <p><strong>Storm</strong> is an always present dark cloud roaming the seas which can be easily spotted from afar. 
+            If it contains heavy rain and wind, wild waves, and dangerous lightning so then you know that you can catch Stormfish. 
+            <br><i>*Storm is also indicated by the ringing of the Ship's Bell</i></p></div>
+            <div class="regions-info-images">
+              <img src="INFO_IMG/Stormbeta.png" alt="Ship in Storm Example">
+            </div>
+            <div class="regions-info-text">
+              <p>Ponds are a feature of many islands scattered across the Sea of Thieves. They are the only source of freshwater and the only locations where the freshwater Pondie Fish can be caught.
+              </p></div>
+              <div class="regions-info-images">
+                <img src="INFO_IMG/Ponds.png" alt="Ponds Example">
+              </div>
+          </article>
+          <a href="https://seaofthieves-archive.fandom.com/wiki/Locations" target="_blank"
+            >More Info</a>
+
+          <div id="popup-overlay" class="hidden">
+            <div id="popup-container">
+              <img id="popup-image" src="INFO_IMG/Regions-map.png" alt="Popup Fishing Regions Image">
+              <button id="show-full-image" class="full-image-button">Show Full Image</button>
+          </div>
+        </div>
+        
+        </section>
+
+
+
+        <hr
+          style="
+            background-color: black;
+            height: 10px;
+            margin-left: -20px;
+            margin-right: -20px;
+          "
+        />
+        <!-- TIPS -->
+        <section>
+          <h2 id="section-tips">TIPS AND TRICKS</h2>
+          <p>
+            You can get fish and meat not only by fishing but also from other
+            places, e.g. from barrels in:
+          </p>
+          <p>
+            FORTS<img src="INFO_IMG/fort1.png" alt="Fort" /><img
+              src="INFO_IMG/fort2.png"
+              alt="Fort"
+            />
+          </p>
+          <a href="https://rarethief.com/sea-of-thieves-sea-forts-guide/" target="_blank"
+            >MORE INFO ABOUT FORTS</a
+          >
+          <p>
+            Ship Wrecks<img src="INFO_IMG/Ship1.png" alt="Ship Wreck" /><img
+              src="INFO_IMG/Ship2.png"
+              alt="Ship Wreck"
+            />
+          </p>
+          <a href="https://seaofthieves.fandom.com/wiki/Shipwrecks" target="_blank"
+            >MORE INFO ABOUT SHIP WRECKS</a
+          >
+          <a href="https://www.youtube.com/watch?v=sCJ1LCfPQyU&autoplay=1" target="_blank"
+            >MORE POSSIBILITIES TO GET FISH WITHOUT FISHING</a
+          >
+          <hr style="height: 10px; margin-left: -20px; margin-right: -20px" />
+          <p>You can cook fish Faster by using 4 x frying pan in Forts</p>
+          <img src="INFO_IMG/fort-pan0.png" alt="4 Frying Pan in Forts" />
+          <hr style="height: 10px; margin-left: -20px; margin-right: -20px" />
+          <p>
+            Highest Selling Fish In Sea Of Thieves If you're wanting to maximize
+            your profit in our Sea of Thieves Fishing Guide, you should always
+            try to pursue Rare variants. In addition, you should also cook it as
+            this will always return the most money. However, if you burn your
+            fish during the cooking process, its value will plummet. Shadow
+            Stormfish (Rare variant) currently sells for the most money in our
+            Sea of Thieves fishing guide, but only when cooked. Its Trophy
+            variants sell for 11,250g raw and 16,875g cooked.​​​​​​​​​​​​​​ You
+            can sell your fish at Hunter’s Call posts (indicated by the Octopus
+            logo), and be sure not to burn them! To sell your fish, you'll need
+            to be holding it in your hand, similarly to how you sell chests to
+            vendors.
+          </p>
+          <hr style="height: 10px; margin-left: -20px; margin-right: -20px" />
+          <a
+            href="https://www.merfolkslullaby.com/map?latitude=18.615035398798895&longitude=-64.40515692899349&zoom=12.574191141293307&realm=sea-of-thieves" target="_blank"
+            >use interactive map for easy adventure</a
+          >
+        </section>
+
+        <hr
+          style="
+            background-color: black;
+            height: 10px;
+            margin-left: -20px;
+            margin-right: -20px;
+          "
+        />
+
+        <section>
+          <h2 id="section-5">FISHING TUTORIAL (for beginners)</h2>
+          <p>
+            How To Fish 1. Decide your bait. Pull out your fishing rod, re-open
+            your inventory and when holding"R"(or B on controller), decide on
+            the bait you want. Once it's on the end of your hook, you're ready
+            to cast. 2. To cast, simply point at a body of water, and left
+            click. To retrieve your line, simply right click. 3. Once your line
+            is in the water, it's simply a case of waiting. Sometimes you'll be
+            able to see a fish under the water, others it'll be too dark. Either
+            way, once you've got a bite your line will begin to flex and bow. 4.
+            To reel in a fish when you have a bite, don't instantly left click
+            (it'll cause the line to break and the fish to escape). What you
+            need to do is tire the fish out. Fundamentally, you move your
+            fishing rod in the opposite direction that the fish is moving. If
+            the fish is going left, hold right (typically "D"). If the fish is
+            going right, hold left (typically "A"). If the fish is going away
+            from you, hold down (typically "S"). !!!If you're holding the rod in
+            the wrong direction, you'll hear it begin to strain and crack. When
+            your line goes slack and when the fish is exhausted, reel it in.!!!
+            5. To take your fish off your line, you need to be sure you have the
+            inventory space. If you don't have space, you can store items in a
+            nearby barrel or eat some existing food.
+          </p>
+          <img src="INFO_IMG/fishing1.png" alt="How to Fish" /><img
+            src="INFO_IMG/fishing2.png"
+            alt="How to Fish"
+          /><img src="INFO_IMG/fishing3.png" alt="How to Fish" />
+          <p>
+            How To Cook It's fairly simple! Head below deck and you'll see a
+            stove and skillet. If you aren't on board your ship, most islands
+            have an available frying pan by any fire. With your fish in hand,
+            you'll be able to interact with the pan, and start cooking. Like all
+            things in Sea of Thieves, there's no UI to indicate how well your
+            fish is cooked. You'll need to pay attention. If it's undercooked
+            and you eat it, you'll be sick with food poisoning. Left on the heat
+            too long, and it'll be burnt and worthless. While it takes practice
+            to know exactly which fish have which timings, the easiest tricks
+            are: Watch for the fish to change colour. When it turns brown, it's
+            typically cooked just right. The fish's pupils will go completely
+            white. Steam coming off the frying pan will thin out as the fish
+            cooks through. Larger fish (trophies) take longer to cook.
+          </p>
+          <img src="INFO SS/Cooking1.png" alt="How to Cook" /><img
+            src="INFO SS/Cooking2.png"
+            alt="How to Cook"
+          /><img src="INFO SS/Cooking3.png" alt="How to Cook" />
+          <a href="https://rarethief.com/sea-of-thieves-fishing-guide/" target="_blank"
+            >more detailed guide here</a
+          >
+        </section>
+        <hr
+          style="
+            background-color: black;
+            height: 10px;
+            margin-left: -20px;
+            margin-right: -20px;
+          "
+        />
+        <footer style="background-color: black; height: 200px">
+          <i class="copyright" aria-hidden="true" style="color: azure"
+            >Created by Szymon Słoniowski © 2023</i
+          >
+        </footer>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
