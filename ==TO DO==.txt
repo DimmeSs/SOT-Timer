@@ -10,19 +10,28 @@ IDEA FOR LATER :
    - zmienia kolor ikonki i podnosi lekko
    - pod ikonką dodaje podświate kolorową
 
-v2.0
-Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
+po najechaniu na domek wyświetlaja się nad nim [ bait region price tip ] zeby przeniosło odrazu
 
-smień section 0 1 2 3 4 na nazwy !!!!
+yt popup w modal okienku
+----------------------------------------------
+v2.0
+
+dodać h4 do shipwreck storm itp , + dodać więcej info
+
+po zrobieniu regions przenieś beta do main bo commity nie wyświetlają się w historii XD
+
+
+zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kiedy sie je widzi to ładują się odrazu lazy img cos takiego
+
+animacja pojawiania się tekstu i rzeczy na stronier wraz z czasem jak sie zjeżdza w dół
+Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
 
 stormfishe zdjecia ogarnij im wspolną klase czy coś
 
-yt popup w modal okienku
-TABELE
-tekst 4/12 + design sekcji "WHERE TO SELL"
-dodaj link do baitów oraz regionów!!!!! 
-info + Dodaj w regionach opcje wyświetlenia fun made mapki!!!!!
 
+bait ogarnij responsiwne
+
+TABELE
 zamień czarny pasek na to fajne coś wiesz o co chodzi!!!!!
 
 sekcje ,
