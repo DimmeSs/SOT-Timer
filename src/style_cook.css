@@ -564,6 +564,11 @@ ul {
   margin: 0 auto;
   max-width: 90%;
   max-height: 90%;
+  transition: transform 0.3s ease;
+  margin-bottom: 5px;
+}
+#map-with-regions:hover{
+  transform: scale(1.01);
 }
 
 /* # REGIONS # */
@@ -596,13 +601,13 @@ ul {
 #popup-image {
   width: auto;
   height: auto;
-  max-width: 90%;
+  max-width: 100%;
   transform: scale(0.5);
   transition: transform 0.3s ease-in-out;
   margin: 0 auto;  /* Dodane */
   padding: 0;  /* Dodane */
   overflow-y: auto;
-  max-height: 90vh;
+  max-height: 92vh;
 }
 
 #popup-overlay.show {
@@ -638,6 +643,35 @@ ul {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
+
+.regions-info-text{
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 100px;
+}
+.regions-info-images{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Zawija elementy do nowej linii, jeśli nie mieszczą się */
+  
+}
+.regions-info-images img {
+  max-height: calc(15 * 1em);
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin:0px 20px; 
+  width: auto;
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+}
+
 /* # Preloading Animation # */
 #preloader {
   display: flex;

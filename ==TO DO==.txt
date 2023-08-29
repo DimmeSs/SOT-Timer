@@ -11,6 +11,8 @@ IDEA FOR LATER :
    - pod ikonką dodaje podświate kolorową
 
 po najechaniu na domek wyświetlaja się nad nim [ bait region price tip ] zeby przeniosło odrazu
+
+yt popup w modal okienku
 ----------------------------------------------
 v2.0
 
@@ -19,17 +21,12 @@ zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kie
 animacja pojawiania się tekstu i rzeczy na stronier wraz z czasem jak sie zjeżdza w dół
 Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
 
-smień section 0 1 2 3 4 na nazwy !!!!
-po kliknieciu mapy pojawia sie popup zdjęcia z rozpiską
-
 stormfishe zdjecia ogarnij im wspolną klase czy coś
 
-yt popup w modal okienku
-TABELE
-tekst 4/12 + design sekcji "WHERE TO SELL"
-dodaj link do baitów oraz regionów!!!!! 
-info + Dodaj w regionach opcje wyświetlenia fun made mapki!!!!!
 
+bait ogarnij responsiwne
+
+TABELE
 zamień czarny pasek na to fajne coś wiesz o co chodzi!!!!!
 
 sekcje ,
