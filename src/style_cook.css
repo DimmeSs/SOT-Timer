@@ -594,12 +594,15 @@ ul {
 }
 
 #popup-image {
+  width: auto;
+  height: auto;
   max-width: 90%;
-  max-height: 90%;
   transform: scale(0.5);
   transition: transform 0.3s ease-in-out;
   margin: 0 auto;  /* Dodane */
   padding: 0;  /* Dodane */
+  overflow-y: auto;
+  max-height: 90vh;
 }
 
 #popup-overlay.show {
@@ -622,6 +625,10 @@ ul {
   cursor: pointer;
   border-radius: 12px;
   font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  margin-top:-22px;
+  position: sticky;
 }
 
 .full-image-button:hover {

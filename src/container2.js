@@ -157,6 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
 // POP UP IMAGE REGIONS
 document.addEventListener('DOMContentLoaded', () => {
   const galleryImages = document.querySelectorAll('.gallery-image');
