@@ -338,6 +338,7 @@ ul {
 /* Price Tables */
 .fish_name{
   margin-top: 6em;
+  margin-bottom: 3em;
 }
 .fish_name h3:first{
   margin-top: 1em;
