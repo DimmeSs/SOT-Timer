@@ -569,17 +569,16 @@ ul {
   margin: auto;
 }
 
-/* Zapytania medialne */
+
 @media (max-width: 768px) {
   .bait-item {
-    min-width: 100%;  /* Zmiana na 100%, aby elementy były jeden pod drugim */
+    min-width: 100%;  
   }
 
   .bait-item p {
-    height: auto;  /* Zmiana na 'auto', aby dostosować wysokość do zawartości */
-    min-height: 80px;  /* Dodane minimalna wysokość */
-  }
-}
+    height: auto;
+    min-height: 80px;  
+}}
 #worm-in-barrels-img{
   max-height: 92vh;
   width: auto;
@@ -708,7 +707,7 @@ ul {
 .regions-info-images{
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Zawija elementy do nowej linii, jeśli nie mieszczą się */
+  flex-wrap: wrap; 
   
 }
 .regions-info-images img {
@@ -722,7 +721,93 @@ ul {
   max-width: 250px;
   margin-bottom: 30px;
 }
+/* TIPS & TRICKS */
+.first-tip-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.tip-image {
+  flex: 1;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;  
+}
+.tip-image h4{
+  font-family: "Windlass", Sans-serif;
+  margin-top: 0px;
+  color: white;
+  font-size: 30px;
+  letter-spacing:2px
+}
+#tip-number{
+  margin-top: 100px;
+  font-family: "Lato", Sans-serif;
+  color: white;
+  font-size: 30px;
+  letter-spacing:2px;
+  text-align: center;
+}
+.tip-image img {
+  height: 200px;
+  max-width: 100%; 
+  border-radius: 10px;
+  margin: 5px;
+}
 
+.tip-image a{
+  margin-bottom: 100px;
+  color: rgba(167, 167, 167, 0.637);
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 1700px;
+  text-align: center;
+  margin: 20px auto;
+  margin-bottom: 60px;
+  text-decoration: none;
+  }
+  .tip-image a:hover{
+    text-decoration:underline;
+  }
+.additionalLinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.centralAdditionalLink {
+  text-align: center;
+  flex-basis: 100%;
+  margin-bottom: 100px;
+  color: rgba(167, 167, 167, 0.637);
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 1700px;
+  text-align: center;
+  margin: 20px auto;
+  margin-bottom: 60px;
+  text-decoration: none;
+}
+.centralAdditionalLink:hover{
+  text-decoration:underline;
+}
+@media (max-width: 768px) {
+  .first-tip-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tip-image img {
+    width: 350px;
+    height: 150px;
+  }
+  .tip-image a{
+    margin-bottom: 100px;
+}}
 /* # Preloading Animation # */
 #preloader {
   display: flex;

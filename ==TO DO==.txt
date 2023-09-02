@@ -1,5 +1,3 @@
-!!! Wszystko robię w branch BETA żeby branch main zostal nietknięty
-!!! w Main zmieniam tylko TODO\
 
 IDEA FOR LATER :
 
@@ -12,30 +10,22 @@ IDEA FOR LATER :
 
 po najechaniu na domek wyświetlaja się nad nim [ bait region price tip ] zeby przeniosło odrazu
 
+pierwszy raz na stronie masz pod ikonkami wyświetlone EN PL a po którymś (np po 3 razie) innym razie znika (i jest tylko w footerze )
+EN < -- > PL
 yt popup w modal okienku
 ----------------------------------------------
 v2.0
 
-dodać h4 do shipwreck storm itp , + dodać więcej info
-
+SEO:
+!!!!!!!!!!!!!!!!!Zdjęcia na jpeg zmień
 !!!!!!!!!!!!!!!!!aria-label do a href + alt do img 
-
-
-zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kiedy sie je widzi to ładują się odrazu lazy img cos takiego
+!!!!!!!!!!!!!!!!!zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kiedy sie je widzi to ładują się odrazu lazy img cos takiego
 
 animacja pojawiania się tekstu i rzeczy na stronie wraz z czasem jak sie zjeżdza w dół
 Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
 
 stormfishe zdjecia ogarnij im wspolną klase czy coś
 
+tipy 
+tutorial 
 
-bait ogarnij responsiwne
-
-TABELE
-zamień czarny pasek na to fajne coś wiesz o co chodzi!!!!!
-
-sekcje ,
-tipy ,
-info ,
-money ,
-tabele ,
