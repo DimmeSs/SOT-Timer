@@ -736,9 +736,13 @@ ul {
   justify-content: center; 
   align-items: center;  
 }
+.tip-image p{
+  color: white;
+  font-style: italic;
+}
 .tip-image h4{
   font-family: "Windlass", Sans-serif;
-  margin-top: 0px;
+  margin-top: 60px;
   color: white;
   font-size: 30px;
   letter-spacing:2px
@@ -747,7 +751,7 @@ ul {
   margin-top: 100px;
   font-family: "Lato", Sans-serif;
   color: white;
-  font-size: 30px;
+  font-size: 45px;
   letter-spacing:2px;
   text-align: center;
 }
@@ -779,6 +783,35 @@ ul {
   flex-wrap: wrap;
   margin-top: 10px;
 }
+.header-cell {
+  border: 2px solid #60dabe;
+  padding: 6px;
+  background-color: #1f555f;
+  color: white;
+  font-family: Seconda Round W00 Bold, sans-serif;
+  text-align: center;
+}
+.data-cell-first, .data-cell-second {
+  border: 2px solid #60dabe;
+  background-color: #0e272c;
+  font-family: "Rubik";
+  font-weight: bold;
+  padding: 13px 6px;
+  word-wrap: break-word;
+  text-align: center;
+}
+.data-cell-first p{
+  color: #00ff9c;
+}
+.data-cell-first em{
+  color: #808080;
+}
+.data-cell-second img{
+  height: 10px;
+  margin: 1px;
+  margin-right: 5px;
+}
+
 .centralAdditionalLink {
   text-align: center;
   flex-basis: 100%;
