@@ -207,66 +207,55 @@ document.addEventListener('DOMContentLoaded', () => {
 // GOLD RUSH TIME ZONE 
 function displayEventInfo() {
   const now = new Date();
-  const event1StartUTC = new Date(now);
-  const event1EndUTC = new Date(now);
-  const event2StartUTC = new Date(now);
-  const event2EndUTC = new Date(now);
+  const event1UTC = new Date(now);
+  const event2UTC = new Date(now);
 
-  // Ustal daty dla 17:00-18:00 UTC
-  event1StartUTC.setUTCHours(17, 0, 0, 0);
-  event1EndUTC.setUTCHours(18, 0, 0, 0);
+  // Ustal datę dla 17:00 UTC
+  event1UTC.setUTCHours(17, 0, 0, 0);
 
-  // Ustal daty dla 01:00-02:00 UTC
-  event2StartUTC.setUTCHours(1, 0, 0, 0);
-  event2EndUTC.setUTCHours(2, 0, 0, 0);
+  // Ustal datę dla 01:00 UTC
+  event2UTC.setUTCHours(1, 0, 0, 0);
 
-  const event1LocalStart = event1StartUTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  const event1LocalEnd = event1EndUTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  const event2LocalStart = event2StartUTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  const event2LocalEnd = event2EndUTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-  let timeString = 'Do najbliższego wydarzenia pozostało: ';
-
-  if (now >= event1StartUTC && now <= event1EndUTC) {
-    const timeLeft = event1EndUTC - now;
-    const minutesLeft = Math.floor(timeLeft / (1000 * 60));
-    timeString = `Trwa wydarzenie 1! Pozostało około ${minutesLeft} minut.`;
-  } else if (now >= event2StartUTC && now <= event2EndUTC) {
-    const timeLeft = event2EndUTC - now;
-    const minutesLeft = Math.floor(timeLeft / (1000 * 60));
-    timeString = `Trwa wydarzenie 2! Pozostało około ${minutesLeft} minut.`;
-  } else {
-    const diff1 = event1StartUTC - now;
-    const diff2 = event2StartUTC - now;
-    const nextEvent = diff1 < diff2 ? event1StartUTC : event2StartUTC;
-    const timeUntil = nextEvent - now;
-
-    const hours = Math.floor(timeUntil / (1000 * 60 * 60));
-    const minutes = Math.floor((timeUntil % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeUntil % (1000 * 60)) / 1000);
-
-    if (hours > 0) {
-      timeString += `${hours}h `;
-    }
-    if (minutes > 0) {
-      timeString += `${minutes}m `;
-    }
-    if (hours === 0 && minutes === 0) {
-      timeString += `${seconds}s`;
-    }
+  // Jeżeli już po wydarzeniu, dodaj 1 dzień
+  if (now > event1UTC) {
+    event1UTC.setDate(event1UTC.getDate() + 1);
   }
 
+  if (now > event2UTC) {
+    event2UTC.setDate(event2UTC.getDate() + 1);
+  }
+
+  // Konwersja na lokalny czas
+  const event1LocalTime = event1UTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const event2LocalTime = event2UTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  // Strefa czasowa użytkownika
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  // Oblicz różnicę czasu
+  const diff1 = event1UTC - now;
+  const diff2 = event2UTC - now;
+
+  // Wybierz najbliższe wydarzenie
+  const nextEvent = diff1 < diff2 ? event1UTC : event2UTC;
+  const timeUntil = nextEvent - now;
+
+  // Oblicz ile czasu pozostało do wydarzenia
+  const hours = Math.floor(timeUntil / (1000 * 60 * 60));
+  const minutes = Math.floor((timeUntil % (1000 * 60 * 60)) / (1000 * 60));
+
+  // Wyświetl informacje
   document.getElementById("timeZone").innerText = `Twoja strefa czasowa: ${timeZone}`;
-  document.getElementById("event1").innerText = `Czas wydarzenia 1: ${event1LocalStart} - ${event1LocalEnd}`;
-  document.getElementById("event2").innerText = `Czas wydarzenia 2: ${event2LocalStart} - ${event2LocalEnd}`;
-  document.getElementById("nextEvent").innerText = timeString;
+  document.getElementById("event1").innerText = `Czas wydarzenia 1: ${event1LocalTime}`;
+  document.getElementById("event2").innerText = `Czas wydarzenia 2: ${event2LocalTime}`;
+  document.getElementById("nextEvent").innerText = `Do najbliższego wydarzenia pozostało: ${hours}h ${minutes}m`;
 }
 
+// Wywołaj funkcję po załadowaniu strony
 window.onload = function() {
+  // Wywołaj raz, a potem co minutę
   displayEventInfo();
-  setInterval(displayEventInfo, 1000);
+  setInterval(displayEventInfo, 60000);
 };
 
-
+// TODO : ZRÓB ZEBY JAK JEST GOLDEN RUSH ZEBY WYSWEITLIŁO ZE JEST ORAZ ŻE ZA ILE SIE SKONCZY !!!!!
