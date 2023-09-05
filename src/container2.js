@@ -204,6 +204,69 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open(fullImageURL, '_blank');
   });
 });
+// GOLD RUSH TIME ZONE 
+function displayEventInfo() {
+  const now = new Date();
+  const event1StartUTC = new Date(now);
+  const event1EndUTC = new Date(now);
+  const event2StartUTC = new Date(now);
+  const event2EndUTC = new Date(now);
 
+  // Ustal daty dla 17:00-18:00 UTC
+  event1StartUTC.setUTCHours(17, 0, 0, 0);
+  event1EndUTC.setUTCHours(18, 0, 0, 0);
+
+  // Ustal daty dla 01:00-02:00 UTC
+  event2StartUTC.setUTCHours(1, 0, 0, 0);
+  event2EndUTC.setUTCHours(2, 0, 0, 0);
+
+  const event1LocalStart = event1StartUTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const event1LocalEnd = event1EndUTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const event2LocalStart = event2StartUTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const event2LocalEnd = event2EndUTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  let timeString = 'Do najbliższego wydarzenia pozostało: ';
+
+  if (now >= event1StartUTC && now <= event1EndUTC) {
+    const timeLeft = event1EndUTC - now;
+    const minutesLeft = Math.floor(timeLeft / (1000 * 60));
+    timeString = `Trwa wydarzenie 1! Pozostało około ${minutesLeft} minut.`;
+  } else if (now >= event2StartUTC && now <= event2EndUTC) {
+    const timeLeft = event2EndUTC - now;
+    const minutesLeft = Math.floor(timeLeft / (1000 * 60));
+    timeString = `Trwa wydarzenie 2! Pozostało około ${minutesLeft} minut.`;
+  } else {
+    const diff1 = event1StartUTC - now;
+    const diff2 = event2StartUTC - now;
+    const nextEvent = diff1 < diff2 ? event1StartUTC : event2StartUTC;
+    const timeUntil = nextEvent - now;
+
+    const hours = Math.floor(timeUntil / (1000 * 60 * 60));
+    const minutes = Math.floor((timeUntil % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeUntil % (1000 * 60)) / 1000);
+
+    if (hours > 0) {
+      timeString += `${hours}h `;
+    }
+    if (minutes > 0) {
+      timeString += `${minutes}m `;
+    }
+    if (hours === 0 && minutes === 0) {
+      timeString += `${seconds}s`;
+    }
+  }
+
+  document.getElementById("timeZone").innerText = `Twoja strefa czasowa: ${timeZone}`;
+  document.getElementById("event1").innerText = `Czas wydarzenia 1: ${event1LocalStart} - ${event1LocalEnd}`;
+  document.getElementById("event2").innerText = `Czas wydarzenia 2: ${event2LocalStart} - ${event2LocalEnd}`;
+  document.getElementById("nextEvent").innerText = timeString;
+}
+
+window.onload = function() {
+  displayEventInfo();
+  setInterval(displayEventInfo, 1000);
+};
 
 
