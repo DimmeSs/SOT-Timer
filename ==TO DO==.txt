@@ -21,6 +21,8 @@ SEO:
 !!!!!!!!!!!!!!!!!aria-label do a href + alt do img 
 !!!!!!!!!!!!!!!!!zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kiedy sie je widzi to ładują się odrazu lazy img cos takiego
 
+zamiast linków zrób przycisk z linków do innej strony
+
 animacja pojawiania się tekstu i rzeczy na stronie wraz z czasem jak sie zjeżdza w dół
 Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
 

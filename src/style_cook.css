@@ -721,7 +721,33 @@ ul {
   max-width: 250px;
   margin-bottom: 30px;
 }
+
+
 /* TIPS & TRICKS */
+#tip-summary{
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  max-width: 1700px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  font-style: italic;
+}
+
+#tip-description{
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  max-width: 1700px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  font-style: italic;
+}
+
+/* TIP#1 */
 .first-tip-box {
   display: flex;
   justify-content: space-between;
@@ -827,7 +853,7 @@ ul {
   text-decoration: none;
 }
 .centralAdditionalLink:hover{
-  text-decoration:underline;
+  color: rgba(255, 255, 255, 0.717);
 }
 @media (max-width: 768px) {
   .first-tip-box {
@@ -841,6 +867,38 @@ ul {
   .tip-image a{
     margin-bottom: 100px;
 }}
+/* TIP 3 */
+
+.gold-rush-container{
+  max-width: 700px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-style: italic;
+  font-family: Roboto, Arial, sans-serif;
+  color:#00ff9c;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 1700px;
+  text-align: center;
+  margin: 20px auto;
+  margin-bottom: 60px;
+  text-decoration: none;
+}
+/* event1
+event2
+nextEvent */
+
+
+/* TIP #4 */
+
+#interactive-map{
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: right;
+
+}
 /* # Preloading Animation # */
 #preloader {
   display: flex;

@@ -238,8 +238,6 @@ function displayEventInfo() {
   const event1LocalTime = event1UTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   const event2LocalTime = event2UTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
   const diff1 = event1UTC - now;
   const diff2 = event2UTC - now;
 
@@ -253,9 +251,9 @@ function displayEventInfo() {
   let hoursToEnd = Math.floor(timeUntilEndOfGoldRush / (1000 * 60 * 60));
   let minutesToEnd = Math.floor((timeUntilEndOfGoldRush % (1000 * 60 * 60)) / (1000 * 60));
 
-  document.getElementById("timeZone").innerText = `Twoja strefa czasowa: ${timeZone}`;
-  document.getElementById("event1").innerText = `Czas wydarzenia 1: ${event1LocalTime}`;
-  document.getElementById("event2").innerText = `Czas wydarzenia 2: ${event2LocalTime}`;
+
+  document.getElementById("event1").innerText = `${event1LocalTime}`;
+  document.getElementById("event2").innerText = `${event2LocalTime}`;
 
   let timeString = "";
   if (isGoldRush) {
@@ -265,7 +263,7 @@ function displayEventInfo() {
     }
     timeString += `${minutesToEnd} minutes`;
   } else {
-    timeString += "Next event in: ";
+    timeString += "GOLD RUSH will be in: ";
     if (hours > 0) {
       timeString += `${hours} hours & `;
     }
