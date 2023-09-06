@@ -225,30 +225,54 @@ function displayEventInfo() {
     event2UTC.setDate(event2UTC.getDate() + 1);
   }
 
-  // Konwersja na lokalny czas
+  let isGoldRush = false;
+  let endOfGoldRush;
+  if (now >= event1UTC && now < new Date(event1UTC).setUTCHours(18)) {
+    isGoldRush = true;
+    endOfGoldRush = new Date(event1UTC).setUTCHours(18);
+  } else if (now >= event2UTC && now < new Date(event2UTC).setUTCHours(2)) {
+    isGoldRush = true;
+    endOfGoldRush = new Date(event2UTC).setUTCHours(2);
+  }
+
   const event1LocalTime = event1UTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   const event2LocalTime = event2UTC.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-  // Strefa czasowa użytkownika
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  // Oblicz różnicę czasu
   const diff1 = event1UTC - now;
   const diff2 = event2UTC - now;
 
-  // Wybierz najbliższe wydarzenie
   const nextEvent = diff1 < diff2 ? event1UTC : event2UTC;
   const timeUntil = nextEvent - now;
 
-  // Oblicz ile czasu pozostało do wydarzenia
-  const hours = Math.floor(timeUntil / (1000 * 60 * 60));
-  const minutes = Math.floor((timeUntil % (1000 * 60 * 60)) / (1000 * 60));
+  let hours = Math.floor(timeUntil / (1000 * 60 * 60));
+  let minutes = Math.floor((timeUntil % (1000 * 60 * 60)) / (1000 * 60));
 
-  // Wyświetl informacje
+  const timeUntilEndOfGoldRush = endOfGoldRush - now;
+  let hoursToEnd = Math.floor(timeUntilEndOfGoldRush / (1000 * 60 * 60));
+  let minutesToEnd = Math.floor((timeUntilEndOfGoldRush % (1000 * 60 * 60)) / (1000 * 60));
+
   document.getElementById("timeZone").innerText = `Twoja strefa czasowa: ${timeZone}`;
   document.getElementById("event1").innerText = `Czas wydarzenia 1: ${event1LocalTime}`;
   document.getElementById("event2").innerText = `Czas wydarzenia 2: ${event2LocalTime}`;
-  document.getElementById("nextEvent").innerText = `Do najbliższego wydarzenia pozostało: ${hours}h ${minutes}m`;
+
+  let timeString = "";
+  if (isGoldRush) {
+    timeString += "GOLD RUSH IS HERE, ends in: ";
+    if (hoursToEnd > 0) {
+      timeString += `${hoursToEnd} hours & `;
+    }
+    timeString += `${minutesToEnd} minutes`;
+  } else {
+    timeString += "Next event in: ";
+    if (hours > 0) {
+      timeString += `${hours} hours & `;
+    }
+    timeString += `${minutes} minutes`;
+  }
+
+  document.getElementById("nextEvent").innerText = timeString;
 }
 
 // Wywołaj funkcję po załadowaniu strony
@@ -257,5 +281,3 @@ window.onload = function() {
   displayEventInfo();
   setInterval(displayEventInfo, 60000);
 };
-
-// TODO : ZRÓB ZEBY JAK JEST GOLDEN RUSH ZEBY WYSWEITLIŁO ZE JEST ORAZ ŻE ZA ILE SIE SKONCZY !!!!!
