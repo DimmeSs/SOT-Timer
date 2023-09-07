@@ -885,19 +885,43 @@ ul {
   margin-bottom: 60px;
   text-decoration: none;
 }
-/* event1
-event2
+/*  
 nextEvent */
-
-
+#mojDiv {
+  background-image: url('INFO_IMG/gold_rush.gif');
+  background-size: cover;
+  background-position: center;
+}
 /* TIP #4 */
 
-#interactive-map{
-  max-width: 50%;
-  height: auto;
-  display: block;
-  margin: right;
 
+#tip4-text-div{
+  float: left; 
+  width: 40%; 
+  padding-right: 20px;
+}
+
+#text-next-to-map{
+  float: right;
+  width:100px
+}
+
+#tip4-map-div{
+  float: right; 
+  width: 60%; 
+  padding-left: 20px; 
+  display:block
+}
+.interactive-map{
+  max-width: 50%;
+  display: block;
+  margin-right: 100%;
+}
+.interactive-map img{
+  max-height: 400px;
+  display: block;
+  margin-right: 100%;
+  border-radius: 1.5rem;
 }
 /* # Preloading Animation # */
 #preloader {

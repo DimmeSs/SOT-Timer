@@ -251,9 +251,18 @@ function displayEventInfo() {
   let hoursToEnd = Math.floor(timeUntilEndOfGoldRush / (1000 * 60 * 60));
   let minutesToEnd = Math.floor((timeUntilEndOfGoldRush % (1000 * 60 * 60)) / (1000 * 60));
 
+  const div = document.getElementById('mojDiv');
+  document.getElementById("when-local").innerText = `${event1LocalTime} and ${event2LocalTime}`;
+  
+  function przelaczGIF(isGoldRush) {
+    const div = document.getElementById('mojDiv');
+    if (isGoldRush) {
+      div.classList.remove('pokazGIF');
+    } else {
+      div.classList.add('pokazGIF');
+    }
+  }
 
-  document.getElementById("event1").innerText = `${event1LocalTime}`;
-  document.getElementById("event2").innerText = `${event2LocalTime}`;
 
   let timeString = "";
   if (isGoldRush) {

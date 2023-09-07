@@ -5358,29 +5358,34 @@
           <hr id="create_table">
         
           <h5 id="tip-number">TIP #3</h5>
-          <p id="tip-summary">
-            Use the Gold Rush hours to maximize your earnings from fishing</p>
-          <p id="tip-description" style="max-width: 600px;">Gold Rush is a special event that occurs twice a day, each lasting for an hour. During these periods, players benefit from a 1.5x reward multiplier for all treasures sold. The event is active between <a href="#UTC-17">17:00-18:00 UTC</a> and <a href="#UTC-01">01:00-02:00 UTC</a>. For time zones specific to your location, please refer to the chart below.</p>
-          <div class="gold-rush-container">
-            <p id="timeZone"></p>
-            <p>Events in your local time zone will be at:</p>
-            <p id="event1"></p>
-            <p id="event2"></p>
-            <p id="nextEvent"></p>
-          </div>
+          <div style="border-radius: 25px;
+          border: 2px solid #ffffff1a;
+          padding: 20px;
+          width:1200px;
+          margin: 0 auto;" id="mojDiv">
+      <p id="tip-summary">
+        Use the Gold Rush hours to maximize your earnings from fishing</p>
+      <p id="tip-description" style="max-width: 600px;">Gold Rush is a special event that occurs twice a day, each lasting for an hour. During these periods, players benefit from a 1.5x reward multiplier for all treasures sold. The event is active between <a href="#UTC-17">17:00-18:00 UTC</a> and <a href="#UTC-01">01:00-02:00 UTC</a>. For time zones specific to your location, please refer to the chart below.</p>
+      <div class="gold-rush-container">
+        <p id="timeZone"></p>
+        <p>Events in your local time zone will be at:</p>
+        <p id="when-local"></p>
+        <p id="nextEvent"></p>
+      </div>
+    </div>
 
           <hr id="create_table">
 
           <h5 id="tip-number">TIP #4</h5>
 
           <div style="overflow: auto; text-align: center;">
-            <div style="float: left; width: 50%; padding-right: 20px;">
-              <p style="text-align: left; width:100px">If you want to get some money while fishing and exploring you can use Trade Routes for your advantage
+            <div id="tip4-text-div">
+              <p id="text-next-to-map" >If you want to get some money while fishing and exploring you can use Trade Routes for your advantage
                 you can also see where is storms and some other things online</p>
             </div>
-            <div style="float: right; width: 50%; padding-left: 20px;">
-              <a href="https://www.merfolkslullaby.com/map?latitude=18.615035398798895&longitude=-64.40515692899349&zoom=12.574191141293307&realm=sea-of-thieves" target="_blank">
-                <img src="INFO_IMG/interactive map.jpg" alt="Interactive map example" style="max-width: 50%; margin: 0 auto;">
+            <div id="tip4-map-div">
+              <a href="https://www.merfolkslullaby.com/map?latitude=18.615035398798895&longitude=-64.40515692899349&zoom=12.574191141293307&realm=sea-of-thieves" target="_blank" class="interactive-map">
+                <img src="INFO_IMG/interactive map.jpg" alt="Interactive map example" >
               </a>
             </div>
           </div>
