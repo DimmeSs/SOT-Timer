@@ -891,9 +891,17 @@ nextEvent */
   background-image: url('INFO_IMG/gold_rush.gif');
   background-size: cover;
   background-position: center;
+  
 }
 /* TIP #4 */
-
+#tip-description{
+  color: black; /* Kolor tekstu */
+  text-shadow: 
+    -1px -1px 0 rgb(0, 0, 0), /* Obrys z lewej góry */
+    1px -1px 0 rgb(0, 0, 0), /* Obrys z prawej góry */
+    -1px 1px 0 rgb(0, 0, 0), /* Obrys z lewej dołu */
+    1px 1px 0 rgb(0, 0, 0); /* Obrys z prawej dołu */
+}
 
 #tip4-text-div{
   float: left; 
