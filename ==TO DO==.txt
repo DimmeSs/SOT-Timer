@@ -17,7 +17,7 @@ yt popup w modal okienku
 v2.0
 
 SEO:
-!!!!!!!!!!!!!!!!!Zdjęcia na jpeg zmień
+!!!!!!!!!!!!!!!!!Zdjęcia na jpeg/svg zmień
 !!!!!!!!!!!!!!!!!aria-label do a href + alt do img 
 !!!!!!!!!!!!!!!!!zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kiedy sie je widzi to ładują się odrazu lazy img cos takiego
 

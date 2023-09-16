@@ -257,9 +257,11 @@ function displayEventInfo() {
   function przelaczGIF(isGoldRush) {
     const div = document.getElementById('mojDiv');
     if (isGoldRush) {
-      div.classList.remove('pokazGIF');
-    } else {
       div.classList.add('pokazGIF');
+      body.classList.add('pokazGIF');
+    } else {
+      div.classList.remove('pokazGIF');
+      body.classList.remove('pokazGIF');
     }
   }
 
@@ -268,13 +270,13 @@ function displayEventInfo() {
   if (isGoldRush) {
     timeString += "GOLD RUSH IS HERE, ends in: ";
     if (hoursToEnd > 0) {
-      timeString += `${hoursToEnd} hours & `;
+      timeString += `${hoursToEnd} hours `;
     }
     timeString += `${minutesToEnd} minutes`;
   } else {
     timeString += "GOLD RUSH will be in: ";
     if (hours > 0) {
-      timeString += `${hours} hours & `;
+      timeString += `${hours} hours `;
     }
     timeString += `${minutes} minutes`;
   }
