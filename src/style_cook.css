@@ -892,6 +892,7 @@ nextEvent */
   font-family: 'Windlass', sans-serif;
   font-weight: 900;
   font-size: 26px;
+  line-height: 1.7;
   text-transform: uppercase;
   text-align: center;
   padding-top: 40px;
@@ -922,7 +923,7 @@ nextEvent */
 }
 #when-local{
   background: #53CF91;
-  background: linear-gradient(to right, #53CF91 0%, #2106ed 100%);
+  background: linear-gradient(to right, #90c7f6, #12b0ea,#90c7f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
