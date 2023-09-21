@@ -1008,35 +1008,68 @@ body.pokazGIF #tip-description-gold-rush{
 }  
 
 /* TIP #4 */
-
 #tip4-text-div{
-  float: left; 
-  width: 40%; 
-  padding-right: 20px;
+  text-align: center;
 }
-
+#tip4-summary{
+  font-family: "Windlass", Sans-serif;
+  margin-top: 60px;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+#tip4-summary strong{
+  color: rgb(147, 144, 144);
+}
 #text-next-to-map{
-  float: right;
-  width:100px
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  margin-bottom: 30px;
 }
 
-#tip4-map-div{
-  float: right; 
-  width: 60%; 
-  padding-left: 20px; 
-  display:block
-}
-.interactive-map{
-  max-width: 50%;
-  display: block;
-  margin-right: 100%;
-}
+
 .interactive-map img{
   max-height: 400px;
   display: block;
-  margin-right: 100%;
+  margin: 0 auto;
+  display: block;
   border-radius: 1.5rem;
 }
+@media (max-width: 610px) {
+  .interactive-map img{max-height: 220px;}}
+
+.tip5__guide-text{
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  margin-bottom: 50px;
+}
+.tip5__guide-text a,#tip4__pirate-legend a{
+  text-decoration: none;
+  color: #00ff9c;
+}
+#tip4__pirate-legend{
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  text-align: center;
+}
+
 /* # Preloading Animation # */
 #preloader {
   display: flex;
