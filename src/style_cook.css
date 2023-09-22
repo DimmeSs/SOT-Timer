@@ -771,7 +771,8 @@ ul {
   margin-top: 60px;
   color: white;
   font-size: 30px;
-  letter-spacing:2px
+  letter-spacing:2px;
+  text-align: center;
 }
 #tip-number{
   margin-top: 100px;
@@ -1055,7 +1056,7 @@ body.pokazGIF #tip-description-gold-rush{
   color: #fffdfa;
   margin-bottom: 50px;
 }
-.tip5__guide-text a,#tip4__pirate-legend a{
+.tip5__guide-text a,#tip4__pirate-legend a,#tip5__info a{
   text-decoration: none;
   color: #00ff9c;
 }
@@ -1069,7 +1070,21 @@ body.pokazGIF #tip-description-gold-rush{
   color: #fffdfa;
   text-align: center;
 }
+#tip5__info{
+  max-width: 500px;
+  margin: 30px auto;
+  display: block;
+  max-width: 600px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  text-align: center;
+}
 
+.tip5__guide-text br{
+  margin-bottom: 20px;
+}
 /* # Preloading Animation # */
 #preloader {
   display: flex;
