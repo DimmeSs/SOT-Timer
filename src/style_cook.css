@@ -771,7 +771,8 @@ ul {
   margin-top: 60px;
   color: white;
   font-size: 30px;
-  letter-spacing:2px
+  letter-spacing:2px;
+  text-align: center;
 }
 #tip-number{
   margin-top: 100px;
@@ -892,6 +893,7 @@ nextEvent */
   font-family: 'Windlass', sans-serif;
   font-weight: 900;
   font-size: 26px;
+  line-height: 1.7;
   text-transform: uppercase;
   text-align: center;
   padding-top: 40px;
@@ -922,7 +924,7 @@ nextEvent */
 }
 #when-local{
   background: #53CF91;
-  background: linear-gradient(to right, #53CF91 0%, #2106ed 100%);
+  background: linear-gradient(to right, #90c7f6, #12b0ea,#90c7f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
@@ -1007,34 +1009,81 @@ body.pokazGIF #tip-description-gold-rush{
 }  
 
 /* TIP #4 */
-
 #tip4-text-div{
-  float: left; 
-  width: 40%; 
-  padding-right: 20px;
+  text-align: center;
 }
-
+#tip4-summary{
+  font-family: "Windlass", Sans-serif;
+  margin-top: 60px;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+#tip4-summary strong{
+  color: rgb(147, 144, 144);
+}
 #text-next-to-map{
-  float: right;
-  width:100px
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  margin-bottom: 30px;
 }
 
-#tip4-map-div{
-  float: right; 
-  width: 60%; 
-  padding-left: 20px; 
-  display:block
-}
-.interactive-map{
-  max-width: 50%;
-  display: block;
-  margin-right: 100%;
-}
+
 .interactive-map img{
   max-height: 400px;
   display: block;
-  margin-right: 100%;
+  margin: 0 auto;
+  display: block;
   border-radius: 1.5rem;
+}
+@media (max-width: 610px) {
+  .interactive-map img{max-height: 220px;}}
+
+.tip5__guide-text{
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  margin-bottom: 50px;
+}
+.tip5__guide-text a,#tip4__pirate-legend a,#tip5__info a{
+  text-decoration: none;
+  color: #00ff9c;
+}
+#tip4__pirate-legend{
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  text-align: center;
+}
+#tip5__info{
+  max-width: 500px;
+  margin: 30px auto;
+  display: block;
+  max-width: 600px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fffdfa;
+  text-align: center;
+}
+
+.tip5__guide-text br{
+  margin-bottom: 20px;
 }
 /* # Preloading Animation # */
 #preloader {
