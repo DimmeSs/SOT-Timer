@@ -1035,17 +1035,31 @@ body.pokazGIF #tip-description-gold-rush{
   margin-bottom: 30px;
 }
 
+#tip4-map-div {
+  text-align: center;
+}
 
-.interactive-map img{
+.interactive-map {
+  display: inline-block;  
+  margin: 0;
+  padding: 0;
+  text-decoration: none; 
+}
+
+.interactive-map img {
   max-height: 400px;
   display: block;
   margin: 0 auto;
-  display: block;
   border-radius: 1.5rem;
 }
+
+
+
 @media (max-width: 610px) {
   .interactive-map img{max-height: 220px;}}
 
+
+/* TIP 5 */
 .tip5__guide-text{
   display: block;
   margin: 0 auto;
