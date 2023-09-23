@@ -43,7 +43,7 @@
     <!-- Top-site Content -->
     <div id="content">
       <div id="blur-background"></div>
-      <nav>
+      <nav id="nav-bar">
         <!-- Top Image -->
         <div class="image-container">
           <img src="/ICONS/Top_image-min1.png" alt="Top Image" id="section-0" />
@@ -5432,52 +5432,45 @@
 
         <section>
           <hr id="create_table" style="margin-top: 100px;">
-          <h2 id="section-5">FISHING TUTORIAL (for beginners)</h2>
-          <p>
-            How To Fish 1. Decide your bait. Pull out your fishing rod, re-open
-            your inventory and when holding"R"(or B on controller), decide on
-            the bait you want. Once it's on the end of your hook, you're ready
-            to cast. 2. To cast, simply point at a body of water, and left
-            click. To retrieve your line, simply right click. 3. Once your line
-            is in the water, it's simply a case of waiting. Sometimes you'll be
-            able to see a fish under the water, others it'll be too dark. Either
-            way, once you've got a bite your line will begin to flex and bow. 4.
-            To reel in a fish when you have a bite, don't instantly left click
-            (it'll cause the line to break and the fish to escape). What you
-            need to do is tire the fish out. Fundamentally, you move your
-            fishing rod in the opposite direction that the fish is moving. If
-            the fish is going left, hold right (typically "D"). If the fish is
-            going right, hold left (typically "A"). If the fish is going away
-            from you, hold down (typically "S"). !!!If you're holding the rod in
-            the wrong direction, you'll hear it begin to strain and crack. When
-            your line goes slack and when the fish is exhausted, reel it in.!!!
-            5. To take your fish off your line, you need to be sure you have the
-            inventory space. If you don't have space, you can store items in a
-            nearby barrel or eat some existing food.
-          </p>
-          <img src="INFO_IMG/fishing1.png" alt="How to Fish" /><img
-            src="INFO_IMG/fishing2.png"
-            alt="How to Fish"
-          /><img src="INFO_IMG/fishing3.png" alt="How to Fish" />
-          <p>
-            How To Cook It's fairly simple! Head below deck and you'll see a
-            stove and skillet. If you aren't on board your ship, most islands
-            have an available frying pan by any fire. With your fish in hand,
-            you'll be able to interact with the pan, and start cooking. Like all
-            things in Sea of Thieves, there's no UI to indicate how well your
-            fish is cooked. You'll need to pay attention. If it's undercooked
-            and you eat it, you'll be sick with food poisoning. Left on the heat
-            too long, and it'll be burnt and worthless. While it takes practice
-            to know exactly which fish have which timings, the easiest tricks
-            are: Watch for the fish to change colour. When it turns brown, it's
-            typically cooked just right. The fish's pupils will go completely
-            white. Steam coming off the frying pan will thin out as the fish
-            cooks through. Larger fish (trophies) take longer to cook.
-          </p>
-          <img src="INFO SS/Cooking1.png" alt="How to Cook" /><img
-            src="INFO SS/Cooking2.png"
-            alt="How to Cook"
-          /><img src="INFO SS/Cooking3.png" alt="How to Cook" />
+          <h2 id="section-5">FISHING TUTORIAL <br>(for beginners)</h2>
+            <p id="tip4-summary">How to fish in Sea of Thieves</p>
+            <img src="INFO_IMG/howtofish.jpg" id="tutorial__fishing_first_img" alt="How to fish example" >
+            <ol class="tutorial__fishing_ol">
+              <li>Decide your bait. Pull out your fishing rod, re-open your inventory and when holding "R"(or B on controller), decide on the bait you want. Once it's on the end of your hook, you're ready to cast.</li>
+              <div class="centered-images">
+                <img src="INFO_IMG/fishing1.png" alt="How to Fish" />
+                <img src="INFO_IMG/fishing2.png" alt="How to Fish"/>
+              </div>
+              <li>To cast, simply point at a body of water, and left click. To retrieve your line, simply right click.</li>
+              <li>Once your line is in the water, it's simply a case of waiting. Sometimes you'll be able to see a fish under the water, others it'll be too dark. Either way, once you've got a bite your line will begin to flex and bow.</li>
+              <li>To reel in a fish when you have a bite, don't instantly left click (it'll cause the line to break and the fish to escape). What you need to do is tire the fish out. Fundamentally, you move your fishing rod in the opposite 
+                direction that the fish is moving. If the fish is going left, hold right (typically "D"). If the fish is going right, hold left (typically "A"). 
+                If the fish is going away from you, hold down (typically "S"). <br><br> <strong>Note: If you're holding the rod in the wrong direction, you'll hear it begin to strain and crack. When your line goes slack and when the fish is exhausted, reel it in.</strong></li>
+              <div class="centered-images"><img src="INFO_IMG/fishing3.png" alt="How to Fish" /></div>
+              <li>To take your fish off your line, you need to be sure you have the inventory space. If you don't have space, you can store items in a nearby barrel or eat some existing food.</li>
+          </ol>
+
+            
+              <p id="tip4-summary" style="margin-top:200px">How to cook fish in Sea of Thieves</p>
+              <img src="INFO SS/Cooking1.png" id="tutorial__fishing_first_img" alt="How to Cook"/>
+              <ol class="tutorial__fishing_ol">
+                <li>It's fairly simple! Head below deck and you'll see a stove and skillet. If you aren't on board your ship, most islands have an available frying pan by any fire.</li>
+                <li>With your fish in hand, you'll be able to interact with the pan, and start cooking.</li>
+                <div class="centered-images">
+                  <img src="INFO SS/Cooking2.png" alt="How to Cook"/>
+                  <img src="INFO SS/Cooking3.png" alt="How to Cook" />
+                </div>
+                <li>Like all things in Sea of Thieves, there's no UI to indicate how well your fish is cooked. You'll need to pay attention. If it's undercooked and you eat it, you'll be sick with food poisoning. Left on the heat too long, and it'll be burnt and worthless.</li>
+                <li>While it takes practice to know exactly which fish have which timings, the easiest tricks are:</li>
+                <ul>
+                    <li>Watch for the fish to change colour. When it turns brown, it's typically cooked just right.</li>
+                    <li>The fish's pupils will go completely white.</li>
+                    <li>Steam coming off the frying pan will thin out as the fish cooks through.</li>
+                    <li>Larger fish (trophies) take longer to cook.</li>
+                </ul>
+                <p id="tutorial__after_info">For easier fish cooking, consider using the <a href="#nav-bar">Cook Timer</a>.</p>
+            </ol>
+            
           <a href="https://rarethief.com/sea-of-thieves-fishing-guide/" target="_blank"
             >more detailed guide here</a
           >
