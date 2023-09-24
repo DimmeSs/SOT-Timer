@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap");
 /* Import fonts */
 @font-face {
   font-family: "Windlass";
@@ -148,7 +148,6 @@ h1 {
   font-weight: bold;
 }
 
-
 #guide-text {
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
@@ -178,7 +177,6 @@ h1 {
   float: right;
 }
 
-
 .content-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -190,9 +188,9 @@ h1 {
 }
 
 .slider-wrapper {
-    flex: none; 
-    width: 55%;
-    position: relative;
+  flex: none;
+  width: 55%;
+  position: relative;
 }
 ul {
   flex: none;
@@ -200,11 +198,12 @@ ul {
   margin-right: 2rem;
 }
 @media (max-width: 670px) {
-.slider-wrapper {
-  position: relative;
-  max-width: 20rem;
-  flex: 2;
-}}
+  .slider-wrapper {
+    position: relative;
+    max-width: 20rem;
+    flex: 2;
+  }
+}
 .slider {
   display: flex;
   aspect-ratio: 16 / 9;
@@ -336,35 +335,37 @@ ul {
 }
 
 /* Price Tables */
-.fish_name{
+.fish_name {
   margin-top: 6em;
   margin-bottom: 3em;
 }
-.fish_name h3:first{
+.fish_name h3:first {
   margin-top: 1em;
 }
 .fish_name h3 {
   color: whitesmoke;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   font-weight: bold;
-  text-align:center;
-  text-transform:uppercase;
-  font-size:26px; 
-  letter-spacing:1px;
-  font-family: 'Lato', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 26px;
+  letter-spacing: 1px;
+  font-family: "Lato", sans-serif;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: 16px 0;
   grid-gap: 22px;
   margin-bottom: 50px;
 }
-.fish_name h3:after,.fish_name h3:before,#end_table {
+.fish_name h3:after,
+.fish_name h3:before,
+#end_table {
   content: " ";
   display: block;
   border-bottom: 2px solid #ccc;
 }
 
-#end_table{
+#end_table {
   margin-top: 60px;
 }
 .table-container {
@@ -511,12 +512,11 @@ ul {
   margin-right: 2px;
 }
 
-
 /* BAIT */
-#section-bait{
+#section-bait {
   margin-bottom: 0px;
 }
-#create_table{
+#create_table {
   content: " ";
   display: block;
   border-bottom: 2px solid #a09e9e;
@@ -536,23 +536,23 @@ ul {
   margin: 125px 0px;
   flex: 1;
   min-width: calc(33.333% - 20px);
-  display: flex;  /* Dodane */
+  display: flex; /* Dodane */
   flex-direction: column;
   align-items: center;
 }
-.bait-item h4{
+.bait-item h4 {
   font-family: "Windlass", Sans-serif;
   font-size: 30px;
   color: #ffffff;
   margin-bottom: 10px;
   margin-top: 0px;
-  letter-spacing:2px
+  letter-spacing: 2px;
 }
 .bait-item p {
   height: 100px;
   display: flex;
   justify-content: center;
-  align-items: center;  /* Dodane */
+  align-items: center; /* Dodane */
   text-align: center;
   margin: 10px 0;
   font-family: Roboto, Arial, sans-serif;
@@ -562,24 +562,25 @@ ul {
   color: #fffdfa;
 }
 
-.bait-top-image, .bait-bottom-image {
+.bait-top-image,
+.bait-bottom-image {
   max-width: 100%;
   height: auto;
   display: block;
   margin: auto;
 }
 
-
 @media (max-width: 768px) {
   .bait-item {
-    min-width: 100%;  
+    min-width: 100%;
   }
 
   .bait-item p {
     height: auto;
-    min-height: 80px;  
-}}
-#worm-in-barrels-img{
+    min-height: 80px;
+  }
+}
+#worm-in-barrels-img {
   max-height: 92vh;
   width: auto;
   height: auto;
@@ -588,7 +589,7 @@ ul {
   margin: 0 auto;
   margin-top: -40px;
 }
-#map-with-regions{
+#map-with-regions {
   display: block;
   margin: 0 auto;
   max-width: 90%;
@@ -596,7 +597,7 @@ ul {
   transition: transform 0.3s ease;
   margin-bottom: 5px;
 }
-#map-with-regions:hover{
+#map-with-regions:hover {
   transform: scale(1.01);
 }
 
@@ -623,7 +624,7 @@ ul {
   transition: opacity 0.3s ease-in-out;
   margin: 0;
   padding: 0;
-  text-align: center;  /* Dodane */
+  text-align: center; /* Dodane */
   display: none;
 }
 
@@ -634,10 +635,9 @@ ul {
   max-width: 100%;
   transform: scale(0.5);
   transition: transform 0.3s ease-in-out;
-  margin: 0 auto;  /* Dodane */
-  padding: 0;  /* Dodane */
+  margin: 0 auto; /* Dodane */
+  padding: 0; /* Dodane */
   overflow-y: auto;
-  
 }
 
 #popup-overlay.show {
@@ -650,7 +650,7 @@ ul {
 }
 
 .full-image-button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -662,7 +662,7 @@ ul {
   font-size: 16px;
   display: block;
   margin: 0 auto;
-  margin-top:-22px;
+  margin-top: -22px;
   position: sticky;
 }
 
@@ -674,7 +674,7 @@ ul {
   transition: opacity 0.3s ease-in-out;
 }
 
-.regions-info-text{
+.regions-info-text {
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.7;
@@ -685,36 +685,34 @@ ul {
   margin-bottom: 30px;
   margin-top: 100px;
 }
-.regions-info-text h4{
+.regions-info-text h4 {
   font-family: "Windlass", Sans-serif;
   font-size: 30px;
   margin-bottom: -8px;
-  letter-spacing:2px
+  letter-spacing: 2px;
 }
-.regions-info-text strong{
+.regions-info-text strong {
   font-size: 18px;
-
 }
-.regions-info-text a{
+.regions-info-text a {
   color: #00ff9c;
   font-weight: bold;
   font-family: "Seconda Round W00 Bold", sans-serif;
   margin-right: 2px;
 }
-.regions-info-text i{
+.regions-info-text i {
   color: #fffdfaa2;
 }
-.regions-info-images{
+.regions-info-images {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; 
-  
+  flex-wrap: wrap;
 }
 .regions-info-images img {
   max-height: calc(15 * 1em);
-  border-radius: 10px; 
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin:0px 20px; 
+  margin: 0px 20px;
   width: auto;
   display: flex;
   justify-content: center;
@@ -722,9 +720,8 @@ ul {
   margin-bottom: 30px;
 }
 
-
 /* TIPS & TRICKS */
-#tip-summary{
+#tip-summary {
   font-size: 16px;
   line-height: 1.7;
   color: #fffdfa;
@@ -735,7 +732,7 @@ ul {
   font-style: italic;
 }
 
-#tip-description{
+#tip-description {
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.7;
@@ -759,37 +756,37 @@ ul {
   margin: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center;  
+  justify-content: center;
+  align-items: center;
 }
-.tip-image p{
+.tip-image p {
   color: white;
   font-style: italic;
 }
-.tip-image h4{
+.tip-image h4 {
   font-family: "Windlass", Sans-serif;
   margin-top: 60px;
   color: white;
   font-size: 30px;
-  letter-spacing:2px;
+  letter-spacing: 2px;
   text-align: center;
 }
-#tip-number{
+#tip-number {
   margin-top: 100px;
   font-family: "Lato", Sans-serif;
   color: white;
   font-size: 45px;
-  letter-spacing:2px;
+  letter-spacing: 2px;
   text-align: center;
 }
 .tip-image img {
   height: 200px;
-  max-width: 100%; 
+  max-width: 100%;
   border-radius: 10px;
   margin: 5px;
 }
 
-.tip-image a{
+.tip-image a {
   margin-bottom: 100px;
   color: rgba(167, 167, 167, 0.637);
   font-family: Roboto, Arial, sans-serif;
@@ -800,10 +797,10 @@ ul {
   margin: 20px auto;
   margin-bottom: 60px;
   text-decoration: none;
-  }
-  .tip-image a:hover{
-    text-decoration:underline;
-  }
+}
+.tip-image a:hover {
+  text-decoration: underline;
+}
 .additionalLinks {
   display: flex;
   justify-content: center;
@@ -818,7 +815,8 @@ ul {
   font-family: Seconda Round W00 Bold, sans-serif;
   text-align: center;
 }
-.data-cell-first, .data-cell-second {
+.data-cell-first,
+.data-cell-second {
   border: 2px solid #60dabe;
   background-color: #0e272c;
   font-family: "Rubik";
@@ -827,13 +825,13 @@ ul {
   word-wrap: break-word;
   text-align: center;
 }
-.data-cell-first p{
+.data-cell-first p {
   color: #00ff9c;
 }
-.data-cell-first em{
+.data-cell-first em {
   color: #808080;
 }
-.data-cell-second img{
+.data-cell-second img {
   height: 10px;
   margin: 1px;
   margin-right: 5px;
@@ -853,7 +851,7 @@ ul {
   margin-bottom: 60px;
   text-decoration: none;
 }
-.centralAdditionalLink:hover{
+.centralAdditionalLink:hover {
   color: rgba(255, 255, 255, 0.717);
 }
 @media (max-width: 768px) {
@@ -865,15 +863,16 @@ ul {
     width: 350px;
     height: 150px;
   }
-  .tip-image a{
+  .tip-image a {
     margin-bottom: 100px;
-}}
+  }
+}
 /* TIP 3 */
 
 /*  
 nextEvent */
 #mojDiv {
-  background-image: none; 
+  background-image: none;
   background-size: cover;
   background-position: center;
   border-radius: 25px;
@@ -884,13 +883,13 @@ nextEvent */
 }
 
 #mojDiv.pokazGIF {
-  background-image: url('INFO_IMG/gold_rush.gif'); /* pokaż GIF, gdy div ma klasę .pokazGIF */
+  background-image: url("INFO_IMG/gold_rush.gif"); /* pokaż GIF, gdy div ma klasę .pokazGIF */
 }
 
 /* Domyślny kolor napisów (kiedy nie ma "Gold Rush") */
 
-#tip-summary-gold-rush{
-  font-family: 'Windlass', sans-serif;
+#tip-summary-gold-rush {
+  font-family: "Windlass", sans-serif;
   font-weight: 900;
   font-size: 26px;
   line-height: 1.7;
@@ -901,14 +900,14 @@ nextEvent */
   -webkit-text-stroke: 0.7px #ffffff;
   text-shadow: 0px 4px 4px #848484;
 }
-.gold-rush-container{
+.gold-rush-container {
   max-width: 700px;
   margin: 0 auto;
   display: block;
   text-align: center;
   font-style: italic;
   font-family: "Windlass", Sans-serif;
-  color:#00ff9c;
+  color: #00ff9c;
   font-size: 20px;
   line-height: 1.7;
   max-width: 1700px;
@@ -920,11 +919,10 @@ nextEvent */
   font-weight: 900;
   -webkit-text-stroke: 0.3px #000000;
   text-shadow: 0px 4px 4px #282828;
-
 }
-#when-local{
-  background: #53CF91;
-  background: linear-gradient(to right, #90c7f6, #12b0ea,#90c7f6);
+#when-local {
+  background: #53cf91;
+  background: linear-gradient(to right, #90c7f6, #12b0ea, #90c7f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
@@ -932,12 +930,12 @@ nextEvent */
   -webkit-text-stroke: none;
   text-shadow: none;
 }
-  
-#tip-description-gold-rush{
+
+#tip-description-gold-rush {
   color: rgb(255, 255, 255);
   -webkit-text-stroke: 0.2px #b8b0b0;
   text-shadow: 0px 4px 4px #282828;
-  font-family: 'Work Sans',sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 900;
   font-size: 14px;
   text-transform: uppercase;
@@ -949,14 +947,14 @@ nextEvent */
 
 /* Kolor napisów podczas "Gold Rush" */
 
-body.pokazGIF .gold-rush-container{
+body.pokazGIF .gold-rush-container {
   max-width: 700px;
   margin: 0 auto;
   display: block;
   text-align: center;
   font-style: italic;
   font-family: "Windlass", Sans-serif;
-  color: 	#230a68;
+  color: #230a68;
   font-size: 20px;
   line-height: 1.7;
   max-width: 1700px;
@@ -968,9 +966,8 @@ body.pokazGIF .gold-rush-container{
   font-weight: 900;
   -webkit-text-stroke: 0.3px #000000;
   text-shadow: 0px 4px 4px #282828;
-  
 }
-body.pokazGIF #when-local{
+body.pokazGIF #when-local {
   background: #537acf;
   background: linear-gradient(to right, #291970 0%, #1a6158 100%);
   -webkit-background-clip: text;
@@ -979,11 +976,10 @@ body.pokazGIF #when-local{
   font-size: 30px;
   -webkit-text-stroke: none;
   text-shadow: none;
-  
 }
 
-body.pokazGIF #tip-summary-gold-rush{
-  font-family: 'Windlass', sans-serif;
+body.pokazGIF #tip-summary-gold-rush {
+  font-family: "Windlass", sans-serif;
   font-weight: 900;
   font-size: 26px;
   text-transform: uppercase;
@@ -993,12 +989,12 @@ body.pokazGIF #tip-summary-gold-rush{
   -webkit-text-stroke: 1.5px #282828;
   text-shadow: 0px 4px 4px #282828;
 }
-  
-body.pokazGIF #tip-description-gold-rush{
+
+body.pokazGIF #tip-description-gold-rush {
   color: black;
   -webkit-text-stroke: 0.5px #000000;
   text-shadow: 0px 4px 4px #282828;
-  font-family: 'Work Sans',sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 900;
   font-size: 14px;
   text-transform: uppercase;
@@ -1006,13 +1002,13 @@ body.pokazGIF #tip-description-gold-rush{
   line-height: 1.7;
   max-width: 500px;
   margin: 50px auto;
-}  
+}
 
 /* TIP #4 */
-#tip4-text-div{
+#tip4-text-div {
   text-align: center;
 }
-#tip4-summary{
+#tip4-summary {
   font-family: "Windlass", Sans-serif;
   margin-top: 60px;
   color: white;
@@ -1021,10 +1017,10 @@ body.pokazGIF #tip-description-gold-rush{
   text-align: center;
   margin-bottom: 60px;
 }
-#tip4-summary strong{
+#tip4-summary strong {
   color: rgb(147, 144, 144);
 }
-#text-next-to-map{
+#text-next-to-map {
   display: block;
   margin: 0 auto;
   max-width: 400px;
@@ -1040,10 +1036,10 @@ body.pokazGIF #tip-description-gold-rush{
 }
 
 .interactive-map {
-  display: inline-block;  
+  display: inline-block;
   margin: 0;
   padding: 0;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .interactive-map img {
@@ -1053,14 +1049,14 @@ body.pokazGIF #tip-description-gold-rush{
   border-radius: 1.5rem;
 }
 
-
-
 @media (max-width: 610px) {
-  .interactive-map img{max-height: 220px;}}
-
+  .interactive-map img {
+    max-height: 220px;
+  }
+}
 
 /* TIP 5 */
-.tip5__guide-text{
+.tip5__guide-text {
   display: block;
   margin: 0 auto;
   max-width: 600px;
@@ -1070,11 +1066,13 @@ body.pokazGIF #tip-description-gold-rush{
   color: #fffdfa;
   margin-bottom: 50px;
 }
-.tip5__guide-text a,#tip4__pirate-legend a,#tip5__info a{
+.tip5__guide-text a,
+#tip4__pirate-legend a,
+#tip5__info a {
   text-decoration: none;
   color: #00ff9c;
 }
-#tip4__pirate-legend{
+#tip4__pirate-legend {
   display: block;
   margin: 0 auto;
   max-width: 600px;
@@ -1084,7 +1082,7 @@ body.pokazGIF #tip-description-gold-rush{
   color: #fffdfa;
   text-align: center;
 }
-#tip5__info{
+#tip5__info {
   max-width: 500px;
   margin: 30px auto;
   display: block;
@@ -1096,22 +1094,21 @@ body.pokazGIF #tip-description-gold-rush{
   text-align: center;
 }
 
-.tip5__guide-text br{
+.tip5__guide-text br {
   margin-bottom: 20px;
 }
 
-
 /* TUTORIAL SECTION */
 /* HOW TO FISH */
-#tutorial__fishing_first_img{
-  width: 800px;          
-  max-width: 100%;       
+#tutorial__fishing_first_img {
+  width: 800px;
+  max-width: 100%;
   display: block;
   margin: 0 auto;
   border-radius: 15px;
 }
 
-.tutorial__fishing_ol{
+.tutorial__fishing_ol {
   display: block;
   margin: 50px auto;
   max-width: 600px;
@@ -1120,22 +1117,22 @@ body.pokazGIF #tip-description-gold-rush{
   line-height: 1.7;
   color: #fffdfa;
 }
-.tutorial__fishing_ol li{
+.tutorial__fishing_ol li {
   margin: 20px;
 }
 .centered-images {
   display: flex;
-  flex-direction: row;    
-  align-items: center;  
-  justify-content: center; 
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
-  margin: 40px;   
+  margin: 40px;
 }
 
 .centered-images img {
-  width: 350px;          
+  width: 350px;
   height: auto;
-  border-radius: 20px;        
+  border-radius: 20px;
 }
 
 /* HOW TO COOK */
@@ -1148,22 +1145,22 @@ body.pokazGIF #tip-description-gold-rush{
 .tutorial__fishing_ol ul {
   display: flex;
   flex-direction: row;
-  justify-content: center; 
+  justify-content: center;
   list-style-type: disc;
   padding-left: 20px;
   margin: 0 auto;
 }
 
 .tutorial__fishing_ol ul li {
-  flex: 0 0 75%; 
+  flex: 0 0 75%;
   text-align: center;
 }
 
-#tutorial__after_info{
-color: rgb(255, 255, 255);
+.tutorial__after_info p {
+  color: rgb(255, 255, 255);
   -webkit-text-stroke: 0.2px #b8b0b0;
   text-shadow: 0px 4px 4px #282828;
-  font-family: 'Work Sans',sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 900;
   font-size: 14px;
   text-transform: uppercase;
@@ -1173,10 +1170,120 @@ color: rgb(255, 255, 255);
   margin: 50px auto;
 }
 
-
-#tutorial__after_info a{
+.tutorial__after_info a {
   text-decoration: none;
-  color: #00ff9c;}
+  color: #00ff9c;
+}
+/* FOOTER */
+
+footer {
+  background-color: black;
+  color: gray;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.7;
+  justify-content: space-around;
+}
+
+.custom-hr {
+  background-color: black;
+  height: 15px;
+  margin: 0px -20px;
+  border-width: 2px;
+}
+
+.left-section {
+  /* Początkowe style dla ekranów mniejszych niż 960px */
+}
+
+.right-section {
+  text-align: center;
+}
+
+/* Styl dla ekranów o szerokości większej niż 960px */
+@media screen and (min-width: 961px) {
+  footer {
+    justify-content: center;
+  }
+    .left-section {
+        margin-right: 260px; /* Margines prawy to 260px */
+    }
+
+    .right-section {
+        margin-left: 260px; /* Margines lewy to 260px */
+    }
+}
+@media screen and (max-width: 600px) {
+  footer {
+      flex-direction: column; /* Ustawia kierunek flex na pionowy */
+      align-items: center; /* Wyśrodkowanie w poziomie */
+      justify-content: center; /* Wyśrodkowanie w pionie */
+  }
+
+  .left-section, .center-section, .right-section {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 60px; /* Zapewnia, że sekcje zajmują pełną szerokość kontenera */
+  }
+  .bottom-section{
+    left: none;
+  }
+}
+.highlighted {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 0.2px #b8b0b0;
+  text-shadow: 0px 4px 4px #282828;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.center-section img {
+  max-width: 130px; 
+}
+
+.right-section ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.right-section li {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 4px 4px #282828;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 1.7;
+}
+
+.bottom-section {
+  position: absolute;
+  bottom: 10px;
+ 
+  display: flex;
+  gap: 5px; /* Odległość między "EN" a "PL" */
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+@media screen and (min-width: 600px){
+.bottom-section {
+ left: 50%;
+  transform: translateX(-20%);
+}
+}
 /* # Preloading Animation # */
 #preloader {
   display: flex;
