@@ -8,6 +8,9 @@ IDEA FOR LATER :
    - zmienia kolor ikonki i podnosi lekko
    - pod ikonką dodaje podświate kolorową
 
+-header zawsze widoczny po zjeżdzeniu w doł oraz po najechaniu na niego wyświetlają się kategorię jak są
+
+
 po najechaniu na domek wyświetlaja się nad nim [ bait region price tip ] zeby przeniosło odrazu
 
 pierwszy raz na stronie masz pod ikonkami wyświetlone EN PL a po którymś (np po 3 razie) innym razie znika (i jest tylko w footerze )
@@ -20,14 +23,14 @@ SEO:
 !!!!!!!!!!!!!!!!!Zdjęcia na jpeg/svg zmień
 !!!!!!!!!!!!!!!!!aria-label do a href + alt do img 
 !!!!!!!!!!!!!!!!!zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kiedy sie je widzi to ładują się odrazu lazy img cos takiego
+!!!!!!!!!!!zaaogrąglone rogi zdjęć
 
 zamiast linków zrób przycisk z linków do innej strony
 
 animacja pojawiania się tekstu i rzeczy na stronie wraz z czasem jak sie zjeżdza w dół
 Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
-
+#1 ogar zdjęcia
 stormfishe zdjecia ogarnij im wspolną klase czy coś
 
-tipy 
 tutorial 
 
