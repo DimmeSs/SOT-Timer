@@ -3,7 +3,7 @@
   <head>
     <meta name="author" content="Szymon Słoniowski" />
     <meta charset="UTF-8" />
-    <title>Sea of Thieves Cooking & Fishing Guide with Timer App – Your Ultimate Resource for Cooking, Fishing, and Trading</title>
+    <title>Thieves Timer - Sea of Thieves Cooking & Fishing Guide with Timer App - Your Ultimate Resource for Cooking, Fishing, and Trading</title>
     <meta name="description" content="Your all-in-one Sea of Thieves companion app for mastering cooking and fishing. Monitor cooking times and get alerted before your food burns or your ship catches fire. Includes tutorials, locations, and value charts. Explore now!">
     <meta name="keywords" content="Sea of Thieves, Cooking Timer, Fishing Guide, Sea of Thieves Recipes, Sea of Thieves Fish, Game Guides, Sea of Thieves Cooking, Sea of Thieves Fishing, Trading Guide, Sea of Thieves Meat, Sea of Thieves Companion App,sea, of, thieves, food, cooking, cook, timer, shark, fish, game, timers, SoT, pork, chicken,">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,14 +30,14 @@
       crossorigin
     />
     <script src="/preloader-animation.js"></script>
-    <link rel="preload" as="image" href="/ICONS/Top_image-min1.png" />
-    <link rel="preload" as="image" href="/ICONS/background1-min.png" />
+    <link rel="preload" as="image" href="/ICONS/Top_image-min1.webp" alt="Top Baner Image" />
+    <link rel="preload" as="image" href="/INFO_IMG/background1-min.jpg" alt="Background"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <!-- Loading Animation -->
     <div id="preloader" class="preloader-container">
-      <img src="/ICONS/preloader.gif" alt="" />
+      <img src="/ICONS/preloader.gif" alt="preloader" />
       <p>Loading</p>
     </div>
     <!-- Top-site Content -->
@@ -46,32 +46,33 @@
       <nav id="nav-bar">
         <!-- Top Image -->
         <div class="image-container">
-          <img src="/ICONS/Top_image-min1.png" alt="Top Image" id="section-0" />
+          <img src="/ICONS/Top_image-min1.webp" alt="Top Baner Image" id="section-0" />
         </div>
         <span id="beforeInfo"
           >Click the button before you put the meat to fry</span
         >
         <div class="button-container">
           <button id="BFish" class="nav-button">
-            <img src="/ICONS/Fish.png" alt="FISH" id="Fish" /><span>Fish</span>
+            <img src="/ICONS/Fish.png" alt="FISH" id="Fish"  loading="lazy" /><span>Fish</span>
           </button>
           <button id="BTFish" class="nav-button">
-            <img src="/ICONS/FFish.png" alt="TROPHY FISH" id="TFish" /><span
+            <img src="/ICONS/FFish.png" alt="TROPHY FISH" id="TFish"  loading="lazy" /><span
               >Trophy Fish</span
             >
           </button>
           <button id="BMonsterM" class="nav-button">
-            <img src="/ICONS/FKraken.png" alt="KRAKEN" id="MonsterM" /><img
+            <img src="/ICONS/FKraken.png" alt="KRAKEN" id="MonsterM" loading="lazy" /><img
               src="/ICONS/FMegalodon.png"
               alt="KRAKEN"
               id="MonsterM"
+              loading="lazy"
             /><span>Monster Meats</span>
           </button>
           <button id="BMeat" class="nav-button">
-            <img src="/ICONS/FChicken.png" alt="CHICKEN" id="BasicM" />
-            <img src="/ICONS/FPork.png" alt="PORK" id="BasicM" />
-            <img src="/ICONS/FSnake.png" alt="SNAKE" id="BasicM" />
-            <img src="/ICONS/FShark.png" alt="SHARK" id="BasicM" />
+            <img src="/ICONS/FChicken.png" alt="CHICKEN" id="BasicM" loading="lazy" />
+            <img src="/ICONS/FPork.png" alt="PORK" id="BasicM" loading="lazy" />
+            <img src="/ICONS/FSnake.png" alt="SNAKE" id="BasicM" loading="lazy" />
+            <img src="/ICONS/FShark.png" alt="SHARK" id="BasicM" loading="lazy" />
             <span>Basic Meat</span>
           </button>
         </div>
@@ -128,7 +129,7 @@
                 stroke-dashoffset="440"
               ></circle>
             </svg>
-            <img id="burnedImage" src="/ICONS/Burned.png" />
+            <img id="burnedImage" src="/ICONS/Burned.png" loading="lazy" alt="burnedImage"/>
           </div>
           <div id="info" class="timer-top">[Info]</div>
           <div id="info2" class="timer-bottom"></div>
@@ -141,8 +142,8 @@
     </div>
 
     <!-- GUIDE -->
-    <div class="container2">
-      <main class="content2">
+    <div class="container2" >
+      <main class="content2" >
 
         <button id="scroll-to-top">
           <svg
@@ -182,28 +183,28 @@
 
           <div class="content-wrapper" id="Mouse_slider">
             <ul class="seapost-list">
-              <li data-src="INFO_IMG/Brian’s Bazaar.png">
+              <li data-src="INFO_IMG/Brian’s Bazaar.png" loading="lazy">
                 <b>Brian’s Bazaar <em>Y12</em></b>
               </li>
-              <li data-src="INFO_IMG/The finest trading Post.png">
+              <li data-src="INFO_IMG/The finest trading Post.png" loading="lazy">
                 <b>The finest trading Post <em>F17</em></b>
               </li>
-              <li data-src="INFO_IMG/The North Star Seapost.png">
+              <li data-src="INFO_IMG/The North Star Seapost.png" loading="lazy">
                 <b>The North Star Seapost <em>H10</em></b>
               </li>
-              <li data-src="INFO_IMG/Roaring traders.png">
+              <li data-src="INFO_IMG/Roaring traders.png" loading="lazy">
                 <b>Roaring traders <em>U20</em></b>
               </li>
-              <li data-src="INFO_IMG/The Spoils of Plenty Store.png">
+              <li data-src="INFO_IMG/The Spoils of Plenty Store.png" loading="lazy">
                 <b>The Spoils of Plenty Store <em>B7</em></b>
               </li>
-              <li data-src="INFO_IMG/Stephen’s Spoils.png">
+              <li data-src="INFO_IMG/Stephen’s Spoils.png" loading="lazy">
                 <b>Stephen’s Spoils <em>L15</em></b>
               </li>
-              <li data-src="INFO_IMG/Three Paces East Seapost.png">
+              <li data-src="INFO_IMG/Three Paces East Seapost.png" loading="lazy">
                 <b>Three Paces East Seapost <em>S10</em></b>
               </li>
-              <li data-src="INFO_IMG/The Wild Treasures Store.png">
+              <li data-src="INFO_IMG/The Wild Treasures Store.png" loading="lazy">
                 <b>The Wild Treasures Store <em>O4</em></b>
               </li>
             </ul>
@@ -213,12 +214,12 @@
                 <img src="" id="overlayImage" />
               </div>
               <div class="slider">
-                <img id="slide-1" src="INFO_IMG/IMGslide1.jpg" />
-                <img id="slide-2" src="INFO_IMG/IMGslide2.png" />
-                <img id="slide-3" src="INFO_IMG/IMGslide3.png" />
-                <img id="slide-4" src="INFO_IMG/IMGslide4.png" />
-                <img id="slide-5" src="INFO_IMG/IMGslide5.png" />
-                <img id="slide-6" src="INFO_IMG/IMGslide6.png" />
+                <img id="slide-1" src="INFO_IMG/IMGslide1.jpg" alt="slide_nr1" />
+                <img id="slide-2" src="INFO_IMG/IMGslide2.png" alt="slide_nr2"/>
+                <img id="slide-3" src="INFO_IMG/IMGslide3.png" alt="slide_nr3"/>
+                <img id="slide-4" src="INFO_IMG/IMGslide4.png" alt="slide_nr4"/>
+                <img id="slide-5" src="INFO_IMG/IMGslide5.png" alt="slide_nr5"/>
+                <img id="slide-6" src="INFO_IMG/IMGslide6.png" alt="slide_nr6"/>
               </div>
               <div class="slider-nav" id="Mouse_slider">
                 <a href="#slide-1"></a>
@@ -268,6 +269,8 @@
                   src="INFO_IMG/fish-example.png"
                   width="30%"
                   height="auto"
+                  loading="lazy"
+                  alt="fish-example"
                 />
               </td>
             </tr>
@@ -279,6 +282,8 @@
                   src="INFO_IMG/MonsterM-example.png"
                   width="30%"
                   height="auto"
+                  loading="lazy"
+                  alt="MonsterM-example"
                 />
               </td>
             </tr>
@@ -290,6 +295,8 @@
                   src="INFO_IMG/BasicM-example.png"
                   width="40%"
                   height="auto"
+                  loading="lazy"
+                  alt="BasicM Example"
                 />
               </td>
             </tr>
@@ -300,6 +307,8 @@
                   class="image-preview"
                   src="INFO_IMG/gem-example_test.png"
                   width="30%"
+                  loading="lazy"
+                  alt="Gem Example"
                 />
               </td>
             </tr>
@@ -311,6 +320,8 @@
                   src="INFO_IMG/TreacherousPlunder2-example.png"
                   width="50%"
                   height="100%"
+                  loading="lazy"
+                  alt="Treacherous Plunder Example"
                 />
               </td>
             </tr>
@@ -340,7 +351,7 @@
             There is photo that shows all 10 types with location and bait that
             is needed by Rigack
           </p>
-          <img src="INFO_IMG/CheatSheet.jpg" id="CheatSheet" />
+          <img src="INFO_IMG/CheatSheet.jpg" alt="CheatSheet with all types of Fish" id="CheatSheet" loading="lazy" />
         </section>
 
         <!-- PRICES -->
@@ -348,76 +359,76 @@
           <h2 id="section-1">Click to See Prices and Location</h2>
 
           <div class="Fish-Link">
-            <a
-              href="#Sec-Ancientscale"
+            <a href="#Sec-Ancientscale"
               class="fish-link-item"
               data-image="FISH/Almond Ancientscale.png"
+              loading="lazy"
               >Ancientscale</a
             >
-            <a
-              href="#Sec-Battlegill"
+            <a href="#Sec-Battlegill"
               class="fish-link-item"
               data-image="FISH/Jade Battlegill.png"
+              loading="lazy"
               >Battlegill</a
             >
-            <a
-              href="#Sec-Devilfish"
+            <a href="#Sec-Devilfish"
               class="fish-link-item"
               data-image="FISH/Ashen Devilfish.png"
+              loading="lazy"
               >Devilfish</a
             >
-            <a
-              href="#Sec-Islehopper"
+            <a href="#Sec-Islehopper"
               class="fish-link-item"
               data-image="FISH/Stone Islehopper.png"
+              loading="lazy"
               >Islehopper</a
             >
-            <a
-              href="#Sec-Plentifin"
+            <a href="#Sec-Plentifin"
               class="fish-link-item"
               data-image="FISH/Olive Plentifin.png"
+              loading="lazy"
               >Plentifin</a
             >
-            <a
-              href="#Sec-Pondie"
+            <a href="#Sec-Pondie"
               class="fish-link-item"
               data-image="FISH/Charcoal Pondie.png"
+              loading="lazy"
               >Pondie</a
             >
-            <a
-              href="#Sec-Splashtail"
+            <a href="#Sec-Splashtail"
               class="fish-link-item"
               data-image="FISH/Ruby Splashtail.png"
+              loading="lazy"
               >Splashtail</a
             >
-            <a
-              href="#Sec-Stormfish"
+            <a href="#Sec-Stormfish"
               class="fish-link-item"
               data-image="FISH/Ancient Stormfish.png"
+              loading="lazy"
               >Stormfish</a
             >
-            <a
-              href="#Sec-Wildsplash"
+            <a href="#Sec-Wildsplash"
               class="fish-link-item"
               data-image="FISH/Russet WildSplashes.png"
+              loading="lazy"
               >Wildsplash</a
             >
-            <a
-              href="#Sec-Wrecker"
+            <a href="#Sec-Wrecker"
               class="fish-link-item"
               data-image="FISH/Sun Wrecker.png"
+              loading="lazy"
               >Wrecker</a
             >
-            <a
-              href="#Sec-Meats"
+            <a href="#Sec-Meats"
               class="fish-link-item"
               data-image="INFO_IMG/Meats-example.png"
+              loading="lazy"
               >Meats</a
             >
-            <a
-              href="#Sec-Treacherous Plunder"
+            <a href="#Sec-Treacherous Plunder"
               class="fish-link-item"
               data-image="INFO_IMG/TreacherousPlunder2-example.png"
+              loading="lazy"
               >Treacherous Plunder</a
             >
           </div>
@@ -436,27 +447,32 @@
                 src="FISH/Almond Ancientscale.png"
                 alt="Almond Ancientscale Image"
                 class="fish-image"
+                loading="lazy"
               />
               <img
                 src="FISH/Sapphire Ancientscale.png"
                 alt="Sapphire Ancientscale Image"
                 class="fish-image"
+                loading="lazy"
               />
               <img
                 src="FISH/Smoke Ancientscale.png"
                 alt="Smoke Ancientscale Image"
                 class="fish-image"
+                loading="lazy"
               />
               <img
                 src="FISH/Bone Ancientscale.png"
                 alt="Bone Ancientscale Image"
                 class="fish-image"
-              />
+                loading="lazy"
+                />
               <img
                 src="FISH/Starshine Ancientscale.png"
                 alt="Starshine Ancientscale Image"
                 class="fish-image"
-              />
+                loading="lazy"
+                />
             </div>
             <div class="table-scroll-container">
               <table class="price-table-container">
@@ -1770,7 +1786,7 @@
             <br><strong>Moss</strong> Islehopper <a href="#section-regions"> Lone Cove | Wanderer's Refuge | Marauder's Arch | Thieves' Haven</a>
             <br><strong>Honey</strong> Islehopper <a href="#section-regions">Crescent Isle | Kraken's Fall | Sunken Grove | Plunder Valley | Discovery Ridge</a>
             <br><strong>Raven</strong> Islehopper <a href="#section-regions"> Mermaid's Hideaway | Discovery Ridge | Shark Bait Cove | Wanderers Refuge</a>
-            <br><strong>Amethyst</strong> Islehopper <a href="">Smuggler's Bay | Mermaid's Hideaway | The Crooked Masts | Old Faithful Isle | Snake Island | Devil's Ridge</a>
+            <br><strong>Amethyst</strong> Islehopper <a href="#section-regions">Smuggler's Bay | Mermaid's Hideaway | The Crooked Masts | Old Faithful Isle | Snake Island | Devil's Ridge</a>
             <br>Does not require Bait to catch.</i></p></article>
           <!-- Islehopper table -->
           <div class="table-container">
@@ -5131,35 +5147,35 @@
           <div class="bait-info">
             <div class="bait-item">
               <h4 id="Sec-Leeches">Leeches</h4>
-              <img class="bait-top-image" src="INFO_IMG/BAITS_1.png" alt="Leeches Image"/>
+              <img class="bait-top-image" src="INFO_IMG/BAITS_1.png" alt="Leeches Image" loading="lazy"/>
               <p>Leeches seem drawn to the water. They are best found by digging as close to the water line as possible.</p>
-              <img class="bait-bottom-image" src="INFO_IMG/leeches_location.png" alt="Leeches location example">
+              <img class="bait-bottom-image" src="INFO_IMG/leeches_location.png" alt="Leeches location example" loading="lazy">
             </div>
             <div class="bait-item">
               <h4 id="Sec-Earthworms">Earthworms</h4>
-              <img class="bait-top-image" src="INFO_IMG/BAITS_2.png" alt="Leeches Image"/>
+              <img class="bait-top-image" src="INFO_IMG/BAITS_2.png" alt="Leeches Image" loading="lazy"/>
               <p>Earthworms tend to nestle themselves beneath the grass.</p>
-              <img class="bait-bottom-image" src="INFO_IMG/worms_location.png" alt="Worms location example">
+              <img class="bait-bottom-image" src="INFO_IMG/worms_location.png" alt="Worms location example" loading="lazy">
             </div>
             <div class="bait-item">
               <h4 id="Sec-Grubs">Grubs</h4>
-              <img class="bait-top-image" src="INFO_IMG/BAITS_3.png" alt="Leeches Image"/>
+              <img class="bait-top-image" src="INFO_IMG/BAITS_3.png" alt="Leeches Image" loading="lazy"/>
               <p>Grubs appear to enjoy the warm sand. Just be sure you’re at least little further back from where you might find leeches.</p>
-              <img class="bait-bottom-image" src="INFO_IMG/grubs_location.png" alt="Grubs location example">
+              <img class="bait-bottom-image" src="INFO_IMG/grubs_location.png" alt="Grubs location example" loading="lazy">
             </div>
           </div>
           <hr id="create_table">
           
           <p id="guide-text">There is also a possibility of obtaining bait from barrels that can be found on 
             the main islands as well as the smaller ones, and also in crates.</p>
-          <img src="INFO_IMG/worms_in_barrel.png" id="worm-in-barrels-img" alt="Baits in barrels example"/>
+          <img src="INFO_IMG/worms_in_barrel.png" id="worm-in-barrels-img" alt="Baits in barrels example" loading="lazy"/>
         </section>
         
         <!-- REGIONS -->
         <section>
           <h2 id="section-regions">Regions for Fishing in Sea of Thieves</h2>
           <br>
-          <img class="gallery-image" id="map-with-regions" src="INFO_IMG/Regions_beta.png" />
+          <img class="gallery-image" id="map-with-regions" alt="Map with Regions" src="INFO_IMG/Regions_beta.webp"/>
           <p id="guide-text" style="color: rgba(167, 167, 167, 0.637);">*Click on the Map to find out More</p>
           <article class="regions-info">
 
@@ -5169,7 +5185,7 @@
                   The Ancient Isles is mostly a bright and sunny place with dark blue waters and thick vegetation among large rock monuments where you can catch <a href="#Sec-Ancientscale">Ancientscales</a>. 
                 </p></div>
                 <div class="regions-info-images">
-                  <img src="INFO_IMG/The_Ancient_Isles.png" alt="The Ancient Isles Example">
+                  <img src="INFO_IMG/The_Ancient_Isles.png" alt="The Ancient Isles Example" loading="lazy">
                 </div>
 
               <div class="regions-info-text">
@@ -5178,7 +5194,7 @@
                   The Shores of Plenty's inviting bright and sunny environment induces a more calming aroma to wandering pirates. Here, the climate is tropical with the water a clear light blue, the sands Silver-white with Palm-filled Shores and lush vegetation.
                   In the waters of the Shores of Plenty you can catch <a href="#Sec-Plentifin">Plentifins</a></p></div>
                 <div class="regions-info-images">
-                  <img src="INFO_IMG/The_Shores_of_Plenty.png" alt="The Shores of Plenty Example">
+                  <img src="INFO_IMG/The_Shores_of_Plenty.png" alt="The Shores of Plenty Example" loading="lazy">
                 </div>
 
               <div class="regions-info-text">
@@ -5188,7 +5204,7 @@
                   In the open waters of The Wilds you can catch <a href="#Sec-Wildsplash">Wildsplashes</a>. 
                 </p></div>
                 <div class="regions-info-images">
-                  <img src="INFO_IMG/The_Wilds.jpg" alt="The_Wilds Example">
+                  <img src="INFO_IMG/The_Wilds.jpg" alt="The_Wilds Example" loading="lazy">
                 </div>
 
               <div class="regions-info-text">
@@ -5198,7 +5214,7 @@
                   where you can catch <a href="#Sec-Devilfish">Devilfish</a> in the open waters.
                     </p></div>
                 <div class="regions-info-images">
-                  <img src="INFO_IMG/The_Devil's_Roar.png" alt="The Devil's Roar Example">
+                  <img src="INFO_IMG/The_Devil's_Roar.png" alt="The Devil's Roar Example" loading="lazy">
                 </div>
                       
             <div class="regions-info-text">
@@ -5208,7 +5224,7 @@
               <br><i> *A large flock of Seagulls flying above an area at sea indicates that a shipwreck is below them.</i></p>
             </div>
             <div class="regions-info-images">
-              <img src="INFO_IMG/Ship1.png" alt="Shipwreck Example">
+              <img src="INFO_IMG/Ship1.png" alt="Shipwreck Example" loading="lazy">
             </div>
 
             <div class="regions-info-text">
@@ -5218,7 +5234,7 @@
             Remember that Storms do not go to The Devil's Roar Region so if you want to catch some Stormfishes, there is no point waiting there for Storm.
             <br><i>*Storms are also indicated by the ringing of the Ship's Bell</i></p></div>
             <div class="regions-info-images">
-              <img src="INFO_IMG/Stormbeta.png" alt="Ship in Storm Example">
+              <img src="INFO_IMG/Stormbeta.png" alt="Ship in Storm Example" loading="lazy">
             </div>
 
             <div class="regions-info-text">
@@ -5227,7 +5243,7 @@
                 They are the only source of freshwater and the only locations where the <a href="#Sec-Pondie">Pondie</a> can be caught.
               </p></div>
               <div class="regions-info-images">
-                <img src="INFO_IMG/Ponds.png" alt="Ponds Example">
+                <img src="INFO_IMG/Ponds.png" alt="Ponds Example" loading="lazy">
               </div>
 
             <div class="regions-info-text">
@@ -5235,7 +5251,7 @@
               <p><strong>Skeleton Ships</strong> can be found as patrol ships peacefully sailing between islands or through emergent encounters. 
               </p></div>
               <div class="regions-info-images">
-                <img src="INFO_IMG/skeleton-ship.jpg" alt="Skeleton Ship Example">
+                <img src="INFO_IMG/skeleton-ship.jpg" alt="Skeleton Ship Example" loading="lazy">
               </div>
 
             <div class="regions-info-text">
@@ -5244,7 +5260,7 @@
                 An active Skeleton Fort can appear at any Fortress Island <i>*apart from Fort of the Damned, which has its own Raid event</i>
               </p></div>
               <div class="regions-info-images">
-                <img src="INFO_IMG/skeleton-fort.png" alt="Skeleton Fort Skull Example">
+                <img src="INFO_IMG/skeleton-fort.png" alt="Skeleton Fort Skull Example" loading="lazy">
               </div>
 
             <div class="regions-info-text">
@@ -5252,7 +5268,7 @@
               <p><strong>The Fort of Fortune</strong> is a rare type of World Event. Its structure is similar to the current Skeleton Fort World Event but provides a greater challenge and holds a greater reward.The Fort of Fortune’s Skull Cloud differs from the standard Skeleton Fort Skull Cloud with its glowing red scars and eyes.
               </p></div>
               <div class="regions-info-images">
-                <img src="INFO_IMG/Fort-of-fortune.png" alt="Fort of fortune Skull Example">
+                <img src="INFO_IMG/Fort-of-fortune.png" alt="Fort of fortune Skull Example" loading="lazy">
               </div>
 
             <div class="regions-info-text">
@@ -5260,7 +5276,7 @@
               <p><strong>Fort of the Damned</strong> is a Fortress Raid located in The Ancient Isles <strong><i>L-14</i></strong> . Unlike other World Events, the Fort of the Damned Raid is manually activated by players. Once the Fort is active, the Skull will appear above Fort of the Damned so be careful.
               </p></div>
               <div class="regions-info-images">
-                <img src="INFO_IMG/Skull-Fort-Damned.png" alt="Skull Fort Damned Example">
+                <img src="INFO_IMG/Skull-Fort-Damned.png" alt="Skull Fort Damned Example" loading="lazy">
               </div>
 
 
@@ -5269,7 +5285,7 @@
             >More Informations about Regions</a>
           <div id="popup-overlay" class="hidden">
             <div id="popup-container">
-              <img id="popup-image" src="INFO_IMG/Regions-map.png" alt="Popup Fishing Regions Image">
+              <img id="popup-image" src="INFO_IMG/Regions-map-min.jpg" alt="Popup Fishing Regions Image">
               <button id="show-full-image" class="full-image-button">Show Full Image</button>
           </div>
         </div>
@@ -5285,14 +5301,14 @@
           <div class="first-tip-box">
             <div class="tip-image">
               <h4>FORTS</h4>
-              <img src="INFO_IMG/fort1.png" alt="Fort" />
-              <img src="INFO_IMG/fort2.png" alt="Fort" />
+              <img src="INFO_IMG/fort1.png" alt="Fort"  loading="lazy"/>
+              <img src="INFO_IMG/fort2.png" alt="Fort"  loading="lazy"/>
               <a href="https://rarethief.com/sea-of-thieves-sea-forts-guide/" target="_blank">Learn More About Forts</a>
             </div>
             <div class="tip-image">
               <h4>SHIPWRECK</h4>
-              <img src="INFO_IMG/Ship1.png" alt="Ship Wreck" />
-              <img src="INFO_IMG/Ship2.png" alt="Ship Wreck" />
+              <img src="INFO_IMG/Ship1.png" alt="Ship Wreck"  loading="lazy"/>
+              <img src="INFO_IMG/Ship2.png" alt="Ship Wreck"  loading="lazy"/>
               <a href="https://seaofthieves.fandom.com/wiki/Shipwrecks" target="_blank">Learn More About Shipwrecks</a>
             </div>
           </div>
@@ -5347,13 +5363,13 @@
 
           <h5 id="tip-number">TIP #2</h5>
           <div class="tip-image"><p id="Sec-4Pans">You can cook fish Faster by using Four Frying Pan in Forts</p><h4>How to Find and Use</h4>
-          <img src="INFO_IMG/fort-pan0.png" alt="4 Frying Pan in Forts" /></div>
+          <img src="INFO_IMG/fort-pan0.png" alt="4 Frying Pan in Forts" loading="lazy"/></div>
           <div class="tip-image" style="margin-top: 100px;"><p>1. Find the fort & go inside the building</p></div>
-          <div class="tip-image"><img src="INFO_IMG/fort-pan1.png" alt="4 Frying Pan in Forts" /></div>
+          <div class="tip-image"><img src="INFO_IMG/fort-pan1.png" alt="4 Frying Pan in Forts" loading="lazy"/></div>
           <div class="tip-image"><p>2. Enter the room on the left</p></div>
-          <div class="tip-image"><img src="INFO_IMG/fort-pan2.png" alt="4 Frying Pan in Forts" /></div>
+          <div class="tip-image"><img src="INFO_IMG/fort-pan2.png" alt="4 Frying Pan in Forts" loading="lazy"/></div>
           <div class="tip-image"><p>3. Put the fish / meat to pans</p></div>
-          <div class="tip-image" style="margin-bottom: 100px;"><img src="INFO_IMG/fort-pan3.png" alt="4 Frying Pan in Forts" /></div>
+          <div class="tip-image" style="margin-bottom: 100px;"><img src="INFO_IMG/fort-pan3.png" alt="4 Frying Pan in Forts" loading="lazy"/></div>
 
           <hr id="create_table">
         
@@ -5384,7 +5400,7 @@
             <div id="tip4-map-div">
               <a href="https://www.merfolkslullaby.com/map?latitude=18.615035398798895&longitude=-64.40515692899349&zoom=12.574191141293307&realm=sea-of-thieves" 
               target="_blank" class="interactive-map">
-                <img src="INFO_IMG/interactive map.jpg" alt="Interactive map example">
+                <img src="INFO_IMG/interactive map.jpg" alt="Interactive map example" loading="lazy">
               </a>
             </div>
           
@@ -5434,37 +5450,36 @@
           <hr id="create_table" style="margin-top: 100px;">
           <h2 id="section-5">FISHING TUTORIAL <br>(for beginners)</h2>
             <p id="tip4-summary">How to fish in Sea of Thieves</p>
-            <img src="INFO_IMG/howtofish.jpg" id="tutorial__fishing_first_img" alt="How to fish example" >
+            <img src="INFO_IMG/howtofish.jpg" id="tutorial__fishing_first_img" alt="How to fish example" loading="lazy">
             <ol class="tutorial__fishing_ol">
               <li>Decide your bait. Pull out your fishing rod, re-open your inventory and when holding "R"(or B on controller), decide on the bait you want. Once it's on the end of your hook, you're ready to cast.</li>
               <div class="centered-images">
-                <img src="INFO_IMG/fishing1.png" alt="How to Fish" />
-                <img src="INFO_IMG/fishing2.png" alt="How to Fish"/>
+                <img src="INFO_IMG/fishing1.png" alt="How to Fish" loading="lazy"/>
+                <img src="INFO_IMG/fishing2.png" alt="How to Fish" loading="lazy"/>
               </div>
               <li>To cast, simply point at a body of water, and left click. To retrieve your line, simply right click.</li>
               <li>Once your line is in the water, it's simply a case of waiting. Sometimes you'll be able to see a fish under the water, others it'll be too dark. Either way, once you've got a bite your line will begin to flex and bow.</li>
               <li>To reel in a fish when you have a bite, don't instantly left click (it'll cause the line to break and the fish to escape). What you need to do is tire the fish out. Fundamentally, you move your fishing rod in the opposite 
                 direction that the fish is moving. If the fish is going left, hold right (typically "D"). If the fish is going right, hold left (typically "A"). 
                 If the fish is going away from you, hold down (typically "S"). <br><br> <strong>Note: If you're holding the rod in the wrong direction, you'll hear it begin to strain and crack. When your line goes slack and when the fish is exhausted, reel it in.</strong></li>
-              <div class="centered-images"><img src="INFO_IMG/fishing3.png" alt="How to Fish" /></div>
+              <div class="centered-images"><img src="INFO_IMG/fishing3.png" alt="How to Fish" loading="lazy"/></div>
               <li>To take your fish off your line, you need to be sure you have the inventory space. If you don't have space, you can store items in a nearby barrel or eat some existing food.</li>
           </ol>
 
             
               <p id="tip4-summary" style="margin-top:200px">How to cook fish in Sea of Thieves</p>
-              <img src="INFO SS/Cooking1.png" id="tutorial__fishing_first_img" alt="How to Cook"/>
+              <img src="INFO_IMG/Cooking1.png" id="tutorial__fishing_first_img" alt="How to Cook" loading="lazy"/>
               <ol class="tutorial__fishing_ol">
                 <li>It's fairly simple! Head below deck and you'll see a stove and skillet. If you aren't on board your ship, most islands have an available frying pan by any fire.</li>
                 <li>With your fish in hand, you'll be able to interact with the pan, and start cooking.</li>
                 <div class="centered-images">
-                  <img src="INFO SS/Cooking2.png" alt="How to Cook"/>
-                  <img src="INFO SS/Cooking3.png" alt="How to Cook" />
+                  <img src="INFO_IMG/Cooking2.png" alt="How to Cook" loading="lazy"/>
+                  <img src="INFO_IMG/Cooking3.png" alt="How to Cook" loading="lazy"/>
                 </div>
                 <li>Like all things in Sea of Thieves, there's no UI to indicate how well your fish is cooked. You'll need to pay attention. If it's undercooked and you eat it, you'll be sick with food poisoning. Left on the heat too long, and it'll be burnt and worthless.</li>
                 <li>While it takes practice to know exactly which fish have which timings, the easiest tricks are:</li>
                 <ul>
                   <li>Steam coming off the frying pan will thin out as the fish cooks through.</li>
-                  <li>The fish's eyes will go completely white.</li>
                   <li>Watch for the fish to change colour. When it turns brown, it's typically cooked just right.</li>
                 </ul>
               </ol>
@@ -5481,7 +5496,7 @@
           <p>&copy; 2023 <span class="highlighted">Thieves Timer</span></p>
       </div>
       <div class="center-section">
-          <img src="INFO_IMG/512x512.png" alt="Center Image">
+          <img src="INFO_IMG/512x512.png" alt="Center Image" loading="lazy">
       </div>
       <div class="right-section">
           <p class="highlighted">Helpful Links</p>

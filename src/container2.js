@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   galleryImages.forEach((image) => {
     image.addEventListener('click', function() {
-      const newImgSrc = "INFO_IMG/Regions-map.png";
+      const newImgSrc = "INFO_IMG/Regions-map-min.png";
       popupImage.setAttribute('src', newImgSrc);
 
       popupOverlay.style.display = 'flex';
