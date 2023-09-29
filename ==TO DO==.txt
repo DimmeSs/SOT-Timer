@@ -5,7 +5,7 @@ IDEA FOR LATER :
 - loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
 - żeby slider działał tylko wtedy gdy widać go na ekranie 
 - po najechaniu na header z linkami dodać animacje do tego:
-   - zmienia kolor ikonki i podnosi lekko
+   - zmienia kolor ikonki ( ikonki na svg zmien + fill: on hover)
    - pod ikonką dodaje podświate kolorową
 
 -header zawsze widoczny po zjeżdzeniu w doł oraz po najechaniu na niego wyświetlają się kategorię jak są
@@ -16,19 +16,37 @@ po najechaniu na domek wyświetlaja się nad nim [ bait region price tip ] zeby 
 pierwszy raz na stronie masz pod ikonkami wyświetlone EN PL a po którymś (np po 3 razie) innym razie znika (i jest tylko w footerze )
 EN < -- > PL
 yt popup w modal okienku
-----------------------------------------------
-v2.0
+header menu bar better design
 
-SEO:
-!!!!!!!!!!!!!!!!!Zdjęcia na jpeg/svg zmień
-!!!!!!!!!!!!!!!!!zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kiedy sie je widzi to ładują się odrazu lazy img cos takiego
-!!!!! nav bedzie się wyswietlał zawsze od momentu kiedy zjedzie się pod TOP sekcje
-!!!!!animacja pojawiania się tekstu i rzeczy na stronie wraz z czasem jak sie zjeżdza w dół
-!!!!!mniejsze rozpixelowanie NA tlo.jpg
+
+-------
+v2.0
+-------
+
+ROBIE:
+
+!!!!! header menu bar nav bedzie się wyswietlał zawsze od momentu kiedy zjedzie się pod TOP sekcje
+
+--------
+ZRÓB:
+
+NAPRAW GOLD RUSH
+
+Zdjęcia na jpeg/svg zmień
+
+zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kiedy sie je widzi to ładują się odrazu lazy img cos takiego
+
+animacja pojawiania się tekstu i rzeczy na stronie wraz z czasem jak sie zjeżdza w dół
+
+mniejsze rozpixelowanie NA tlo.jpg
 
 zamiast linków zrób przycisk z linków do innej strony
-Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
+
+Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + 
+         popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
+
 #1 ogar zdjęcia
+
 stormfishe zdjecia ogarnij im wspolną klase czy coś
 
 

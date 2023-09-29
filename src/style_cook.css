@@ -1189,7 +1189,7 @@ body.pokazGIF #tip-description-gold-rush {
 }
 /* FOOTER */
 
-footer {
+footer{
   background-color: black;
   color: gray;
   display: flex;
@@ -1202,7 +1202,9 @@ footer {
   line-height: 1.7;
   justify-content: space-around;
 }
-
+#unhilighted{
+  color: gray;
+}
 .custom-hr {
   background-color: black;
   height: 15px;
@@ -1304,6 +1306,20 @@ footer {
     transform: translateX(-20%);
   }
 }
+
+.clickable-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;  /* Dodano */
+  transition: all 0.3s ease;
+}
+
+.clickable-link:hover {
+  transform: translateX(3px);
+  text-shadow: 3px 0px 5px rgba(255, 255, 255, 0.7);
+  text-decoration: none; /* Zmieniono box-shadow na text-shadow */
+}
+
 /* # Preloading Animation # */
 #preloader {
   display: flex;
@@ -1407,8 +1423,27 @@ footer {
 
 .menu_bar {
   position: relative;
+  transition: 2s;
+}
+.sticky {
+  position: fixed;
+  top: 19px;
+  width: 100%;
+  z-index: 100000;
 }
 
+.animate-show {
+  animation: slideDown 0.72s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 19px;
+  }
+}
 .nav-images {
   display: flex;
   justify-content: center;
@@ -1428,7 +1463,6 @@ footer {
 .nav-image {
   position: relative;
   display: inline-block;
-  transition: transform 0.5s ease;
 }
 
 .nav-image img {
@@ -1436,7 +1470,6 @@ footer {
   max-height: 30px; /* zmniejszenie wysokości obrazów, aby były trochę mniejsze niż hr */
   width: auto;
   margin-top: 5px;
-  transition: transform 0.5s ease;
 }
 
 .nav-image span {
@@ -1472,7 +1505,9 @@ footer {
   height: 50px;
   margin-top: -20px;
   margin-bottom: -20px;
+  border-radius: 4px;
 }
+
 
 #skull {
   width: fit-content;

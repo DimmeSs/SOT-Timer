@@ -1,4 +1,24 @@
+// STICKY NAV
+document.addEventListener("DOMContentLoaded", function() {
+  const menuBar = document.querySelector("header");
+  const navImages = document.querySelector(".nav-images");  // Dodaj selektor dla .nav-images
+  const stickyPoint = menuBar.offsetTop;
+
+  window.addEventListener("scroll", function() {
+    if (window.pageYOffset >= stickyPoint) {
+      menuBar.classList.add("sticky");
+      menuBar.classList.add("animate-show");
+    } else {
+      menuBar.classList.remove("sticky");
+      menuBar.classList.remove("animate-show");
+
+    }
+  });
+});
+
+
 // SLIDER
+
 let currentSlide = 1;
 const totalSlides = 6;
 const slideChangeInterval = 5000;
