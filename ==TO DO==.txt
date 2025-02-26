@@ -1,9 +1,42 @@
 
+
+-------
+v2.0
+-------
+
+ROBIE:
+
+NAPRAW GOLD RUSH
+
+--------
+ZRÓB:
+
+Ogar zdjęcia ( size i rozmiar ) Zdjęcia na webp zmień 
+Loading Time napraw ( za długo )
+
+
+Domek ikonka pod @2023 w footerze
+
+
+
+zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kiedy sie je widzi to ładują się odrazu lazy img cos takiego
+
+animacja pojawiania się tekstu i rzeczy na stronie wraz z czasem jak sie zjeżdza w dół
+
+
+
+zamiast linków zrób przycisk z linków do innej strony
+
+dodaj możliwość przesuwania myszką obrazka w lewo i w prawo w SEA POST SLIDER
+
+mniejsze rozpixelowanie NA tlo.jpg
+
+
 IDEA FOR LATER :
 
 - pwa offline nie działa na telefonie, napraw
 - loading bardziej wyraźne ( lub uzywajac animacji css albo svg animacji )
-- żeby slider działał tylko wtedy gdy widać go na ekranie 
+- żeby slider działał tylko wtedy gdy widać go na ekranie
 - po najechaniu na header z linkami dodać animacje do tego:
    - zmienia kolor ikonki ( ikonki na svg zmien + fill: on hover)
    - pod ikonką dodaje podświate kolorową
@@ -17,36 +50,3 @@ pierwszy raz na stronie masz pod ikonkami wyświetlone EN PL a po którymś (np 
 EN < -- > PL
 yt popup w modal okienku
 header menu bar better design
-
-
--------
-v2.0
--------
-
-ROBIE:
-
-!!!!! header menu bar nav bedzie się wyswietlał zawsze od momentu kiedy zjedzie się pod TOP sekcje
-
---------
-ZRÓB:
-
-NAPRAW GOLD RUSH
-
-Zdjęcia na jpeg/svg zmień
-
-zdjęcia będa się ładować w trakcie korzystania ze strony ale w momencie kiedy sie je widzi to ładują się odrazu lazy img cos takiego
-
-animacja pojawiania się tekstu i rzeczy na stronie wraz z czasem jak sie zjeżdza w dół
-
-mniejsze rozpixelowanie NA tlo.jpg
-
-zamiast linków zrób przycisk z linków do innej strony
-
-Slider jak najedziesz PALCEM na nazwe żeby się pokazywała mapa + usun to zatrzymanie zdjecia + 
-         popraw zatrzymanie slaida gdy myszka jest na slaiderze + dodaj możliwość przesuwania myszką obrazka w lewo i w prawo
-
-#1 ogar zdjęcia
-
-stormfishe zdjecia ogarnij im wspolną klase czy coś
-
-

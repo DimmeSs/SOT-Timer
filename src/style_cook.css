@@ -453,6 +453,10 @@ ul {
 .flex-rarity img {
   margin-right: 3px;
 }
+
+.flex-rarity {
+  white-space: nowrap; /* Zapobiega zawijaniu tekstu */
+}
 .Meat-images,
 .TreachP-images {
   display: flex;
